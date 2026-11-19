@@ -9,39 +9,122 @@ In fast, skip this and design from what you have. At agency pace, before draftin
 I draft the designs, is there a logo file, brand colours, or a site you like that I should see?" Designing
 blind and redoing it costs far more than a minute's wait. Then carry on with whatever you have.
 
+## Before you draft
+
+- Read `04-taste.md` again, the part headed "What to do instead".
+- Put the design skills to work, as that guide says. With `design-taste-frontend` installed, have it deal
+  directions for this business and build from those. With `ui-ux-pro-max`, run its design-system search for
+  type and palette options.
+- Have the pictures ready: the three to six strongest from `_mrk/brand/photos/` and `resources/photos/`.
+- Use the strongest model you have for this step. If the session is on a small one, say so once in a line
+  ("These designs will be better on a stronger model: `/model`") and carry on.
+
+### Lay the foundations first
+
+Five drafts made from nothing each look half-finished. Five drafts that share one set of foundations all
+look finished, and still differ where it matters. Before drafting, write `_mrk/directions/tokens.css`:
+
+- **Colour roles** from the brand: the brand colour, a deeper shade, a soft tint, a dark ground, a light
+  ground tinted slightly toward the brand, ink for text, a muted text colour, a hairline colour. Check the
+  text pairs for contrast now.
+- **A type scale**: seven or eight sizes, from small labels to a very large heading.
+- **A spacing scale**, two or three corner radii, one shadow.
+- **One icon set**: line icons, one stroke width, drawn inline so nothing has to load. Pick the icons the
+  facts call for (phone, map pin, clock, the services) once, and reuse them.
+- **A face for figures**: phone numbers, times, prices and codes are set in a fixed-width or tabular face,
+  so they line up and read as data.
+
+Every draft links this file. Each one then sets its own ground, its own type families and its own picture
+treatment on top.
+
 ## Five directions
 
 Draft five genuinely different directions. Different ideas, not five tints of one.
 
-**These are sketches of the top of the home page, and nothing more.** The site is built once, in step 7,
-after the owner has chosen. Anything built now for the four designs they do not pick is thrown away.
+**A direction is a visual idea, not a layout variation.** Each one has:
 
-Each direction is **one small HTML file**:
+- **A ground.** What the page sits on: a dark field, the brand colour edge to edge, a photo across the
+  screen, warm paper. **At least three of the five are not a white page.**
+- **A type voice.** A typeface and a scale chosen for this business, with a heading big enough to be felt.
+  Not the same family in all five.
+- **A way with pictures.** The business's pictures, used large and treated to belong: cropped with intent,
+  toned toward the brand colour, set in a firm shape.
+- **A name and one sentence** that says the idea in words the owner would use ("the workshop: black like a
+  shed floor, hi-vis yellow, type you can read from across the yard").
 
-- **Fast:** the home page's first screen only.
-- **Agency:** the home page's first screen and one more section.
-- Phone and desktop come from the same file (it is responsive). Do not make separate files for each.
-- Real logo, real facts and real photos from the brand kit.
-- A name of a few words and **one sentence** that says the idea ("the workshop: honest materials, big
-  photos of the work, type like a job sheet").
+A white page with a headline, a paragraph and a button is a wireframe, not a direction. Do not show one.
 
-**Never at this stage:**
+**How much to build.** The top of the home page: the first screen and one more section, at either pace. One
+HTML file per direction, responsive.
+
+### What every draft contains
+
+A draft with a big heading, a paragraph, a button and a photo is a poster. It says nothing about the
+business. Each of the five has all of these, made from `_mrk/facts.md`:
+
+**In the first screen**
+
+1. **A heading that names the outcome** the customer wants, in their words, in eight words or fewer. Under
+   it, one sentence: who it is for, where, and how.
+2. **Two actions, side by side.** The main one says what happens ("Book a free consultation"). If the
+   business takes calls, the phone number is a second button with a phone icon, never small text.
+3. **A working panel.** Something you design from the facts that shows the service actually happening. It
+   sits where a stock photo would. For example:
+   - a day or a visit laid out as a timeline, with real services at real times;
+   - a small picker ("What would help?") with the real services as choices;
+   - a job sheet, a quote, a booking card, a price or menu card;
+   - opening hours with "open now", or the areas served.
+
+   Real details only. It should look usable, not decorative. A strong real photo can sit behind or beside
+   it, but does not replace it.
+4. **Three proof points in a row**, each with an icon: where they are, what is free, what they are
+   registered or qualified as. Facts only. One that still needs the owner's word gets a small "to confirm"
+   note beside it, never an invented claim.
+
+**In the second section**, one of these, properly built:
+
+- the services as a list: an icon, the name, a line of real detail, and any real code or price;
+- the process as three or four steps joined by a line, each with an icon and a sentence;
+- real results or reviews as cards, if the business has them.
+
+**Use the facts.** Each draft shows at least six real facts about this business. If you could swap in a
+competitor's name and nothing would look wrong, it is not done.
+
+### Finish the details
+
+These are what make a draft look designed and not typed:
+
+- An icon on every item someone would scan: steps, services, proof points, actions.
+- Figures in the figure face: phone numbers, times, codes, prices.
+- Hairlines between list rows, in place of boxes around everything.
+- Small labels and chips for categories. An arrow on the main action.
+- States where they would exist: a chosen option, a current step.
+- Corners, spacing and sizes taken from the foundations, never invented per draft.
+
+**Pictures.** Every picture slot holds a real picture from the brand kit. **Never an empty box or "your
+photo here".** If there is truly nothing usable for a slot, design that
+direction without the slot. Copy the pictures you use into `_mrk/directions/assets/` so the page finds them.
+
+**Never at this stage** (this is what keeps the cost down):
 
 - Any page other than the home page. No about, services, contact or product pages.
-- The whole home page. One screen, or one screen and a section.
-- A style guide, a component library, sample pages for each page type, or a design system. The design
-  system is written once, after the pick, for the chosen direction only.
-- An Astro project, a build step, or shared code between the five. Plain HTML with its own CSS in the file.
+- The whole home page.
+- A style guide, a component library or sample pages. The design system is written once, after the pick,
+  for the chosen direction only.
+- An Astro project, a build step, or shared code between the five.
 
-If a direction is running past about 200 lines, it is doing too much: stop and cut it back. Draft the five in
-parallel if you can; the owner is waiting to see something.
+Draft the five in parallel if you can. Each helper needs the whole picture: the facts, the brand kit, the
+pictures, the taste rules and this guide. A helper given only a one-line idea returns a generic page.
 
 Rules for the set:
 
 - Every direction obeys `04-taste.md` and uses only real material (rule 1).
-- **All five use the client's brand kit as given.** Whatever is marked "Client" in `_mrk/brand-kit.md` is
-  fixed across the set. With a full brand kit, the directions differ in layout, rhythm, imagery and how the
-  brand colour is used, not in typeface or palette.
+- **What the client supplied is fixed.** Anything marked "Client" in `_mrk/brand-kit.md` is the same across
+  the set. With a full client brand kit, the directions differ in ground, layout, imagery and how the brand
+  colour is used, not in typeface or palette.
+- **What was only sampled from the old site is a starting point.** A colour lifted from an old logo or a
+  theme can be used boldly, given a ground colour to sit on, or replaced with a stronger proposal. Say which
+  on the page, in a few words.
 - **With client inspiration, at least two directions follow it closely**, and each says which sites or
   screenshots it draws on. Build them from each site's teardown: everything on its "borrow" list is
   available, nothing on its "leave" list is. This is what gets the design right first time.
@@ -56,6 +139,25 @@ Rules for the set:
 - Anything in the brand kit marked "Chosen by you" is a proposal. Point it out on the index page so they
   can approve or change it with the pick.
 
+## Check your own work before anyone sees it
+
+Take a screenshot of every draft at 1440px and at 390px, and look at each one the way the owner will. Redraw
+any draft that:
+
+- has no working panel in the first screen, or an unstructured second section;
+- shows fewer than six real facts, or could be for any business in any town;
+- has an empty, broken or missing picture;
+- is mostly white with small type;
+- has anything cut off or running off the side: measure the page width at both sizes, it must equal the
+  screen width, and no heading or number may be clipped;
+- has bare text where an icon, a figure face or a hairline should be;
+- looks like one of the other four;
+- falls apart on the phone.
+
+With `impeccable` or the Taste inspector installed, run their critique as well. Two rounds at most. Then put
+each draft beside the reference it drew on and ask one question: does it hold up next to it? Redraw the
+weakest rather than show it.
+
 ## One page that shows all five
 
 Save the five in `_mrk/directions/`, with an `index.html` made for someone who has never done this before:
@@ -63,7 +165,9 @@ Save the five in `_mrk/directions/`, with an `index.html` made for someone who h
 - A heading at the top: "Five designs for <business>. Pick the one you would be proud to send a customer to."
 - Each design under a **big number, 1 to 5**, with a name of a few words and one sentence saying the idea.
 - The design itself, large, with its phone view beside or below it. A link opens it full size.
-- No jargon, no file names, no notes to yourself.
+- No jargon, no file names, no notes to yourself, and no block of caveats. If stock pictures are standing
+  in, one short line under the heading says so: "Photos are from your current site. Send better ones any
+  time."
 
 ## Show it to them, in the app ✋
 

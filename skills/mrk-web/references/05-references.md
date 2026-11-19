@@ -4,10 +4,10 @@
 before any direction is drafted, are what make the five directions in step 6 different from each other and
 from the usual.
 
-**In fast, before the designs:** only the sites the client named. One screenshot at each width and five
-lines of notes per site: what to borrow, what to leave. Skip the map, the full teardown and the wider hunt.
-If the client named none, take two quick references for this kind of business from a free gallery. Do the
-fuller version after the pick only if the build needs it.
+**In fast, before the designs:** the sites the client named, plus two well-made sites from outside the
+client's industry, taken from a free gallery. One screenshot at each width and five lines of notes per site:
+what to borrow, what to leave. Skip the map, the full teardown and the wider hunt. Do the fuller version
+after the pick only if the build needs it.
 
 ## What to collect
 
@@ -16,6 +16,11 @@ screen, proof, how it works, results, pricing, FAQ, final call to action), find 
 handle it well. Prefer the same kind of business, then the same kind of customer.
 
 Aim for 8 to 15 references in all. More becomes noise.
+
+**At least two come from outside the client's industry**, chosen for craft: a restaurant, a tool maker, a
+museum, a magazine. Businesses in one sector copy each other, which is how every disability provider,
+plumber and dentist ends up with the same site. Sector references tell you what must be on the page.
+Outside references are where the look comes from.
 
 ## The client's inspiration comes first
 

@@ -74,11 +74,15 @@ need, in this order, and leave the rest until after they choose:
    say nothing unless a required tool is missing. Create `resources/` and read whatever is in it.
 2. **Read the site.** Crawl it with the script, then write `facts.md` and `brand-kit.md`. The site map,
    baseline and redirects wait.
-3. **Glance at any sites the client named.** A screenshot and a few lines each. No wider hunt unless there
-   is nothing to design from.
-4. **Design.** Five sketches of the home page's first screen, one small file each, drafted in parallel if
-   you can. No other pages, no style guide. Open them in the app and ask which one, in two lines
-   (`06-directions.md`).
+3. **Get your eye in.** Read `04-taste.md` and put the installed design skills to work. Look at any sites
+   the client named, plus two well-made sites from outside their industry. A screenshot and a few lines each.
+4. **Design.** Lay shared foundations (colours, type scale, icons), then five designs of the top of the home
+   page. Each is a different visual idea, and each has a working panel built from the facts, two actions,
+   proof points and a structured second section. Check them yourself on screen and redraw the weak ones.
+   Then open them in the app and ask which one, in two lines (`06-directions.md`).
+
+Being quick and quiet is about what the owner has to read and answer. It is never a reason to design less
+well: the five designs are the first thing they judge the skill by.
 
 While this runs, say at most one short line at a time ("Reading your site.", "Designing."). No tables, no
 findings, no file paths, no questions. Each guide has an "In fast" note saying what to do now and what to
@@ -99,8 +103,7 @@ per finished step.
 ### Agency: the guided route
 
 Follow the step guides in full: the four brief questions and a confirm, the client's own materials, the
-Search Console pages report so the important pages are kept, key facts confirmed with the owner, every liked site studied properly, five home page sketches each with a first
-screen and one more section, a hand-over after each step, and offers to draft messages to a client. It asks more and
+Search Console pages report so the important pages are kept, key facts confirmed with the owner, every liked site studied properly, five home page designs, a hand-over after each step, and offers to draft messages to a client. It asks more and
 takes longer, and the result is more considered. Still say less: short hand-overs, one choice at a time, and
 the thing to look at or answer always last.
 
@@ -160,8 +163,10 @@ Show it for `installer`, and again after anything is installed. Never during a b
 
 ## Rules that do not bend
 
-1. **Real facts only.** Every number, quote, name, logo, price and photo of the business comes from the
-   business. If proof is missing, cut the section or add it to `_mrk/owner-todo.md`. Never fill the gap.
+1. **Real facts only.** Every number, quote, name, logo and price comes from the business. If proof is
+   missing, cut the section or add it to `_mrk/owner-todo.md`. Never fill the gap. Pictures the current site
+   already uses are the business's own material: use them. What is never added is a fake: an invented
+   person, a stranger passed off as staff, a logo the business never earned.
 2. **The live site and its domain are untouched** until step 19 and a clear yes from the owner.
 3. **Money is shown before it is spent.** Paid images, paid plans, anything with a charge: the list, the
    price, then a yes.

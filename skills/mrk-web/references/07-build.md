@@ -58,7 +58,9 @@ Across every page type:
   the client used unless they agree to a change.
 - **Build the patterns the client asked for** (the list at the end of `_mrk/references.md`), on the pages
   they belong to, in the design system's own style.
-- **Their photos first.** Use what is in `resources/photos/` ahead of anything from the old site.
+- **Their photos first.** Use what is in `resources/photos/`, then the old site's own pictures, stock
+  included. No empty picture slots and no "photo here" boxes: use a picture, or design
+  the section without one.
 - **Their videos** from `resources/links.md` go where they help, each behind a poster image.
 - **Only publish what is meant to be public.** A document becomes a download only if the owner said so.
   Copy that file into the site; never link to or expose the `resources/` folder itself.

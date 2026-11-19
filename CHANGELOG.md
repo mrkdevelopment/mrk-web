@@ -44,8 +44,19 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 
 ### Changed
 
-- The first designs are sketches of the top of the home page only, one small file each. No other pages, no
-  style guide and no sample pages are made before a design is chosen, which was using a lot of credits.
+- Better first designs. Each of the five is a visual idea with its own ground colour and type, and each
+  now has substance: a working panel designed from the business's facts (a day as a timeline, a picker of
+  the real services), two actions, three proof points, and a structured second section. All five share one
+  set of foundations (colours, type scale, one icon set), so they look finished. They are checked on screen
+  and redrawn if weak before you see them.
+- The old site's pictures are used, stock photos included, in the designs and the build. There are no more
+  empty "photo here" boxes. The to-do list gets a "Photo tips" section saying which pictures are stock or
+  weak and which real photos would improve the site most.
+- The crawl also finds background pictures set by page builders such as Divi and Elementor.
+- References include two well-made sites from outside the client's industry, so designs do not all look
+  like the sector.
+- The first designs cover the top of the home page only (first screen and one more section). No other
+  pages, no style guide and no sample pages are made before a design is chosen.
 - Two things, kept apart. **Installing** copies the skill and replies with one line. **Building** is
   `/mrk-web start` and a website address. Setup is no longer part of either: the tool check runs silently,
   and the tools table and free extras are in `/mrk-web installer`.

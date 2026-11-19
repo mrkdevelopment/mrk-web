@@ -171,7 +171,8 @@ function removeBlocks(html, names) {
   return html;
 }
 
-// Images referenced by a page: img src / lazy-load attributes / srcset / <source>, og:image.
+// Images referenced by a page: img src / lazy-load attributes / srcset / <source>, og:image, and
+// background images set in the page itself. Backgrounds set in stylesheets are read by cssImages().
 function imagesOf(html, base) {
   const found = [];
   const add = (src, alt) => {
@@ -192,6 +193,8 @@ function imagesOf(html, base) {
   for (const a of tags(html, 'source')) if (a.srcset && /image/.test(a.type || 'image')) add(bestOfSrcset(a.srcset), '');
   add(meta(html, 'og:image'), 'og:image');
   for (const m of html.matchAll(/background(?:-image)?\s*:\s*url\(\s*['"]?([^'")]+)['"]?\s*\)/gi)) add(decode(m[1]), '');
+  // lazy-loaded backgrounds: data-bg, data-background, data-background-image, data-lazy-bg ...
+  for (const m of html.matchAll(/\sdata-(?:lazy-)?(?:bg|background)(?:-image|-src|-url)?\s*=\s*["']([^"']+)["']/gi)) add(decode(m[1]), '');
   return found;
 }
 
@@ -381,6 +384,31 @@ function record(u, res) {
   if (res.error) r.content_type = r.content_type || `error: ${res.error}`;
 }
 
+// Page builders (Divi, Elementor and others) put hero and section photos in generated stylesheets,
+// not in <img> tags, so a crawl that only reads the HTML misses the best pictures on the site.
+// Read those stylesheets too, once each. Theme and plugin files are skipped: their images are
+// interface furniture, not the business's photos.
+const cssSeen = new Set();
+const BUILDER_CSS = /\/(?:et-cache|uploads|cache)\/|elementor\/css\//i;
+const NOT_CONTENT = /\/(?:themes|plugins|wp-includes)\//i;
+async function cssImages(pageUrl, html, foundOn) {
+  const sheets = tags(html, 'link')
+    .filter((a) => /stylesheet/i.test(a.rel || '') && a.href)
+    .map((a) => { try { return new URL(decode(a.href), pageUrl).href; } catch { return ''; } })
+    .filter((h) => h && bareHost(new URL(h).hostname) === siteHost && BUILDER_CSS.test(h) && !cssSeen.has(h))
+    .slice(0, 4);
+  for (const sheet of sheets) {
+    cssSeen.add(sheet);
+    const res = await get(sheet, 1024 * 1024);
+    if (res.status !== 200 || !res.body.length) continue;
+    for (const m of res.body.toString('utf8').matchAll(/url\(\s*['"]?([^'")]+?\.(?:jpe?g|png|webp|avif))(?:\?[^'")]*)?['"]?\s*\)/gi)) {
+      let abs; try { abs = new URL(m[1], sheet).href; } catch { continue; }
+      if (NOT_CONTENT.test(abs)) continue;
+      if (!assets.has(abs)) assets.set(abs, { found_on: foundOn, alt: '' });
+    }
+  }
+}
+
 function processPage(u, html) {
   const r = row(u);
   r.fetched = 'yes';
@@ -434,6 +462,7 @@ while (queue.length && fetchedCount < (mode === 'homepage' ? 1 : mode === 'singl
   if (res.status !== 200 || !/html/i.test(ct)) continue;
   fetchedCount++;
   const links = processPage(u, res.body.toString('utf8'));
+  await cssImages(u, pageHtml.get(u), p);
   process.stdout.write(`  [${fetchedCount}] ${p}\n`);
   if (u === homeUrl && mode === 'single') navLinks(pageHtml.get(u), u).map((a) => ours(a.href)).filter(Boolean).slice(0, 20).forEach(enqueue);
   if (mode === 'all-pages') links.forEach(enqueue);

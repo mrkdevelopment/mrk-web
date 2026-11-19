@@ -7,7 +7,8 @@ Generated imagery can help in a narrow way. Everywhere else it hurts, so the def
 
 ## First choice: real photos
 
-If `resources/photos/` already covers what the pages need, this step is done. Record it as skipped.
+If `resources/photos/` and the old site's own pictures cover what the pages need, this step is done. Record
+it as skipped. Stock pictures carried over from the old site are fine to launch with.
 
 Otherwise, before generating anything, offer the owner a short shot list they can take on a phone: the team
 at work, the premises from the street, three finished jobs, the tools or product up close. Real and imperfect

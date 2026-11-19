@@ -40,7 +40,8 @@ Count these when scoring (M4). Do not ship any, unless the brand kit asks for it
 8. Frosted-glass cards floating over a blurry background.
 9. Everything with the same large rounded corners and the same soft shadow.
 10. Invented dashboards, fake app screens or abstract 3D shapes where the real product or work should be.
-11. Stock photos of strangers smiling at laptops, or generated people.
+11. New stock photos of strangers smiling at laptops, or generated people. (Pictures the old site already
+    uses are different: they are the business's own material. See step 2.)
 12. Initials in circles, or grey silhouettes, where real faces should be.
 13. A "trusted by" strip of logos the business never worked with.
 14. Pure black backgrounds with pure white text, or mid-grey body text on white.
@@ -57,6 +58,31 @@ Count these when scoring (M4). Do not ship any, unless the brand kit asks for it
 
 ## What to do instead
 
+Avoiding the tells is not a design. A page with none of them can still be a white rectangle with a headline
+and a button. Aim for something a person would remember.
+
+**Have an idea.** Say in one sentence what this site is like, in terms the owner would recognise: a workshop
+at night, a kitchen table, a clipboard, a shopfront. Type, colour and pictures all follow from it.
+
+**Put colour on the ground.** Use the brand colour in large areas: a whole band, the full first screen,
+behind a photo. Let sections change ground as the page goes down: a dark one, a pale one, one in the brand
+colour. A site where the brand colour appears only on a button has no colour.
+
+**Make the type do something.** A heading large enough to be felt, in a face chosen for this business. Size,
+weight and contrast are free; timid type is the commonest reason a page looks unfinished.
+
+**Show the service working.** The strongest thing on a page is rarely a photo. It is something designed from
+the facts that shows what the business does: a day laid out as a timeline, a picker with the real services,
+a job sheet, the steps joined by a line. Build these as real, usable-looking panels.
+
+**Finish the details.** One set of line icons, with an icon on everything someone would scan. Phone numbers,
+times, prices and codes in a fixed-width or tabular face. Hairlines between rows. Chips for categories.
+These small things are the difference between a designed page and a typed one.
+
+**Use pictures large.** One strong photo across half the screen beats six thumbnails. Crop with intent. If
+the pictures are ordinary, treat them so they belong: a tone toward the brand colour, a firm shape, a frame.
+
+
 **Type.** If the brand kit names typefaces, use them. Otherwise choose on purpose and be able to say why it
 suits this business: shortlist three, check each licence allows web use, and self-host the winner. Two
 families at most. Body text 16 to 18px, lines of about 65 characters, headings tight and confident.
@@ -69,9 +95,9 @@ contrast before building.
 **Layout.** Let the content decide the shape. Vary the rhythm: a full-width band, then a narrow column, then
 something off-centre. Where three things are equal, three cards are fine; they just cannot be the whole idea.
 
-**Pictures.** Real photos of the real business beat everything, even imperfect ones. After that: the product
-or work itself, diagrams, real logos of real clients and partners. Step 8 covers generated imagery and its
-narrow uses.
+**Pictures.** Real photos of the real business beat everything, even imperfect ones. After that: the pictures
+the old site already uses, the product or work itself, diagrams, real logos of real clients and partners.
+Step 8 covers generated imagery and its narrow uses. Never an empty box or a "photo here" placeholder.
 
 **Motion.** Little, and with a reason: feedback on a press, a menu opening, one reveal that explains
 something. Nothing that delays reading. Honour "reduce motion" settings. Never hide content until a scroll
@@ -80,12 +106,17 @@ effect fires.
 **Words.** Written from `_mrk/facts.md` in the customer's language. Say the specific thing: the suburb, the
 turnaround time, the price, the name. Headings carry information. Step 12 checks the result.
 
-## Skills to load if installed
+## Put the design skills to work
 
-- `design-taste-frontend`: art direction and its own inspector. Follow it while designing and building.
-- `impeccable`: set it up once with the facts and brand kit so its critique knows the audience.
-- `refactoring-ui`: spacing, hierarchy and colour scales.
-- `ui-ux-pro-max`: type, palette and pattern suggestions by industry.
+If these are installed they do real work, not background reading. Use them, do not just note them.
+
+- `design-taste-frontend`: ask it for directions for this kind of business, build from what it deals, and run
+  its inspector and its look-and-fix loop on your drafts.
+- `ui-ux-pro-max`: run its design-system search for this business type and industry, for type pairings and
+  palettes to choose between.
+- `impeccable`: set it up once with the facts and brand kit, then have it critique the drafts before the
+  owner sees them.
+- `refactoring-ui`: spacing, hierarchy and colour scales, while building.
 - `emil-design-eng`: anything that moves.
 
 Where two of them disagree, the brand kit and the owner's pick in step 6 decide.

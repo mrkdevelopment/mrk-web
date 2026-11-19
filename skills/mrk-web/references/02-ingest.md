@@ -102,7 +102,7 @@ One merged brand kit. For every entry, note its source, because the source decid
 | Source | Standing |
 |---|---|
 | **Client** (`resources/brand/`, or said by the owner) | Final. Use as given. |
-| **Old site** | A strong default. Keep unless there is a reason to change, and say so in step 6. |
+| **Old site** | The name and logo: keep. Colours and fonts are a starting point, not a rule, and least of all when they are a theme's defaults (Divi's blue, Open Sans). Step 6 may use them boldly, extend them or propose better. |
 | **Chosen by you** (a gap nobody filled) | A proposal. The owner approves it in step 6. |
 
 Record:
@@ -112,8 +112,17 @@ Record:
 - Fonts, and whether they can legally be used on a website. If the client named a font but holds no web
   licence, tell them what a licence costs or what the closest free alternative is. Let them choose.
 - Voice: their own notes from `brand.md`, plus three real sentences that sound like them and three that do not.
-- Photos, each graded keep, fix or replace. The client's own come first. Real photos of real people and work
-  are gold; keep them even when imperfect.
+- **Pictures.** Any picture on the source site may be used in the designs and in the build, stock photos
+  included. The business chose them. Copy them into `_mrk/brand/photos/` and note for each one whether it
+  is a real photo of the business or stock, and whether it is sharp and large enough for a big slot or only
+  a small one. Pass over only what is broken or far too small to use anywhere.
+
+  Pick the three to six strongest for the designs. **Never leave a design without pictures because the
+  pictures are stock.**
+
+  Then add a **Photo tips** section to `_mrk/owner-todo.md`: which pictures are stock or weak, and the few
+  real photos that would improve the site most (the team at work, the premises, three finished jobs), each
+  with a line on how to take it on a phone. These are suggestions for later. They never hold up the build.
 - Favicon and social preview images.
 
 Copy the keepers into `_mrk/brand/`. Leave the originals in `resources/` untouched.
