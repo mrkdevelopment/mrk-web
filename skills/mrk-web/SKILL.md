@@ -8,6 +8,7 @@ description: >-
   read AI-made. Use when someone says "/mrk-web", "mrk-web start", "start" or "continue" in an mrk-web
   project, "rebuild my website", "ingest this site", "score my website", or "build me a website with mrk-web".
 argument-hint: "[start | continue | status | step <n> | help]"
+license: GPL-2.0-or-later (the templates folder is MIT; see the LICENSE files)
 ---
 
 # MRK-Web

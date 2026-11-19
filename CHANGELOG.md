@@ -26,6 +26,10 @@ First version.
   least two of the five design directions, and nothing in the folder is published unless the owner says so.
 - Three paths: rebuild, new business with no site, and agency work for a client.
 - Plugin manifest, so Claude Code can install straight from the repo.
+- Install from a downloaded zip by pasting one sentence into Claude Code, with steps by hand for Mac, Linux
+  and Windows, and how to update and remove.
+- Licence: the skill is GPL version 2 or later; the starter templates are MIT, so sites built with them carry
+  no licence terms from MRK-Web.
 
 ### Limits in this version
 

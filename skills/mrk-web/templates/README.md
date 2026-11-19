@@ -2,6 +2,9 @@
 
 Proven starting points for the parts of a site where a mistake is costly: forms, email, consent, crawler files, headers and legal drafts. Copy each file to the same path in the new site, then adapt it. Everything is generic: replace the example values, never ship them.
 
+**Licence: MIT** (see `LICENSE` in this folder), unlike the rest of the skill, which is GPL. These files are
+meant to be copied into websites, and the sites built from them belong to their owners on their own terms.
+
 No dependencies beyond Astro. Type checking (`astro check`) needs the dev tools `@astrojs/check`, `typescript` and `@types/node`. Tested together on Astro 7.4 and Node 26 (see the bottom of this file).
 
 | Template | What it is | Skill step | What to adapt |

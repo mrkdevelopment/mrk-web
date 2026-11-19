@@ -16,7 +16,10 @@ These have not been done yet. Tick them off first.
 - [ ] Crawl one live WordPress, one Wix and one Squarespace site. The crawl has only been run on an Astro site.
 - [ ] Add the help video links to `skills/mrk-web/references/videos.md` as they are recorded.
 - [ ] Re-check the install commands in `references/01-setup.md` against each project's own page.
-- [ ] Decide the licence and who may use the repo.
+- [x] Licence: GPL version 2 or later for the skill, MIT for the templates (19 Nov 2026).
+- [ ] Decide how it is sold and delivered: the repo is private; buyers would get the zip.
+- [ ] Try the paste-to-install sentence from the README on a clean Mac and a clean Windows computer.
+- [ ] Have an IP lawyer look over the licence set-up before the first sale.
 - [ ] Retire the older `mrk-wp-static`, `mrk-wp-rebuild` and `mrk-wp-headless` skills so they stop competing
       for the same requests.
 

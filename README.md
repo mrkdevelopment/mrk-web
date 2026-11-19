@@ -1,6 +1,7 @@
 # MRK-Web
 
 [![Version](https://img.shields.io/badge/version-1.0.0-2B59FF)](CHANGELOG.md)
+[![Licence](https://img.shields.io/badge/licence-GPL--2.0--or--later-0A1F44)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-skill-D97757)](skills/mrk-web/SKILL.md)
 [![Steps](https://img.shields.io/badge/steps-20-0A1F44)](#the-twenty-steps)
 [![Builds with](https://img.shields.io/badge/builds_with-Astro-BC52EE?logo=astro&logoColor=white)](https://astro.build)
@@ -15,9 +16,42 @@ professional results from AI without learning to code.
 
 ## Install
 
-You need [Claude Code](https://claude.com/claude-code) and access to this private repo.
+You need [Claude Code](https://claude.com/claude-code). Nothing else has to be set up first.
 
-**As a plugin (updates itself):** inside Claude Code, type
+### The quick way: paste one sentence
+
+1. Download the MRK-Web zip and leave it in your Downloads folder. Do not unzip it.
+2. Open Claude Code in any folder and paste this:
+
+```text
+Install the MRK-Web skill for me. The zip is in my Downloads folder and its name starts with "mrk-web". Unzip it, copy the "skills/mrk-web" folder from inside it to my Claude skills folder at ~/.claude/skills/mrk-web (replace any older copy), then run the setup check in its scripts folder and show me the result. Offer to install anything that is missing, and ask me before each one.
+```
+
+3. Say yes when Claude asks permission for each step.
+4. Restart Claude Code when it finishes.
+
+It works the same on Mac, Windows and Linux. Claude finds the right folders for your computer.
+
+### By hand
+
+**Mac or Linux**, in a terminal:
+
+```bash
+unzip ~/Downloads/mrk-web-*.zip -d ~/Downloads/mrk-web-unzipped
+```
+
+```bash
+mkdir -p ~/.claude/skills && cp -R ~/Downloads/mrk-web-unzipped/*/skills/mrk-web ~/.claude/skills/
+```
+
+**Windows:** unzip the download, open it until you see a `skills` folder, and copy the `mrk-web` folder inside
+it into `C:\Users\<your name>\.claude\skills\`. Create the `skills` folder if it is not there.
+
+Restart Claude Code afterwards.
+
+### From GitHub
+
+For people who have been given access to the repo. Inside Claude Code, type:
 
 ```
 /plugin marketplace add mrkdevelopment/mrk-web
@@ -27,17 +61,14 @@ You need [Claude Code](https://claude.com/claude-code) and access to this privat
 Claude Code uses your computer's GitHub sign-in to reach the repo. If it cannot, run `gh auth login` and then
 `gh auth setup-git` in a terminal and try again.
 
-**Or as a plain skill:** in a terminal
+### Updating and removing
 
-```bash
-git clone git@github.com:mrkdevelopment/mrk-web.git
-```
+| Installed from | Update | Remove |
+|---|---|---|
+| The zip | Download the new zip and paste the same sentence again | Delete the `mrk-web` folder from your Claude skills folder |
+| GitHub | `claude plugin update mrk-web@mrk-web` in a terminal | `claude plugin uninstall mrk-web@mrk-web` |
 
-```bash
-ln -s "$(pwd)/mrk-web/skills/mrk-web" ~/.claude/skills/mrk-web
-```
-
-Restart Claude Code after either.
+Your site folders are never touched by an update: each site's progress lives in that site's own `_mrk` folder.
 
 ## Use it
 
@@ -118,3 +149,19 @@ hosting in 1.1, headless WordPress and EmDash CMS in 2.0.
 
 The version number lives in `.claude-plugin/plugin.json`, the badge above and the changelog. Change all three
 together.
+
+## Licence
+
+Copyright (C) 2026 MRK Development Pty Ltd.
+
+**The skill is GPL, version 2 or later.** MRK-Web is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free Software Foundation, either
+version 2 of the License, or (at your option) any later version. It is distributed in the hope that it will
+be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. The full text is in [LICENSE](LICENSE).
+
+**The starter templates are MIT.** Everything in `skills/mrk-web/templates/` is copied into the websites you
+build, so it carries the permissive [MIT licence](skills/mrk-web/templates/LICENSE) instead. The sites you
+build with MRK-Web are yours, under whatever terms you choose.
+
+The other skills MRK-Web can install for you belong to their own authors and keep their own licences.

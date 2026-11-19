@@ -51,6 +51,8 @@ Scripts and templates must stay inside `skills/mrk-web/`, because the skill find
 | Speed gate | 98 on all four Lighthouse scores, mobile, every page. A hard stop; only the site's owner can override, and it is recorded. |
 | Scorecard | Ten checks: five usability, five marketability. |
 | Client materials | Asked for in step 1, kept in `resources/`, out of GitHub by default. |
+| Licence | Skill: GPL-2.0-or-later. `skills/mrk-web/templates/`: MIT, because those files are copied into clients' sites. Keep anything meant to be copied into a site inside `templates/`. |
+| Delivery | Private repo. Buyers install from a zip made from `main`, by pasting one sentence into Claude Code. |
 | Site versions | Semantic versioning, one branch per version, first version on branch `1.0.0`. |
 
 ## Changing the skill
