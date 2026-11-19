@@ -84,8 +84,8 @@ the copied folder and follow it, or restart Claude Code in that folder.
 3. Type `/mrk-web start`. If you have an email or message from a client describing what they want, paste
    it in after that. It reads the message first and only asks what it leaves out.
 
-It opens with a table of every tool, skill and connector it uses: what each is for, what it costs, and
-whether you have it. Then it asks a few questions and begins. After that, plain words work: say **continue** in
+It asks four quick questions, then shows a table of every tool, skill and connector it uses: what each is
+for, what it costs, and whether you have it. Then it begins. After that, plain words work: say **continue** in
 the same folder to pick up later, **status** to see where you are, **tools** to see that table again, or
 **help** for the step list.
 

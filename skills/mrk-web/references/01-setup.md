@@ -12,8 +12,7 @@ bash "$SKILL/scripts/setup-check.sh" --table
 ```
 
 It changes nothing. Show the table exactly as it prints, with the summary line under it. It is already in the
-right order: required, free, accounts for later, paid. If the table was shown at `start` and nothing has
-changed since, do not repeat it: go straight to what is missing. On Windows, run it in Git Bash or WSL.
+right order: required, free, accounts for later, paid. On Windows, run it in Git Bash or WSL.
 
 Show the table again after installing anything, so the owner sees what changed.
 
@@ -105,6 +104,9 @@ Then ask, in these words or close to them:
 > **Do you have anything you would like to bring to the design?** A logo, brand colours or fonts, photos,
 > brochures or product PDFs, videos, a written brief, or websites you like the look of. I have made a
 > `resources` folder with a place for each. Drop in whatever you have; it does not need to be tidy.
+
+If `_mrk/owner-todo.md` lists things the client said were coming (an attachment, locations, checkout
+links), name them in the same message so they can be dropped in too.
 
 Offer three answers:
 

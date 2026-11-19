@@ -76,6 +76,10 @@ Copy `public/_headers` from the templates and remove the lines for services this
 
 ## 5. Connect and preview
 
+First, the domain, if the brief does not already say: what is it, where was it bought, and is the current
+site live on it? Nothing touches the domain until step 19; this is so links and the sitemap are built for the
+right address. No domain yet is fine: the preview address works without one.
+
 1. In Cloudflare: Workers & Pages, create a Pages project, connect the GitHub repo. Build command
    `npm run build`, output folder `dist`. Set `NODE_VERSION` to what Astro needs (step 1 shows it).
    The owner does the sign-in and clicks; guide them screen by screen.

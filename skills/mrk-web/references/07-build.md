@@ -48,8 +48,8 @@ business already has. There is no cart and no payment code in the site.
   are in `_mrk/functions.md`.
 - Buying is the page's main action, so it is in the first screen and repeated.
 - Test every buy button by hand before review: right product, right size, right price at the other end.
-- Whatever the owner's licence or regulator requires (an age check, a licence number, a warning line) is
-  built exactly as they described it in the brief.
+- For a regulated product, ask the owner now what their licence or regulator requires on the site (an age
+  check, a licence number, a warning line) and build exactly that. Do not guess the law.
 
 Across every page type:
 

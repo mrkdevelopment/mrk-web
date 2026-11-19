@@ -11,21 +11,19 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 - Paste a client's email or message after "start". The skill saves it, takes from it the site address, the
   sites they like, the pages and features they asked for, any deadline and whether they sell online, then
   asks only for what is missing.
-- The brief now asks outright for websites the client likes, competitors included, and what they like about
-  each one.
+- Setup asks outright for websites the client likes, competitors included. Why they like each one is asked
+  when the sites are studied.
 - A set way to study a site someone else owns: screenshots, a short written teardown, and two lists of what
   to borrow (structure and patterns) and what to leave (their words, pictures, logo, colours and type).
   Competitors get extra care so the new site can never pass for a rival's.
-- The brief asks whether the site sells online. MRK-Web does not build a shopping cart; it builds buy buttons
-  that go to the checkout the business already has, and says so at the start.
+- When a site sells online, the skill says at the start that it does not build a shopping cart. It builds
+  buy buttons that go to the checkout the business already has.
 - If a client's deadline is tighter than the full build allows, the skill says so and offers a staged launch
   instead of skipping steps.
 - A site folder can be prepared in advance: put the client's message and files in `resources/` and say
   "start". The skill reads them before asking anything.
-- For agencies, what is missing is split into what the agency can answer and what the client must supply,
-  with an offer to draft the reply to the client.
 
-- A tools table at the start, and whenever you say "tools": every tool, skill, connector and account the
+- A tools table at the tool check (step 1), and whenever you say "tools": every tool, skill, connector and account the
   skill uses or recommends, what each is for, which steps use it, what it costs, and whether it is
   installed.
 - `keys.md`: one guide to every account, API key and paid tool in a build, what works without each one, and
@@ -38,6 +36,10 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 
 ### Changed
 
+- Step 0 is much shorter: four questions, a brief of five lines, and one choice, "Do tool check". Nothing
+  optional is asked there any more. Sites they like move to step 1, the domain to step 15, and what a
+  client's message leaves unsettled goes on a to-do list instead of into a list of questions.
+- The skill says less everywhere: no previews of later steps, no lists of what was not asked.
 - Setup now goes free first: free skills and the free Astro docs connector are offered as one set, accounts
   wait until their step, and the paid tools (Mobbin, Higgsfield) are never offered unless asked for.
 - No API key is required any more. The contact page can launch with phone and email links, and the form,

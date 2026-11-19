@@ -40,7 +40,7 @@ Wix or Squarespace. They do not know Git, the terminal or Cloudflare, and should
 
 | They say | You do |
 |---|---|
-| `start` | Show the tools table first (below). Then step 0 if there is no `_mrk/state.json` here; otherwise say where the build is up to and offer to continue. If a client's email or message is pasted in with it, read that before asking anything (`00-brief.md`) |
+| `start` | Step 0 if there is no `_mrk/state.json` here; otherwise say in one line where the build is up to and offer to continue. If a client's email or message is pasted in with it, read that before asking anything (`00-brief.md`) |
 | `continue` | Read `_mrk/state.json` and carry on from the current step |
 | `status` | One line per step: done, current or to do, with the scores so far |
 | `step <n>` | Redo that step. Say first which later steps it will make stale |
@@ -61,8 +61,8 @@ sums it up is not a substitute. Under the table, add the script's summary line a
 means for this build. Do not explain rows one by one, and do not offer to install anything yet: step 1 does
 that.
 
-Your first reply to `start` begins with this table, before the first brief question. Show it again at the
-top of step 1 if anything has changed, after anything is installed, and whenever asked (`tools`).
+Show it at the top of step 1 (that is the tool check), after anything is installed, and whenever asked
+(`tools`). Not at `start`: the brief comes first and stays short.
 
 ## How a run works
 
@@ -79,8 +79,11 @@ top of step 1 if anything has changed, after anything is installed, and whenever
 - **Progress lives in files, not in the chat.** `_mrk/state.json` records the brief, the current step and the
   scores. Update it at the end of every step so a fresh session can pick up with `continue`.
 - **Read a step's guide when you start that step**, not before. Guides are in `$SKILL/references/`.
-- **Every step ends with a file** (the "Done when" column) and two or three plain sentences to the owner: what
-  was done, where it is, what comes next. Then go straight on, unless the step is a stop.
+- **Every step ends with a file** (the "Done when" column) and a short hand-over: what was done, in two or
+  three sentences, then the next action as one choice. Then go straight on, unless the step is a stop.
+- **Say less.** Do not list what you chose not to ask, preview later steps, repeat where the stops are, or
+  suggest when to pause. Do not ask for anything optional before the step that uses it. The owner can say
+  `help` for the overview.
 - **Stops (✋) are the only places you wait.** Everything else: do it, then report.
 - **Run scripts before spending model effort.** If a script in `$SKILL/scripts/` does the job, use it.
 - **Free first.** Set up what is free and needs no account before anything else. API keys are always
@@ -112,7 +115,7 @@ top of step 1 if anything has changed, after anything is installed, and whenever
 
 | # | Step | Why it exists | Guide | Done when |
 |---|---|---|---|---|
-| 0 ✋ | Brief | The few answers that change everything after | `00-brief.md` | `_mrk/brief.md`, `_mrk/state.json` |
+| 0 ✋ | Brief | Four answers that change everything after | `00-brief.md` | `_mrk/brief.md`, `_mrk/state.json` |
 | 1 ✋ | Setup and materials | Missing tools fail quietly; the client's own material makes the first design right | `01-setup.md` | Required tools pass, `resources/` ready |
 | 2 | Ingest | Without real material the build invents things | `02-ingest.md` | `_mrk/facts.md`, `brand-kit.md`, `site-map.md` |
 | 3 | Score the old site | "Better" needs a number to beat | `03-scorecard.md` | `_mrk/scores/before.md` |
@@ -136,8 +139,8 @@ top of step 1 if anything has changed, after anything is installed, and whenever
 
 No existing site? Steps 2, 3 and 13 change shape; `00-brief.md` says how.
 
-Good places to pause for the day: after 6, 13 and 16. Tell the owner they can close the session and say
-`continue` later.
+Good places to pause for the day: after 6, 13 and 16. When you reach one, say in one line that they can
+close the session and say `continue` later. Do not mention it before then.
 
 ## Which model does what
 
