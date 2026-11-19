@@ -1,0 +1,31 @@
+# Copy into the site's .gitignore
+
+# Build output and caches
+dist/
+.astro/
+node_modules/
+.wrangler/
+
+# Secrets: only the .example files are committed
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+# The client's original materials: can be large, and may include private documents.
+# Whatever the site uses has been copied into src/ or public/. Delete these two lines to keep it in the repo.
+resources/*
+!resources/README.md
+
+# Bulky working files that can be remade
+_mrk/ingest/pages/
+_mrk/ingest/assets/
+_mrk/scores/screens-*/
+_mrk/scores/unlighthouse-*/
+_mrk/scores/.work-*/
+
+# OS and editor files
+.DS_Store
+*.log

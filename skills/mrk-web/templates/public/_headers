@@ -1,0 +1,42 @@
+# Cloudflare Pages response headers: https://developers.cloudflare.com/pages/configuration/headers/
+# Rules apply in order and a request gets the headers of every rule it matches. If two rules set the
+# same header the values are joined with a comma, so never set Cache-Control twice for one path.
+# These do NOT apply to Pages Functions (functions/api/contact.ts sets its own).
+# Comments are kept on their own unindented lines: an indented line is read as a header.
+
+# Every page, one line each, in order:
+# X-Content-Type-Options   browsers must not guess file types (stops a .txt being run as a script)
+# Referrer-Policy          other sites see only our domain, not the full page address. Not
+#                          "no-referrer": YouTube embeds won't play without one, and analytics
+#                          loses where visits came from.
+# X-Frame-Options          only this site may show our pages in a frame (stops clickjacking).
+#                          Embedding YouTube or a map INSIDE our pages is unaffected.
+# Permissions-Policy       turns off device features the site never uses. YouTube embeds and
+#                          Turnstile need none of these.
+# Strict-Transport-Security  always HTTPS for a year. No includeSubDomains: other subdomains (mail,
+#                          an old shop) may not have HTTPS yet, and browsers cache this for the year.
+#
+# No Content-Security-Policy on purpose: Google Tag Manager loads whatever tags its container is told
+# to, so a strict policy silently breaks tags added later. For a site using only GA4, Turnstile and
+# YouTube, try this as Content-Security-Policy-Report-Only first and watch the browser console:
+# default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; img-src 'self' data: https:; frame-src https://challenges.cloudflare.com https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' 'unsafe-inline'
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000
+
+# Astro's build files have a content hash in their names, so a changed file gets a new name
+# and can be cached for a year without ever going stale
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Generated text files contain curly quotes, dashes and accents; without a charset some browsers
+# show them garbled. llms.txt is Markdown but served as plain text so browsers display it.
+/*.txt
+  Content-Type: text/plain; charset=utf-8
+/*.xml
+  Content-Type: application/xml; charset=utf-8
+/*.md
+  Content-Type: text/markdown; charset=utf-8

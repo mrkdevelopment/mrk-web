@@ -1,0 +1,105 @@
+---
+/**
+ * Cookie banner for Google Analytics 4 or Google Tag Manager. Renders nothing at all unless
+ * PUBLIC_GA_ID (G-XXXXXXX) or PUBLIC_GTM_ID (GTM-XXXXXXX) is set at build time, so a site without
+ * analytics ships no banner and no script. Behaviour is in src/scripts/consent.ts.
+ *
+ * Put it at the end of <body> in the layout. Put a "Cookie settings" button in the footer so people
+ * can change their mind; it stays hidden unless analytics is on:
+ *   <button type="button" data-cookie-settings hidden>Cookie settings</button>
+ *
+ * Layout: a bar along the bottom, one line of text and two buttons on a phone. While it is open it
+ * reserves its own height at the bottom of the page (padding on <body>) and sets
+ * --consent-bar-height, so nothing is stuck underneath it. If the site has a sticky call-to-action
+ * bar at the bottom, give that bar `bottom: var(--consent-bar-height, 0px)` so it sits above the banner.
+ * Colours come from the page (Canvas/CanvasText); restyle freely, but keep it a bar, not a pop-up.
+ */
+interface Props {
+  /** Link to the privacy policy page */
+  privacyPath?: string;
+}
+
+const { privacyPath = '/privacy-policy/' } = Astro.props;
+
+// Checked here so a typo can't load something unexpected
+const gaId = (import.meta.env.PUBLIC_GA_ID as string | undefined)?.trim() ?? '';
+const gtmId = (import.meta.env.PUBLIC_GTM_ID as string | undefined)?.trim() ?? '';
+const validGa = /^G-[A-Z0-9]+$/.test(gaId) ? gaId : '';
+const validGtm = /^GTM-[A-Z0-9]+$/.test(gtmId) ? gtmId : '';
+---
+
+{
+  (validGa || validGtm) && (
+    <section class="consent-bar" aria-labelledby="consent-title" data-consent-banner data-ga-id={validGa} data-gtm-id={validGtm} hidden>
+      <h2 id="consent-title" class="consent-title" tabindex="-1">
+        Cookies
+      </h2>
+      <p class="consent-text">
+        May we use analytics cookies to see how the site is used? <a href={privacyPath}>Privacy policy</a>
+      </p>
+      <div class="consent-actions">
+        <button type="button" data-consent="granted">
+          Accept
+        </button>
+        <button type="button" data-consent="denied">
+          Decline
+        </button>
+      </div>
+    </section>
+  )
+}
+
+<style is:global>
+  /* Minimal layout only. Equal-weight buttons on purpose: declining must be as easy as accepting. */
+  .consent-bar {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 50;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    padding: 0.625rem 1rem calc(0.625rem + env(safe-area-inset-bottom));
+    background: Canvas;
+    color: CanvasText;
+    border-top: 1px solid color-mix(in srgb, CanvasText 20%, transparent);
+    font-size: 0.875rem;
+    line-height: 1.35;
+  }
+  .consent-bar[hidden] {
+    display: none;
+  }
+  /* The heading names the region for screen readers; visually the text says it all */
+  .consent-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .consent-text {
+    flex: 1 1 16rem;
+    margin: 0;
+  }
+  .consent-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .consent-actions button {
+    min-height: 44px;
+    min-width: 6rem;
+    font: inherit;
+  }
+  body.consent-open {
+    padding-bottom: var(--consent-bar-height, 0px);
+  }
+</style>
+
+{
+  (validGa || validGtm) && (
+    <script>
+      import '../scripts/consent';
+    </script>
+  )
+}

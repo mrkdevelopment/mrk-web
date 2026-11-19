@@ -1,0 +1,34 @@
+# Changelog
+
+All notable changes to MRK-Web. Versions follow [semantic versioning](https://semver.org).
+
+## Unreleased
+
+## 1.0.0 - 2026-11-19
+
+First version.
+
+### Added
+
+- `SKILL.md`: twenty steps from brief to launch, eight fixed rules, the five places it stops for the owner,
+  and `start`, `continue`, `status`, `step <n>` and `help`.
+- A guide for every step in `references/`, read only when that step begins.
+- A two-part scorecard: five usability checks and five marketability checks, each with a test that can be run.
+- Model routing: which work belongs on the strongest model, which on cheaper ones, and which on scripts.
+- House style: MRK's editable defaults for page order, forms, FAQs, colour and wording.
+- Scripts: site crawl with three modes (`homepage`, `single`, `all-pages`), Lighthouse speed test with the
+  98 gate, built-site scan, redirect check, version bump, setup check.
+- Templates: Cloudflare Pages contact function with spam protection, form component, cookie consent with
+  analytics, crawler files, head tags and structured data, headers, privacy and terms drafts, site README and
+  changelog.
+- A `resources/` folder the client fills during setup: brand kit, photos, documents, links and design
+  inspiration. The brand kit overrides the taste rules, the client's inspiration leads the references and at
+  least two of the five design directions, and nothing in the folder is published unless the owner says so.
+- Three paths: rebuild, new business with no site, and agency work for a client.
+- Plugin manifest, so Claude Code can install straight from the repo.
+
+### Limits in this version
+
+- Cloudflare Pages only. cPanel hosting is planned for 1.1.
+- Content is files in the repo. Headless WordPress and EmDash CMS are planned for 2.0.
+- Written and tested for Claude Code. Gemini and Codex are untested.

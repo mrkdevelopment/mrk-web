@@ -1,0 +1,34 @@
+# Runtime settings for the contact form function (functions/api/contact.ts).
+# Locally: copy to .dev.vars (never committed) and run `npx wrangler pages dev dist`.
+# On Cloudflare: Pages project > Settings > Variables and Secrets; mark keys and webhook URLs as "Secret".
+# Every value below is a placeholder.
+
+# Which service sends the email: mailgun, sendgrid or cloudflare
+EMAIL_PROVIDER="mailgun"
+# Inbox that receives enquiries (comma-separated for several)
+CONTACT_TO="inbox@example.com"
+# Sender, on a domain verified with the provider
+CONTACT_FROM="Example Business <forms@example.com>"
+# Public address offered to visitors if sending fails
+CONTACT_FALLBACK_EMAIL="hello@example.com"
+
+# Mailgun: API key (secret), sending domain, and "eu" if the domain is in Mailgun's EU region
+MAILGUN_API_KEY="replace-me"
+MAILGUN_DOMAIN="mg.example.com"
+MAILGUN_REGION=""
+
+# SendGrid: API key with Mail Send permission (secret), and "eu" for an EU regional subuser
+SENDGRID_API_KEY=""
+SENDGRID_REGION=""
+
+# Cloudflare Email Service: account ID and an API token allowed to send email (secret)
+CLOUDFLARE_ACCOUNT_ID=""
+CLOUDFLARE_EMAIL_API_TOKEN=""
+
+# Optional: Turnstile SECRET key (secret). When set, every enquiry must pass the check.
+TURNSTILE_SECRET_KEY=""
+
+# Optional: every enquiry is also posted as JSON to this https URL (CRM, Zapier, Make) (secret)
+FORM_WEBHOOK_URL=""
+# Optional: a different webhook for one form, named after its `form` value, e.g. form="quote"
+FORM_WEBHOOK_QUOTE=""

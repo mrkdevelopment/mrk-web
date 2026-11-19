@@ -1,0 +1,12 @@
+# Cloudflare Pages redirects: https://developers.cloudflare.com/pages/configuration/redirects/
+# Format: /old-path  /new-path  301
+#
+# Rules generated from the old site's URLs go between the two marker lines below. A script rewrites
+# everything between them on each run, so add hand-written rules above or below the markers, never between.
+#
+# Order matters: the first matching rule wins. Put exact rules (/about-us /about/ 301) BEFORE any
+# wildcard rule (/blog/* /articles/:splat 301), or the wildcard will catch the exact paths first.
+# Limits: 2,000 exact rules and 100 wildcard rules per file.
+
+# mrk-web:start
+# mrk-web:end

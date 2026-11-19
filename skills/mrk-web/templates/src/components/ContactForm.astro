@@ -1,0 +1,129 @@
+---
+/**
+ * Enquiry form. Plain HTML that works with JavaScript off (a normal POST to /api/contact, then the
+ * thank-you page); src/scripts/contact-form.ts upgrades it to send in place with inline errors.
+ *
+ * Styling: none here on purpose. Style the class hooks (.enquiry-form, .enquiry-field, .enquiry-error,
+ * .enquiry-status, .enquiry-honeypot ...) in the site's own CSS. The one rule you must keep is hiding
+ * .enquiry-honeypot (see the <style> below): if people can see it, they'll fill it in and be ignored.
+ *
+ * Several forms on one site: give each a different `form` name ("contact", "quote", "site-visit").
+ * The name is sent with the enquiry, shown in the email, and picks FORM_WEBHOOK_<FORM> if set.
+ *
+ *   <ContactForm />
+ *   <ContactForm form="quote" heading="Ask for a quote" submitLabel="Ask for a quote" />
+ */
+import { FIELD_LIMITS, HONEYPOT_FIELD } from '../lib/enquiry';
+import { site } from '../data/site';
+
+interface Props {
+  /** Short slug naming this form (letters, numbers, dashes) */
+  form?: string;
+  /** Visible heading; pass '' to leave it out when the page already has one */
+  heading?: string;
+  submitLabel?: string;
+  /** Where a no-JavaScript visitor lands after sending (must be a page on this site) */
+  successPath?: string;
+  /** Show the optional phone field */
+  phone?: boolean;
+  messageLabel?: string;
+}
+
+const {
+  form = 'contact',
+  heading = 'Send an enquiry',
+  submitLabel = 'Send enquiry',
+  successPath = '/thank-you/',
+  phone = true,
+  messageLabel = 'How can we help?',
+} = Astro.props;
+
+// Unique ids so two forms on one page don't share labels
+const id = (field: string) => `${form}-${field}`;
+const turnstileSiteKey = (import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined)?.trim() ?? '';
+---
+
+<form
+  class="enquiry-form"
+  method="post"
+  action="/api/contact"
+  data-enquiry-form
+  data-fallback-email={site.email}
+  aria-labelledby={heading ? id('heading') : undefined}
+>
+  {heading && <h2 id={id('heading')} class="enquiry-heading">{heading}</h2>}
+
+  <input type="hidden" name="form" value={form} />
+  <input type="hidden" name="redirect" value={successPath} />
+  <input type="hidden" name="page" value={Astro.url.pathname} />
+
+  <div class="enquiry-field">
+    <label for={id('name')}>Your name</label>
+    <input id={id('name')} name="name" type="text" autocomplete="name" required maxlength={FIELD_LIMITS.name} aria-describedby={id('name-error')} />
+    <p id={id('name-error')} class="enquiry-error" data-error-for="name" hidden></p>
+  </div>
+
+  <div class="enquiry-field">
+    <label for={id('email')}>Email</label>
+    <input id={id('email')} name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required maxlength={FIELD_LIMITS.email} aria-describedby={id('email-error')} />
+    <p id={id('email-error')} class="enquiry-error" data-error-for="email" hidden></p>
+  </div>
+
+  {
+    phone && (
+      <div class="enquiry-field">
+        <label for={id('phone')}>
+          Phone <span class="enquiry-optional">(optional)</span>
+        </label>
+        <input id={id('phone')} name="phone" type="tel" autocomplete="tel" maxlength={FIELD_LIMITS.phone} aria-describedby={id('phone-error')} />
+        <p id={id('phone-error')} class="enquiry-error" data-error-for="phone" hidden />
+      </div>
+    )
+  }
+
+  <div class="enquiry-field">
+    <label for={id('message')}>{messageLabel}</label>
+    <textarea id={id('message')} name="message" rows="5" required maxlength={FIELD_LIMITS.message} aria-describedby={id('message-error')}></textarea>
+    <p id={id('message-error')} class="enquiry-error" data-error-for="message" hidden></p>
+  </div>
+
+  <!-- Honeypot: hidden from people and screen readers, filled in by bots -->
+  <div class="enquiry-honeypot" aria-hidden="true">
+    <label for={id('hp')}>Leave this empty</label>
+    <input id={id('hp')} name={HONEYPOT_FIELD} type="text" tabindex="-1" autocomplete="off" />
+  </div>
+
+  {
+    turnstileSiteKey && (
+      <>
+        {/* Filled in by Turnstile once its script loads (on first use of the form, see contact-form.ts) */}
+        <div class="cf-turnstile enquiry-turnstile" data-sitekey={turnstileSiteKey} data-action={form} />
+        <noscript>
+          <p class="enquiry-note">
+            This form needs JavaScript for its spam check. You can email <a href={`mailto:${site.email}`}>{site.email}</a> instead.
+          </p>
+        </noscript>
+      </>
+    )
+  }
+
+  <button type="submit" class="enquiry-submit" data-label={submitLabel}>{submitLabel}</button>
+
+  <!-- Announces sending, success and failure to screen readers; also the visible message -->
+  <p class="enquiry-status" role="status" aria-live="polite" data-enquiry-status></p>
+</form>
+
+<style>
+  /* Off-screen rather than display:none: some bots skip fields that are display:none */
+  .enquiry-honeypot {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  import '../scripts/contact-form';
+</script>

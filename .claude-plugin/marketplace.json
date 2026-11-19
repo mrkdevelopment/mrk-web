@@ -1,0 +1,11 @@
+{
+  "name": "mrk-web",
+  "owner": { "name": "MRK WP" },
+  "plugins": [
+    {
+      "name": "mrk-web",
+      "source": "./",
+      "description": "Guided website builds: ingest, score, design, build, prove and launch."
+    }
+  ]
+}
