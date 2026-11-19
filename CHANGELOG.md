@@ -31,6 +31,11 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 - `keys.md`: one guide to every account, API key and paid tool in a build, what works without each one, and
   how to get each key.
 
+### Fixed
+
+- Open questions (an address, what they like about a site) are now asked in plain text. Putting them into
+  a multiple-choice dialog caused an error and the question was never shown.
+
 ### Changed
 
 - Setup now goes free first: free skills and the free Astro docs connector are offered as one set, accounts

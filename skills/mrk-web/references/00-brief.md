@@ -45,6 +45,9 @@ steps.
 
 Two short rounds, plain words, your recommendation first. Skip anything they already told you.
 
+Questions 2, 3 and 7 have a few fixed answers, so a choice dialog suits them. The others are open (an
+address, a list of sites, what they dislike): ask those in plain text, not in a dialog.
+
 **Round 1**
 
 1. **Is there a website now?** The address, or "no site yet".

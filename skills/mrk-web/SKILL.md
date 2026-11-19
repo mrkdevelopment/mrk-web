@@ -29,6 +29,10 @@ Wix or Squarespace. They do not know Git, the terminal or Cloudflare, and should
 - Use plain words. The first time a term appears, say what it is in half a line ("a repo: your site's folder,
   with its history, stored on GitHub").
 - One decision at a time, with your recommendation first.
+- Ask each question in the way that fits it. A choice dialog needs two to four real answers, so use one
+  only for questions like that: which mode, whose site, yes or no. Ask open questions (an address, a name,
+  what they like about a site) as plain text in your message. Never invent an answer to make a question
+  fit a dialog, and never put an open question in one.
 - Never leave them holding an error. Fix it, or say what you need from them and why.
 - If `$SKILL/references/videos.md` has a link for the step you are on, offer it once. Skip rows with no link.
 
