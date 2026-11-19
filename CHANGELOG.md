@@ -39,6 +39,16 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 
 ### Changed
 
+- Two things, kept apart. **Installing** copies the skill and replies with one line. **Building** is
+  `/mrk-web start` and a website address. Setup is no longer part of either: the tool check runs silently,
+  and the tools table and free extras are there when you say "tools" or "setup".
+- Fast goes straight to the designs. It reads the site, glances at any sites the client named, and opens
+  five first screens to choose from, saying almost nothing on the way. Scoring the old site and the rest of
+  the groundwork happen after the pick.
+- Choosing a design is simpler. The five designs open inside the app on one page, each under a big number,
+  and the only thing asked is "which one, 1 to 5?". Nothing else is in that message.
+- Written for people new to Claude Code: things to look at are opened for you, not left as files to find,
+  and the question that needs an answer is always the short last thing on screen.
 - Step 0 is much shorter: four questions, a brief of five lines, and one choice, "Do tool check". Nothing
   optional is asked there any more. Sites they like move to step 1, the domain to step 15, and what a
   client's message leaves unsettled goes on a to-do list instead of into a list of questions.

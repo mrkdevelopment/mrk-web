@@ -21,6 +21,10 @@ Each direction is:
 - **The first screen and one more section** of the home page, built as a plain HTML file using the real logo,
   real facts and real photos from the brand kit. Phone and desktop.
 
+**In fast: the first screen only**, phone and desktop, for each of the five, drafted in parallel if you can.
+Speed matters here: the owner is waiting to see something. If they want to see more of one before choosing,
+they will ask.
+
 Rules for the set:
 
 - Every direction obeys `04-taste.md` and uses only real material (rule 1).
@@ -41,15 +45,46 @@ Rules for the set:
 - Anything in the brand kit marked "Chosen by you" is a proposal. Point it out on the index page so they
   can approve or change it with the pick.
 
-Save them in `_mrk/directions/` with an `index.html` that shows all five side by side and links to each.
+## One page that shows all five
 
-## The pick ✋
+Save the five in `_mrk/directions/`, with an `index.html` made for someone who has never done this before:
+
+- A heading at the top: "Five designs for <business>. Pick the one you would be proud to send a customer to."
+- Each design under a **big number, 1 to 5**, with a name of a few words and one sentence saying the idea.
+- The design itself, large, with its phone view beside or below it. A link opens it full size.
+- No jargon, no file names, no notes to yourself.
+
+## Show it to them, in the app ✋
 
 This stop holds at either pace. It is the one design decision only the owner can make, and building the
 wrong look wastes everything after it.
 
-Show the owner the index page. Ask which they would be proud to send a customer to, and what they would
-change. They can pick one, or combine parts of two. Do not build past this point without their answer.
+People get lost here when the designs are buried under text or left as a file to find. So:
+
+**1. Open the page for them yourself.** Use the first of these you can do:
+
+- Inside the app they are already in: a preview or browser pane beside the chat (serve the folder if the
+  pane needs an address), or send the page so it displays.
+- If you can show pictures in the chat, also show one picture of each design, numbered 1 to 5.
+- Only if neither is possible: open it in their web browser (`open`, `start` or `xdg-open`).
+
+Never just name the file and leave them to find it.
+
+**2. Then say almost nothing.** Your whole message is this, in your own words:
+
+> Your five designs are open on the right. Which one do you like? Reply with a number from 1 to 5.
+> You can mix them too: "3, with the colours from 1".
+
+Say where the designs really are ("on the right", "in your browser"). **Nothing else goes in that message:**
+no recap of the earlier steps, no scores, no description of each design (the page has it), no file paths, no
+list of what comes next. If something from the brand kit is your own proposal, it is flagged on the page, not
+in the chat.
+
+If you have a way to show buttons that send a reply, add one per design. Do not use a choice dialog for
+this: it holds four answers and there are five designs.
+
+**3. Wait.** Do not build past this point without their answer. If they ask for changes, change the designs,
+show the page again, and ask again in the same short way.
 
 Record the pick and their comments in `_mrk/state.json`.
 

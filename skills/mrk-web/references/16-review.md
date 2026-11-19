@@ -5,7 +5,8 @@ catch the wrong phone number, the service they stopped offering, and the photo o
 
 ## Hand over
 
-Send the preview address with a short checklist they can work through on their own phone:
+Open the preview for them, inside the app if you can, and give them the address so they can open it on
+their own phone too. Then a short checklist to work through:
 
 1. **Facts.** Phone, email, address, hours, prices, names. Is every one right?
 2. **Every page.** Open each from the menu. Anything missing, or that should not be there?

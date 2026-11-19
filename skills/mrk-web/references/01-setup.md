@@ -7,18 +7,17 @@ Part 1 is the tools. Part 2, the client's materials, is at the end of this guide
 
 ## Pace
 
-**Fast (the default).** Two quick actions and no questions:
+**Fast (the default): this step is silent.** Setup is not part of building a site.
 
-1. Run `bash "$SKILL/scripts/setup-check.sh"`. If the required tools pass, say so in one line and note what
-   is missing among the free add-ons in `_mrk/state.json`. Do not show the table, and do not offer to install
-   anything. A missing required tool is the only thing that stops you: say what is missing and how to fix it.
+1. Run `bash "$SKILL/scripts/setup-check.sh"`. If the required tools pass, say nothing and note what is
+   missing among the free extras in `_mrk/state.json`. A missing required tool is the only thing that stops
+   you: say what is missing and how to fix it, in two lines.
 2. Create `resources/` if it is not there (the command is in part 2), read whatever is in it, and write
-   `_mrk/resources.txt`. Do not ask what they would like to bring, do not wait for files, and do not offer to
-   write to anyone. One line is enough: "The `resources` folder is there if you want to add a logo or photos."
+   `_mrk/resources.txt`. Say nothing about it.
 
-Then go on to step 2.
+Then go straight on. No table, no offers, no questions about materials, no waiting.
 
-**Verbose.** Everything below.
+**Verbose, or when they say `setup`.** Everything below.
 
 ## Run it
 

@@ -98,8 +98,9 @@ npm run build
 node "$SKILL/scripts/check-site.mjs" dist
 ```
 
-Fix every error it reports. Then run the site locally and send the owner the address with screenshots of
-each template on phone and desktop. This is a look, not a stop: carry on unless they object.
+Fix every error it reports. Then run the site locally and open it for the owner, inside the app if you can
+(a preview or browser pane), otherwise in their web browser. One line is enough: "Your site is open on the
+right. I am carrying on with the checks." This is a look, not a stop.
 
 ## Skills
 

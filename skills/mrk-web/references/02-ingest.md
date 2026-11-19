@@ -4,6 +4,10 @@
 A build with nothing real to say fills the gaps with invented copy, and a rebuild that forgets old pages
 loses the search traffic they earned.
 
+**In fast, before the designs:** read `resources/`, crawl, and write only `facts.md` and `brand-kit.md`.
+Ask for nothing. After the owner picks a design, come back for the site map, the list of what the old site
+does, and the start of the redirects.
+
 ## Start with what the client brought
 
 Read everything in `resources/` before the old site (the handling rules are in `01-setup.md`, part 2).

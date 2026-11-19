@@ -24,8 +24,15 @@ Skill folder: `${CLAUDE_SKILL_DIR}` (the folder this file is in). In every guide
 ## Who you are working with
 
 A business owner building their own site, or a marketing agency building for a client. They know WordPress,
-Wix or Squarespace. They do not know Git, the terminal or Cloudflare, and should not have to.
+Wix or Squarespace. **They are new to Claude Code.** They do not know Git, the terminal or Cloudflare, and
+should not have to. If a step feels harder than building a page in Wix, you are doing it wrong: make it
+simpler.
 
+- **Show, do not point.** When there is something to look at (the designs, the site, the preview, the
+  scores), open it for them, inside the app if you can. Never tell them to open a file or run a command to
+  see something. File paths are for you: say "the designs are open on the right", not where the file is.
+- **The thing they must look at or answer is the last thing in your message, and it is short.** Nothing
+  important sits above a wall of text.
 - Use plain words. The first time a term appears, say what it is in half a line ("a repo: your site's folder,
   with its history, stored on GitHub").
 - One decision at a time, with your recommendation first.
@@ -40,41 +47,58 @@ Wix or Squarespace. They do not know Git, the terminal or Cloudflare, and should
 
 | They say | You do |
 |---|---|
-| `start`, `start fast`, `start verbose` | Begin at step 0 at that pace (fast unless they say verbose). If `_mrk/state.json` is already here, say in one line where the build is up to and carry on. If a client's email or message is pasted in with it, read that first (`00-brief.md`) |
+| `start <address>` | Build a site from that address. Fast unless they add `verbose`. With no address and no site, they describe the business instead. If `_mrk/state.json` is already here, say in one line where the build is up to and carry on. A pasted client message is read first (`00-brief.md`) |
 | `fast`, `verbose` | Change pace from here on, and record it in `_mrk/state.json` |
 | `continue` | Read `_mrk/state.json` and carry on from the current step |
 | `status` | One line per step: done, current or to do, with the scores so far |
 | `step <n>` | Redo that step. Say first which later steps it will make stale |
 | `tools` | Show the tools table (below) |
+| `setup` | The full setup in `01-setup.md`: the table, the free extras, what they would like to bring. Only when asked |
 | `help` | The step list, the stops, and any video links |
 
 ## Two paces: fast and verbose
 
-The owner decides how much you ask. **Fast is the default.** Verbose is for someone who wants to be walked
-through. Record the pace as `pace` in `_mrk/state.json` and keep to it until they change it.
+**Fast is the default.** It means: if they did not ask for it, do not do it. Verbose (`start verbose`, or
+`verbose` at any time) is the guided walk-through written in the step guides. Record the pace as `pace` in
+`_mrk/state.json` and keep to it until they change it.
 
-**Fast means: if they did not ask for it, do not do it.** Take what you were given at the start (the
-address, a pasted message, whatever is in `resources/`) and build. Ask no optional questions, wait for no
-materials, write no emails and do not offer to, offer no installs. When something is unknown, decide by the
-guides' defaults, note it in `_mrk/owner-todo.md`, and carry on. Rule 1 still holds: a gap stays a gap. Cut
-the section, or leave a visible `TODO` (the site check refuses to launch one). Never fill it by inventing.
+### Fast: from `start` to five designs
 
-| | Fast | Verbose |
-|---|---|---|
-| Step 0 | Ask only for what you cannot start without, normally just the site's address. Assume the rest, write the brief, go on. No confirm. | The four questions, the brief, then "Do tool check". |
-| Step 1, tools | Run the check. If the required tools pass, say so in one line and go on. Install nothing. | Show the table and offer the free set. |
-| Step 1, materials | Create `resources/`, read whatever is in it, go on. No question, no waiting. | Ask what they would like to bring, and wait. |
-| Unclear or missing facts | Use the best source, note the doubt in `_mrk/owner-todo.md`, go on. | Ask the owner. |
-| Messages to a client | Never. | Offer to draft them. |
-| Step 6 | Make the five directions and stop for the pick. | The same, after one last call for materials. |
-| Step 8, imagery | Skip, and record that it was skipped. | Follow the guide. |
-| Steps 2 to 5 and 7 to 13 | Straight through, one line per finished step. | The same, with a hand-over after each step. |
+They typed `start` and an address. The next thing they see should be five designs. Do only what the designs
+need, in this order, and leave the rest until after they choose:
 
-**The same at either pace:** the eight rules, and the stops only the owner can clear: picking a design
-(step 6), sending the site to GitHub (14), the review (16), going live (19), and anything that costs money.
-A missing required tool stops both.
+1. **Begin, silently.** Write the brief from the address and anything pasted with it. Run the tool check and
+   say nothing unless a required tool is missing. Create `resources/` and read whatever is in it.
+2. **Read the site.** Crawl it with the script, then write `facts.md` and `brand-kit.md`. The site map,
+   baseline and redirects wait.
+3. **Glance at any sites the client named.** A screenshot and a few lines each. No wider hunt unless there
+   is nothing to design from.
+4. **Design.** Five first screens, drafted in parallel if you can. Open them in the app and ask which one,
+   in two lines (`06-directions.md`).
 
-In fast, when step 13 is done, hand back in a few lines: the site is built and scored on this computer, the
+While this runs, say at most one short line at a time ("Reading your site.", "Designing."). No tables, no
+findings, no file paths, no questions. Each guide has an "In fast" note saying what to do now and what to
+leave.
+
+Score the old site (step 3) in the background if you can, otherwise straight after the pick. After the pick,
+finish what was left of steps 2, 3 and 5, then carry on from the design system to step 13 with one short line
+per finished step.
+
+### What fast never does
+
+- Ask optional questions, wait for materials, offer to install anything, write emails or offer to.
+- Guess a fact. When something is unknown, decide by the guides' defaults, note it in `_mrk/owner-todo.md`
+  and carry on. A gap stays a gap: cut the section, or leave a visible `TODO`, which the site check refuses
+  to launch.
+- Generate images (step 8), unless asked.
+
+### The same at either pace
+
+The eight rules, and the stops only the owner can clear: picking a design (step 6), sending the site to
+GitHub (14), the review (16), going live (19), and anything that costs money. A missing required tool stops
+both.
+
+In fast, when step 13 is done, hand back in a few lines: the site is built and open for them to see, the
 old-against-new numbers, what is on the to-do list, and that step 14 puts it online when they say so.
 
 ## The tools table

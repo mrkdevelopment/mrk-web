@@ -23,7 +23,7 @@ Pick one. Each is a single line. You need [Claude Code](https://claude.com/claud
 The skill lives inside that site's folder and nowhere else on your computer. Best if you are building a
 single site.
 
-Put the zip in the site's folder, open Claude Code in that folder, and say:
+Make a new, empty folder for the site. Put the zip in it, open Claude Code in that folder, and say:
 
 ```text
 You will find the MRK-Web zip inside this project folder. Install it for this project.
@@ -60,39 +60,47 @@ To update, install the newer version the same way. It replaces the old copy.
 
 ### What installing does
 
-For anyone doing it by hand, and for Claude when asked to install from the zip:
+For anyone doing it by hand, and for Claude when asked to install from the zip. Installing is only this:
 
 1. Unzip. Inside is a folder named `skills/mrk-web`. That folder is the whole skill.
 2. Copy it to one of these, replacing any older copy:
    - one website: `.claude/skills/mrk-web` inside the site's folder;
    - every project: `.claude/skills/mrk-web` inside your home folder (`~/.claude/skills/mrk-web` on Mac
      and Linux, `C:\Users\<you>\.claude\skills\mrk-web` on Windows).
-3. Run the setup check, `scripts/setup-check.sh` in the copied folder, and show the result. Offer to install
-   anything missing, asking before each one.
-4. The zip and the unzipped copy can be deleted.
+3. Delete the unzipped copy. Leave the zip.
+4. Reply with one line and nothing else: "MRK-Web is installed. Type `/mrk-web start` and your website
+   address." Do not run checks, show tables, or offer to install anything else.
 
 To uninstall by hand, delete that `mrk-web` folder (and `.agents/skills/mrk-web` beside it, if the terminal
 command was used).
 
-If the person says "start" straight after installing and the skill is not recognised yet, read `SKILL.md` in
-the copied folder and follow it, or restart Claude Code in that folder.
+If `/mrk-web` is not recognised straight after installing, restart Claude Code once.
 
-## Use it
+## Build a site
 
-1. Open Claude Code in the site's folder. A new, empty folder for a new site.
-2. Use the strongest model you have.
-3. Type `/mrk-web start`. If you have an email or message from a client describing what they want, paste
-   it in after that. It reads the message first and only asks what it leaves out.
+In the site's folder, type `/mrk-web start` and your website address:
+
+```text
+/mrk-web start https://www.your-site.com
+```
+
+That is all. It reads your site and opens five designs for you to choose from. No site yet? Type
+`/mrk-web start` and describe the business in a sentence.
+
+Got an email from a client saying what they want? Paste it in after the address.
 
 ### Two paces
 
 | | You type | What it does |
 |---|---|---|
-| **Fast** (the default) | `/mrk-web start` | Takes what you give it and builds. No questions it can avoid, no waiting for files, no emails. It stops for you to pick a design, and again before anything goes online. |
-| **Verbose** | `/mrk-web start verbose` | Walks you through: the brief questions, a table of every tool it uses, what you would like to bring, and offers to draft messages to your client. |
+| **Fast** (the default) | `/mrk-web start <address>` | Goes straight to five designs, with almost nothing on screen until they are ready. Then it builds the one you pick. It stops again only before anything goes online. |
+| **Verbose** | `/mrk-web start verbose <address>` | Walks you through: the brief questions, a table of every tool it uses, what you would like to bring, and offers to draft messages to your client. |
 
 Say **fast** or **verbose** at any time to switch. After the start, plain words work: **continue** to pick up
-later, **status** to see where you are, **tools** for the table of everything it uses, **help** for the steps.
+later, **status** to see where you are, **help** for the steps.
+
+Optional, whenever you want them: **tools** shows everything the skill can use and what you have, and
+**setup** offers to add the free extras.
 
 At either pace it always stops for four things: choosing a design, sending the site to GitHub, your review,
 and going live. It never spends money without showing the price first.

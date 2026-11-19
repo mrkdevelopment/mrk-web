@@ -16,10 +16,10 @@ anything else you were given, and assume the rest:
 - `goal`: what the current site's main button already asks visitors to do, or what the message says.
 - `builtFor`: leave it out unless they said.
 
-Write the two files, say what you are doing in one line ("Rebuilding all of example.com, built around
-enquiries. Starting."), and go straight to step 1. If something under "Raise these only if" applies, add one
-line for it and keep going. Ask a question only when there is nothing to start from: no address, no message,
-no description of the business.
+Write the two files and go straight on. Say nothing, or one short line ("Reading your site."). Do not show
+the brief. If something under "Raise these only if" applies, write it into `_mrk/brief.md` and hold it until
+after the design pick, then say it in one line. Ask a question only when there is nothing to start from: no
+address, no message, no description of the business.
 
 **Verbose.** Everything below, ending with the brief and "Do tool check".
 

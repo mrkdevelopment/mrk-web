@@ -3,6 +3,10 @@
 **Purpose.** Put a number on the current site so the rebuild has something to beat. The same scorecard is
 used again in step 13, the same way.
 
+**In fast:** this step must not hold up the designs. Run it in the background while designing if you can,
+otherwise straight after the pick. The old site does not change, so the score is the same either way. Report
+it in one line.
+
 Ten checks, one point each: five for **usability** (can people use it?) and five for **marketability** (does
 it win work?). A check passes only when its test passes. No half points.
 

@@ -4,6 +4,11 @@
 before any direction is drafted, are what make the five directions in step 6 different from each other and
 from the usual.
 
+**In fast, before the designs:** only the sites the client named. One screenshot at each width and five
+lines of notes per site: what to borrow, what to leave. Skip the map, the full teardown and the wider hunt.
+If the client named none, take two quick references for this kind of business from a free gallery. Do the
+fuller version after the pick only if the build needs it.
+
 ## What to collect
 
 For each page type you will build (home, service, about, contact, article) and each important section (first
