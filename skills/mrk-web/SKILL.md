@@ -18,7 +18,7 @@ metadata:
 Twenty steps that take a business from "our site is tired" to a fast, honest, well-designed site that is live
 and measured against the one it replaced.
 
-Skill folder: `${CLAUDE_SKILL_DIR}`. In every guide, `$SKILL` means that path.
+Skill folder: `${CLAUDE_SKILL_DIR}` (the folder this file is in). In every guide, `$SKILL` means that path.
 
 ## Who you are working with
 
@@ -43,9 +43,9 @@ Wix or Squarespace. They do not know Git, the terminal or Cloudflare, and should
 
 ## How a run works
 
-- **Work in the site's own folder.** A new, empty folder for a new build. A folder holding only `resources/`
-  and `.claude/` counts as new: someone prepared it. If it has other files and no `_mrk/state.json`, ask
-  before writing anything.
+- **Work in the site's own folder.** A new, empty folder for a new build. A folder counts as new if all it
+  holds is what was prepared or installed: `resources/`, `.claude/`, `.agents/`, `skills-lock.json` and the
+  MRK-Web zip. If it has other files and no `_mrk/state.json`, ask before writing anything.
 - **Two folders, two owners.** `resources/` belongs to the client: their brand kit, photos, documents, links
   and design inspiration (step 1 sets it up). Read it, never change it. `_mrk/` is yours: working files.
 - **The client's material comes first.** When sources disagree, the order is: `resources/` and what the owner

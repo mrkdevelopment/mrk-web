@@ -53,7 +53,7 @@ Scripts and templates must stay inside `skills/mrk-web/`, because the skill find
 | Client materials | Asked for in step 1, kept in `resources/`, out of GitHub by default. |
 | Online shops | Not built. The site links to the checkout the business already has (asked in the brief). |
 | Licence | Skill: GPL-2.0-or-later. `skills/mrk-web/templates/`: MIT, because those files are copied into clients' sites. Keep anything meant to be copied into a site inside `templates/`. |
-| Delivery | Private repo. Buyers install from a zip made from `main`, by pasting one sentence into Claude Code. For now it installs per project, into the site folder's `.claude/skills/mrk-web`, not into the home folder. |
+| Delivery | Private repo. Two ways in, each for one website or for every project: a zip made from `main` (the buyer puts it in a folder and says one sentence to Claude), or `npx skills add mrkdevelopment/mrk-web` (add `-g` for every project) for people with repo access. The plugin manifests still work but are not in the README. |
 | What buyers get | Everything except this file and `ROADMAP.md`, which `.gitattributes` leaves out of GitHub's zip downloads. Do not link to either from the README or anything under `skills/`. |
 | Site versions | Semantic versioning, one branch per version, first version on branch `1.0.0`. |
 

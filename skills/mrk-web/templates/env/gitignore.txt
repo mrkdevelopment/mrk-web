@@ -20,7 +20,9 @@ resources/*
 !resources/README.md
 
 # The MRK-Web skill itself, when it was installed into this project. It is a tool, not part of the site.
-.claude/skills/mrk-web/
+.claude/skills/mrk-web
+.agents/skills/mrk-web/
+mrk-web*.zip
 
 # Bulky working files that can be remade
 _mrk/ingest/pages/

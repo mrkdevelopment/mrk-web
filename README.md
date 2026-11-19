@@ -16,68 +16,70 @@ professional results from AI without learning to code.
 
 ## Install
 
-You need [Claude Code](https://claude.com/claude-code). Nothing else has to be set up first.
+Pick one. Each is a single line. You need [Claude Code](https://claude.com/claude-code) and nothing else.
 
-### The quick way: paste one sentence
+### For one website
 
-MRK-Web installs into one site's folder at a time. Nothing is added to the rest of your computer, and each
-site keeps the version it was built with.
+The skill lives inside that site's folder and nowhere else on your computer. Best if you are building a
+single site.
 
-1. Download the MRK-Web zip and leave it in your Downloads folder. Do not unzip it.
-2. Make a new, empty folder for the site and open Claude Code in it.
-3. Paste this:
+Put the zip in the site's folder, open Claude Code in that folder, and say:
 
 ```text
-Install the MRK-Web skill into this project only. The zip is in my Downloads folder and its name starts with "mrk-web". Unzip it to a temporary folder, then copy the "skills/mrk-web" folder from inside it to .claude/skills/mrk-web in this project folder. If something is already at that path, remove it first, and if it is a link, remove only the link. Do not put MRK-Web anywhere outside this project. Then run the setup check in its scripts folder and show me the result. Offer to install anything that is missing, and ask me before each one.
+You will find the MRK-Web zip inside this project folder. Install it for this project.
 ```
 
-4. Say yes when Claude asks permission for each step.
-5. Restart Claude Code in the same folder when it finishes, then say **start**.
+### For every project on this computer
 
-It works the same on Mac, Windows and Linux. For the next site, make a new folder and paste the sentence
-again.
+Best if you build sites often. Put the zip in any folder, open Claude Code there, and say:
 
-### By hand
-
-**Mac or Linux**, in a terminal opened in the site's folder:
-
-```bash
-unzip ~/Downloads/mrk-web-*.zip -d ~/Downloads/mrk-web-unzipped
+```text
+You will find the MRK-Web zip inside this folder. Install it for all my projects.
 ```
 
-```bash
-mkdir -p .claude/skills && cp -R ~/Downloads/mrk-web-unzipped/*/skills/mrk-web .claude/skills/
-```
+### With access to the GitHub repo
 
-**Windows:** unzip the download, open it until you see a `skills` folder, and copy the `mrk-web` folder inside
-it into a `.claude\skills\` folder inside the site's folder. Create those two folders if they are not there.
+No zip needed. In a terminal:
 
-Restart Claude Code in the site's folder afterwards.
+| To install for | Run |
+|---|---|
+| One website (run it in the site's folder) | `npx skills add mrkdevelopment/mrk-web` |
+| Every project | `npx skills add mrkdevelopment/mrk-web -g` |
 
-### From GitHub
+### Uninstall
 
-For people who have been given access to the repo. Inside Claude Code, type:
-
-```
-/plugin marketplace add mrkdevelopment/mrk-web
-/plugin install mrk-web@mrk-web
-```
-
-Claude Code uses your computer's GitHub sign-in to reach the repo. If it cannot, run `gh auth login` and then
-`gh auth setup-git` in a terminal and try again.
-
-### Updating and removing
-
-| Installed from | Update | Remove |
+| Installed for | Say to Claude | Or run |
 |---|---|---|
-| The zip | Download the new zip and paste the same sentence again in that site's folder | Delete `.claude/skills/mrk-web` from the site's folder |
-| GitHub | `claude plugin update mrk-web@mrk-web` in a terminal | `claude plugin uninstall mrk-web@mrk-web` |
+| One website | "Remove the MRK-Web skill from this project." | `npx skills remove mrk-web` |
+| Every project | "Remove the MRK-Web skill from all my projects." | `npx skills remove mrk-web -g` |
 
-Updating the skill never touches a site's work: each site's progress lives in its own `_mrk` folder.
+Removing the skill never removes a website. The site's own files, and its progress in `_mrk`, stay where
+they are.
+
+To update, install the newer version the same way. It replaces the old copy.
+
+### What installing does
+
+For anyone doing it by hand, and for Claude when asked to install from the zip:
+
+1. Unzip. Inside is a folder named `skills/mrk-web`. That folder is the whole skill.
+2. Copy it to one of these, replacing any older copy:
+   - one website: `.claude/skills/mrk-web` inside the site's folder;
+   - every project: `.claude/skills/mrk-web` inside your home folder (`~/.claude/skills/mrk-web` on Mac
+     and Linux, `C:\Users\<you>\.claude\skills\mrk-web` on Windows).
+3. Run the setup check, `scripts/setup-check.sh` in the copied folder, and show the result. Offer to install
+   anything missing, asking before each one.
+4. The zip and the unzipped copy can be deleted.
+
+To uninstall by hand, delete that `mrk-web` folder (and `.agents/skills/mrk-web` beside it, if the terminal
+command was used).
+
+If the person says "start" straight after installing and the skill is not recognised yet, read `SKILL.md` in
+the copied folder and follow it, or restart Claude Code in that folder.
 
 ## Use it
 
-1. Open Claude Code in the site's folder, where you installed MRK-Web.
+1. Open Claude Code in the site's folder. A new, empty folder for a new site.
 2. Use the strongest model you have.
 3. Say **start**. If you have an email or message from a client describing what they want, paste it in
    after the word start. It reads that first and only asks what the message leaves out.
