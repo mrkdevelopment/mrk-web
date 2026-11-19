@@ -5,8 +5,9 @@ description: >-
   current site, choose a design direction, build a fast static Astro site made to win enquiries, prove it
   against the old one, and launch on Cloudflare Pages with forms, analytics, redirects and AI-search files.
   Made for people coming from WordPress, Wix or Squarespace who want an AI-built site that does not look or
-  read AI-made. Use when someone says "/mrk-web", "mrk-web start", "start" or "continue" in an mrk-web
-  project, "rebuild my website", "ingest this site", "score my website", or "build me a website with mrk-web".
+  read AI-made. Use when someone says "/mrk-web", "mrk-web start", "rebuild my website", "ingest this site",
+  "score my website" or "build me a website with mrk-web", and when they say just "start", "continue",
+  "status" or "tools" in an empty folder or in a folder that holds `_mrk/`, `resources/` or this skill.
 argument-hint: "[start | continue | status | step <n> | help]"
 license: GPL-2.0-or-later (the templates folder is MIT; see the LICENSE files)
 metadata:
@@ -35,11 +36,29 @@ Wix or Squarespace. They do not know Git, the terminal or Cloudflare, and should
 
 | They say | You do |
 |---|---|
-| `start` | Step 0 if there is no `_mrk/state.json` here; otherwise say where the build is up to and offer to continue. If a client's email or message is pasted in with it, read that first (`00-brief.md`) and ask only what it leaves out |
+| `start` | Show the tools table first (below). Then step 0 if there is no `_mrk/state.json` here; otherwise say where the build is up to and offer to continue. If a client's email or message is pasted in with it, read that before asking anything (`00-brief.md`) |
 | `continue` | Read `_mrk/state.json` and carry on from the current step |
 | `status` | One line per step: done, current or to do, with the scores so far |
 | `step <n>` | Redo that step. Say first which later steps it will make stale |
+| `tools` | Show the tools table (below) |
 | `help` | The step list, the stops, and any video links |
+
+## The tools table
+
+The owner wants to see everything this skill uses, row by row. Run:
+
+```bash
+bash "$SKILL/scripts/setup-check.sh" --table
+```
+
+Then **put the whole table in your reply, every row, copied as printed**: each tool, skill, connector and
+account, what it is for, which steps use it, what it costs, and whether it is installed. A sentence that
+sums it up is not a substitute. Under the table, add the script's summary line and one sentence on what it
+means for this build. Do not explain rows one by one, and do not offer to install anything yet: step 1 does
+that.
+
+Your first reply to `start` begins with this table, before the first brief question. Show it again at the
+top of step 1 if anything has changed, after anything is installed, and whenever asked (`tools`).
 
 ## How a run works
 

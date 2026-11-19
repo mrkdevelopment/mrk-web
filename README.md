@@ -81,11 +81,13 @@ the copied folder and follow it, or restart Claude Code in that folder.
 
 1. Open Claude Code in the site's folder. A new, empty folder for a new site.
 2. Use the strongest model you have.
-3. Say **start**. If you have an email or message from a client describing what they want, paste it in
-   after the word start. It reads that first and only asks what the message leaves out.
+3. Type `/mrk-web start`. If you have an email or message from a client describing what they want, paste
+   it in after that. It reads the message first and only asks what it leaves out.
 
-It asks a few questions, checks your setup, and begins. Say **continue** in the same folder to pick up later,
-**status** to see where you are, or **help** for the step list.
+It opens with a table of every tool, skill and connector it uses: what each is for, what it costs, and
+whether you have it. Then it asks a few questions and begins. After that, plain words work: say **continue** in
+the same folder to pick up later, **status** to see where you are, **tools** to see that table again, or
+**help** for the step list.
 
 ### Bring your own materials
 

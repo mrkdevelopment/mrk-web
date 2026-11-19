@@ -25,6 +25,9 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 - For agencies, what is missing is split into what the agency can answer and what the client must supply,
   with an offer to draft the reply to the client.
 
+- A tools table at the start, and whenever you say "tools": every tool, skill, connector and account the
+  skill uses or recommends, what each is for, which steps use it, what it costs, and whether it is
+  installed.
 - `keys.md`: one guide to every account, API key and paid tool in a build, what works without each one, and
   how to get each key.
 

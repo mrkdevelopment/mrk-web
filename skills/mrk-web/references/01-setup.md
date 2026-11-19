@@ -8,11 +8,14 @@ Part 1 is the tools. Part 2, the client's materials, is at the end of this guide
 ## Run it
 
 ```bash
-bash "$SKILL/scripts/setup-check.sh"
+bash "$SKILL/scripts/setup-check.sh" --table
 ```
 
-It changes nothing. Show the owner the result in its own order: required, free, accounts for later, paid.
-On Windows, run it in Git Bash or WSL.
+It changes nothing. Show the table exactly as it prints, with the summary line under it. It is already in the
+right order: required, free, accounts for later, paid. If the table was shown at `start` and nothing has
+changed since, do not repeat it: go straight to what is missing. On Windows, run it in Git Bash or WSL.
+
+Show the table again after installing anything, so the owner sees what changed.
 
 ## What is needed, in the order to set it up
 
