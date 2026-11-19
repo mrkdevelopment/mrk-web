@@ -50,8 +50,8 @@ references. Every entry carries where it came from: the page address, or the fil
 - Legal name and registration number if shown.
 - **Customer, problem, outcome**: one line each, in the words customers use in reviews and testimonials.
   Headlines get written from these later.
-- **Competitors**: three to five in the same trade and area (ask the owner, or search), and how each words
-  its offer.
+- **Competitors**: three to five in the same trade and area, and how each words its offer. Start with any
+  the client named (marked `competitor` in the brief), then ask the owner or search.
 
 Where two sources disagree (two phone numbers, two prices), ask the owner. Never pick one.
 
@@ -83,6 +83,7 @@ Copy the keepers into `_mrk/brand/`. Leave the originals in `resources/` untouch
 A table of every address in `urls.csv`: title, type (home, service, about, contact, article, location, legal,
 other), word count, traffic if known, and a decision: **keep**, **merge into** another page, or **drop**.
 
+- Add every page in the brief's `mustHavePages`, marked **new** if the old site has no such page.
 - Keep the same address wherever you can. The best redirect is none.
 - Never drop or merge a page without checking its traffic first. A dull-looking page can be a top earner.
 - Include addresses that are not pages: feeds, PDFs, old campaign links, anything in `site.json` that answers.
@@ -102,6 +103,9 @@ Once the new site is live, the old numbers are gone for good.
 
 Forms and where they send, booking widgets, live chat, maps, embedded video, tracking pixels, shop or payment
 links. Save as `_mrk/functions.md`. Step 15 carries each one over or retires it on purpose.
+
+If the brief says the site sells online, record the exact checkout address for every product and every
+option (each size, each pack), and confirm the prices with the owner. Step 7 builds a buy button from each.
 
 ## No existing site
 

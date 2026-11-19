@@ -4,6 +4,32 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 
 ## Unreleased
 
+## 1.0.1 - 2026-11-19
+
+### Added
+
+- Paste a client's email or message after "start". The skill saves it, takes from it the site address, the
+  sites they like, the pages and features they asked for, any deadline and whether they sell online, then
+  asks only for what is missing.
+- The brief now asks outright for websites the client likes, competitors included, and what they like about
+  each one.
+- A set way to study a site someone else owns: screenshots, a short written teardown, and two lists of what
+  to borrow (structure and patterns) and what to leave (their words, pictures, logo, colours and type).
+  Competitors get extra care so the new site can never pass for a rival's.
+- The brief asks whether the site sells online. MRK-Web does not build a shopping cart; it builds buy buttons
+  that go to the checkout the business already has, and says so at the start.
+- If a client's deadline is tighter than the full build allows, the skill says so and offers a staged launch
+  instead of skipping steps.
+- A site folder can be prepared in advance: put the client's message and files in `resources/` and say
+  "start". The skill reads them before asking anything.
+- For agencies, what is missing is split into what the agency can answer and what the client must supply,
+  with an offer to draft the reply to the client.
+
+### Changed
+
+- The skill's version is now written inside `SKILL.md`, so a copy installed from the zip knows which version
+  it is.
+
 ## 1.0.0 - 2026-11-19
 
 First version.

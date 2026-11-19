@@ -1,6 +1,6 @@
 {
   "name": "mrk-web",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guided website builds for business owners and agencies: ingest and score the current site, design and build a fast static Astro site that does not look AI-made, prove it against the old one, and launch on Cloudflare Pages.",
   "author": { "name": "MRK WP" },
   "license": "GPL-2.0-or-later",

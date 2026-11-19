@@ -28,7 +28,10 @@ Rules for the set:
   fixed across the set. With a full brand kit, the directions differ in layout, rhythm, imagery and how the
   brand colour is used, not in typeface or palette.
 - **With client inspiration, at least two directions follow it closely**, and each says which sites or
-  screenshots it draws on. This is what gets the design right first time.
+  screenshots it draws on. Build them from each site's teardown: everything on its "borrow" list is
+  available, nothing on its "leave" list is. This is what gets the design right first time.
+- **No direction may pass for a competitor's site.** Where the inspiration is a rival in the same market,
+  follow how it works, not how it looks.
 - **Keep at least one that goes somewhere else.** What someone likes on another site and what suits their
   business are sometimes different, and they can only tell by seeing both.
 - Nothing from their "avoid" list appears in any direction.

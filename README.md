@@ -1,6 +1,6 @@
 # MRK-Web
 
-[![Version](https://img.shields.io/badge/version-1.0.0-2B59FF)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.0.1-2B59FF)](CHANGELOG.md)
 [![Licence](https://img.shields.io/badge/licence-GPL--2.0--or--later-0A1F44)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-skill-D97757)](skills/mrk-web/SKILL.md)
 [![Steps](https://img.shields.io/badge/steps-20-0A1F44)](#the-twenty-steps)
@@ -74,7 +74,8 @@ Your site folders are never touched by an update: each site's progress lives in 
 
 1. Make a new, empty folder for the new site and open Claude Code in it.
 2. Use the strongest model you have.
-3. Say **start**.
+3. Say **start**. If you have an email or message from a client describing what they want, paste it in
+   after the word start. It reads that first and only asks what the message leaves out.
 
 It asks a few questions, checks your setup, and begins. Say **continue** in the same folder to pick up later,
 **status** to see where you are, or **help** for the step list.

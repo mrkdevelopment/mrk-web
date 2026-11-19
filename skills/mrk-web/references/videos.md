@@ -9,6 +9,7 @@ once: "There is a short video on this if you would like to watch it first."
 |---|---|---|
 | Before you start | What MRK-Web does, and installing it | |
 | 0 | The brief: choosing homepage, single or all pages | |
+| 0 | Starting from a client's email | |
 | 1 | Setup: installing the tools and skills | |
 | 1 | Your materials: what to put in the resources folder | |
 | 3 | Reading your site's score | |

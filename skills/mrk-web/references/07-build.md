@@ -38,8 +38,23 @@ Guidance to design from, not a fixed order. The references and the business deci
 | **Article** | Comfortable reading width, author, date, and a next step that fits the topic. |
 | **Location** | Only where there is something real and specific to say about that place. |
 
-Across all of them:
+### When the site sells online
 
+Only if the brief says so (`sells`). The site shows the products and sends buyers to the checkout the
+business already has. There is no cart and no payment code in the site.
+
+- A product page, or one clear section per product: what it is, the price, the options (sizes, packs).
+- One "Buy" button per option, each going to that exact product and option at the checkout. The addresses
+  are in `_mrk/functions.md`.
+- Buying is the page's main action, so it is in the first screen and repeated.
+- Test every buy button by hand before review: right product, right size, right price at the other end.
+- Whatever the owner's licence or regulator requires (an age check, a licence number, a warning line) is
+  built exactly as they described it in the brief.
+
+Across every page type:
+
+- **Every page the client listed is there.** The brief's `mustHavePages` are requirements, under the names
+  the client used unless they agree to a change.
 - **Build the patterns the client asked for** (the list at the end of `_mrk/references.md`), on the pages
   they belong to, in the design system's own style.
 - **Their photos first.** Use what is in `resources/photos/` ahead of anything from the old site.

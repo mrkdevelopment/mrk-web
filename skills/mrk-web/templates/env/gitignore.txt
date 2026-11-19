@@ -22,6 +22,7 @@ resources/*
 # Bulky working files that can be remade
 _mrk/ingest/pages/
 _mrk/ingest/assets/
+_mrk/references/*/pages/
 _mrk/scores/screens-*/
 _mrk/scores/unlighthouse-*/
 _mrk/scores/.work-*/

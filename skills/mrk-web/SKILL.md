@@ -9,6 +9,8 @@ description: >-
   project, "rebuild my website", "ingest this site", "score my website", or "build me a website with mrk-web".
 argument-hint: "[start | continue | status | step <n> | help]"
 license: GPL-2.0-or-later (the templates folder is MIT; see the LICENSE files)
+metadata:
+  version: "1.0.1"
 ---
 
 # MRK-Web
@@ -33,7 +35,7 @@ Wix or Squarespace. They do not know Git, the terminal or Cloudflare, and should
 
 | They say | You do |
 |---|---|
-| `start` | Step 0 if there is no `_mrk/state.json` here; otherwise say where the build is up to and offer to continue |
+| `start` | Step 0 if there is no `_mrk/state.json` here; otherwise say where the build is up to and offer to continue. If a client's email or message is pasted in with it, read that first (`00-brief.md`) and ask only what it leaves out |
 | `continue` | Read `_mrk/state.json` and carry on from the current step |
 | `status` | One line per step: done, current or to do, with the scores so far |
 | `step <n>` | Redo that step. Say first which later steps it will make stale |
@@ -41,8 +43,9 @@ Wix or Squarespace. They do not know Git, the terminal or Cloudflare, and should
 
 ## How a run works
 
-- **Work in the site's own folder.** A new, empty folder for a new build. If the folder has files and no
-  `_mrk/state.json`, ask before writing anything.
+- **Work in the site's own folder.** A new, empty folder for a new build. A folder holding only `resources/`
+  and `.claude/` counts as new: someone prepared it. If it has other files and no `_mrk/state.json`, ask
+  before writing anything.
 - **Two folders, two owners.** `resources/` belongs to the client: their brand kit, photos, documents, links
   and design inspiration (step 1 sets it up). Read it, never change it. `_mrk/` is yours: working files.
 - **The client's material comes first.** When sources disagree, the order is: `resources/` and what the owner

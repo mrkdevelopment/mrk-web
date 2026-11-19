@@ -51,6 +51,7 @@ Scripts and templates must stay inside `skills/mrk-web/`, because the skill find
 | Speed gate | 98 on all four Lighthouse scores, mobile, every page. A hard stop; only the site's owner can override, and it is recorded. |
 | Scorecard | Ten checks: five usability, five marketability. |
 | Client materials | Asked for in step 1, kept in `resources/`, out of GitHub by default. |
+| Online shops | Not built. The site links to the checkout the business already has (asked in the brief). |
 | Licence | Skill: GPL-2.0-or-later. `skills/mrk-web/templates/`: MIT, because those files are copied into clients' sites. Keep anything meant to be copied into a site inside `templates/`. |
 | Delivery | Private repo. Buyers install from a zip made from `main`, by pasting one sentence into Claude Code. |
 | What buyers get | Everything except this file and `ROADMAP.md`, which `.gitattributes` leaves out of GitHub's zip downloads. Do not link to either from the README or anything under `skills/`. |
@@ -61,8 +62,10 @@ Scripts and templates must stay inside `skills/mrk-web/`, because the skill find
 1. Add the change under `## Unreleased` in `CHANGELOG.md`.
 2. If a script changed, run it against a real site or a built `dist/` and read its output.
 3. `claude plugin validate .` must pass.
-4. To release: set the version in `.claude-plugin/plugin.json`, the README badge and the changelog heading.
-   All three, together.
+4. To release: set the version in four places, together: `.claude-plugin/plugin.json`, the README badge,
+   the changelog heading, and `metadata.version` at the top of `skills/mrk-web/SKILL.md` (the only one a zip
+   install keeps). This shows all four at once:
+   `grep -n '"version"\|badge/version\|^## [0-9]\|  version:' .claude-plugin/plugin.json README.md CHANGELOG.md skills/mrk-web/SKILL.md`
 
 To try the skill without installing it: `claude --plugin-dir /path/to/mrk-web` in an empty folder, then say
 "start".
