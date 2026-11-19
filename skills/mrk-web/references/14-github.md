@@ -20,16 +20,26 @@ folder there. A **branch** is a working copy where changes are made before they 
 
 ## Set up the repo
 
-1. `README.md` from `$SKILL/templates/site/README.md`: fill in the placeholders. The row of badges at the top
-   shows the version, what is live, and the stack at a glance.
-2. `CHANGELOG.md` from the template, with a first entry describing the rebuild.
-3. `"version": "1.0.0"` in `package.json`.
-4. Create the repo and the first branch ✋. Ask first: this sends the site's files to GitHub.
-   - Signed in with `gh`: `gh repo create <name> --private --source . --remote origin`
+Every site starts on `main` and then moves to a version branch. Always in this order:
+
+1. **Start `main`.** `git init -b main`. If the folder is already a repo on another branch name, rename that
+   branch to `main`. Add `README.md` from `$SKILL/templates/site/README.md` with the placeholders filled: the
+   row of badges at the top shows the version, what is live, and the stack at a glance. Commit the site as it
+   stands. No changelog yet.
+2. **Create the GitHub repo and push `main`** ✋. Ask first: this sends the site's files to GitHub.
+   - Signed in with `gh`: `gh repo create <name> --private --source . --remote origin --push`
    - Otherwise the owner creates an empty private repo on github.com and gives you its address.
    - Private by default. For an agency, ask whose GitHub account it belongs in.
-5. Work on a branch named for the version: **`1.0.0`** for the first release. `main` only ever holds what is
-   live.
+3. **Branch off to `1.0.0`.** `git checkout -b 1.0.0`. The changelog starts here, on this branch:
+   - `CHANGELOG.md` from the template, with a first entry describing the rebuild;
+   - `"version": "1.0.0"` in `package.json`, and the same in the README badge.
+
+   Commit and push the branch.
+4. **Work on the version branch from now on.** `main` changes only when a finished version is merged into it,
+   and each merge is tagged.
+
+Later versions work the same way: a new branch off `main` named for the version (`1.0.1`, `1.1.0`), changes
+noted in the changelog as they are made, merged into `main` when finished.
 
 ## Version numbers
 
@@ -52,4 +62,5 @@ one place: on a real project it drifted until the README named two different liv
 
 Each release: a branch named for the version, a pull request into `main`, a tag on the merge.
 
-**Done when:** the repo exists, branch `1.0.0` holds the site, and nothing secret is in it.
+**Done when:** `main` is on GitHub, branch `1.0.0` exists with the changelog started, and nothing secret is in
+either.

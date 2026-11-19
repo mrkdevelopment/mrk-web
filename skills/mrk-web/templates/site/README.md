@@ -78,7 +78,7 @@ The site uses [semantic versioning](https://semver.org): `MAJOR.MINOR.PATCH`.
 
 ### Releasing a version
 
-1. Each version gets its own branch, named after the version. The first release is on branch `1.0.0`; the next might be `1.1.0`.
+1. The repo starts on `main`. Each version gets its own branch off `main`, named after the version. The first is `1.0.0`, where the changelog begins; the next might be `1.1.0`.
 2. As you work, add each change under **## Unreleased** at the top of `CHANGELOG.md`.
 3. When it's ready, rename **Unreleased** to the version and today's date (`## 1.1.0 - 2026-01-31`), and add a new empty **## Unreleased** above it.
 4. Set the same number in `package.json` (`"version"`), the "Version" line and the version badge at the top of this file.

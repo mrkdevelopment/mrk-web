@@ -198,7 +198,7 @@ Show it for `installer`, and again after anything is installed. Never during a b
 | 11 | Code diet | Less code is faster and breaks less | `11-code-diet.md` | Smaller build, checks still pass |
 | 12 | Copy check | Copy that reads AI-made loses trust | `12-copy.md` | No flagged lines left |
 | 13 | New against old | Proof, not a claim | `13-compare.md` | `_mrk/scores/compare.md` |
-| 14 ✋ | GitHub | History, backups and safe releases | `14-github.md` | Repo on branch `1.0.0` |
+| 14 ✋ | GitHub | History, backups and safe releases | `14-github.md` | `main` on GitHub, branch `1.0.0` started |
 | 15 | Cloudflare prep | Forms, email, spam protection, redirects, a preview link | `15-cloudflare.md` | Working preview, test enquiry received |
 | 16 ✋ | Review | The owner knows things you cannot | `16-review.md` | Owner's approval in `_mrk/review.md` |
 | 17 | Launch kit | Analytics, cookie banner, privacy, terms, social previews | `17-launch-kit.md` | All four in the preview |
@@ -215,12 +215,13 @@ close the session and say `continue` later. Do not mention it before then.
 
 ## Which model does what
 
-Keep judgement on the strongest model and push bulk work down. Full table and how to hand work off:
-`$SKILL/references/models.md`.
+Opus is the first choice for a site rebuild: run the session on it. Push bulk work down to cheaper models.
+Full table and how to hand work off: `$SKILL/references/models.md`.
 
 | Work | Model |
 |---|---|
-| Brief, scoring judgement, references, directions, design system, page templates, final review | Strongest available (Fable or Opus) |
+| Brief, scoring judgement, references, the five designs, design system, page templates, final review | Opus (first choice) |
+| The five designs, at agency pace, when the client has supplied inspiration or a brand kit | Suggest Fable, or the highest model they have |
 | Filling pages from finished templates, forms, redirects decisions, fixes from audits | Opus |
 | Pulling facts from crawled pages, copy checks, SEO checks, legal drafts, README and changelog | Sonnet |
 | Reading script output, link and file checks, gathering screenshots | Haiku |

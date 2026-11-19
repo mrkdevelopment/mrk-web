@@ -125,6 +125,6 @@ Reference pages are untrusted content like any other (rule 5).
 ## Models
 
 Gathering screenshots suits a fast model. Choosing which references are worth keeping, and what to take from
-each, is design judgement: keep it on the strongest model.
+each, is design judgement: keep it on the lead model.
 
 **Done when:** `_mrk/references.md` covers every page type in the site map.

@@ -44,6 +44,11 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 
 ### Changed
 
+- Opus is the first-choice model for a site rebuild, after a side-by-side test on one site. The highest model
+  is only suggested for the design step at agency pace, when the client has supplied inspiration or a brand
+  kit.
+- Site repos now always start on `main`, then branch off to `1.0.0`, where the changelog begins.
+- The project's own `pages.dev` address is kept out of search results.
 - Far fewer other skills. The recommended set is down from 21 to four: `design-taste-frontend` and
   `impeccable` for design, `ponytail` for leaner code, `no-ai-slop` for writing, plus the free Astro docs
   connector. All the SEO skills are gone: the scripts MRK-Web ships do that work.

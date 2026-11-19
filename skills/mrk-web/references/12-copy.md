@@ -44,6 +44,6 @@ audience is technical.
 ## Models
 
 Flagging lines page by page is good work for a mid-sized model in batches. Rewrites of headings and first
-screens deserve the strongest model, because those few lines carry the page.
+screens deserve the lead model, because those few lines carry the page.
 
 **Done when:** `_mrk/checks/copy.md` shows every flagged line as fixed, deleted, or kept with a reason.

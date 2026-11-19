@@ -87,6 +87,9 @@ right address. No domain yet is fine: the preview address works without one.
    `npm run build`, output folder `dist`. Set `NODE_VERSION` to what Astro needs (step 1 shows it).
    The owner does the sign-in and clicks; guide them screen by screen.
 2. Push the `1.0.0` branch. Cloudflare builds it and gives the preview address.
+   Review always happens there. Cloudflare also publishes `main` at the project's own `pages.dev` address
+   as soon as the repo is connected; nobody is sent to that address, and the headers template keeps it out
+   of search results.
 3. Set the site's address variable to the **real** domain, not the preview one, so page links and the sitemap
    are right at launch.
 

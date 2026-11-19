@@ -17,7 +17,7 @@
 
 1. **Shell first**: layout, navigation, footer, design tokens, the head tags.
 2. **One template per page type**, with real content, finished properly on phone and desktop. Do these on the
-   strongest model: every other page inherits their quality.
+   lead model: every other page inherits their quality.
 3. **Then fill the rest** from the site map, a page type at a time. With templates done this is careful
    copying of content into structure, and suits a mid-sized model in batches.
 4. **Keep every old address** the site map marked "keep", exactly, including its trailing slash.

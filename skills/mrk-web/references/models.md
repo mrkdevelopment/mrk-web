@@ -1,18 +1,25 @@
 # Which model does what
 
 A website build mixes a little judgement that decides everything with a lot of routine work that does not.
-Spend the strongest model on the first and cheaper, faster ones on the second.
+
+**Opus is the first choice for a site rebuild.** Run the session on it: it holds the conversation, makes the
+design calls and builds the templates. Push routine work down to cheaper, faster models and to the scripts.
+
+**The highest model (Fable) is only worth suggesting in one case:** the design step, at agency pace, when the
+client has supplied inspiration or a brand kit. That is when there is real material to interpret, and the
+higher model makes more of it. Tested side by side on one site with no such material, Opus built faster,
+leaner and closer to the facts.
 
 This is guidance for saving time and money. It is never a requirement: if you cannot choose models where you
 are running, or the owner's plan lacks one, use what you have and carry on.
 
-## Four tiers and scripts
+## Tiers and scripts
 
 | Tier | In Claude Code | Good at | Use for |
 |---|---|---|---|
-| **Strongest** | `fable`, or `opus` where Fable is not available | Taste, trade-offs, holding the whole site in mind | Brief, scoring judgement, choosing references, the five directions, the design system, page templates, headline copy, final review |
-| **Builder** | `opus` | Careful code across many files | Filling pages from finished templates, forms and email, redirect decisions, acting on audit findings, the code diet |
-| **Mid** | `sonnet` | Reliable structured work at volume | Pulling facts from crawled pages, flagging copy, SEO checks, legal drafts from templates, README and changelog |
+| **Lead** | `opus` | Taste, trade-offs, careful code across many files | Brief, scoring judgement, choosing references, the five designs, the design system, page templates, forms and email, redirect decisions, the code diet, headline copy, final review |
+| **Highest** | `fable`, where available | Interpreting a client's own inspiration and brand | The five designs only, at agency pace, when inspiration or a brand kit was supplied. Suggest it; do not require it |
+| **Mid** | `sonnet` | Reliable structured work at volume | Pulling facts from crawled pages, filling pages from finished templates, flagging copy, SEO checks, legal drafts from templates, README and changelog |
 | **Fast** | `haiku` | Quick, cheap, narrow jobs | Reading script output, checking links and files, gathering reference screenshots, simple lookups |
 | **Scripts** | no model | Exact, repeatable, free | Crawling, speed tests, the site scan, redirect checks, version bumps |
 
@@ -23,31 +30,31 @@ count missing titles is slower, dearer and less accurate than the scan.
 
 | Step | Main work | Hand down |
 |---|---|---|
-| 0 Brief | Strongest | - |
+| 0 Brief | Lead | - |
 | 1 Setup | Script | - |
-| 2 Ingest | Strongest merges and resolves | Script crawls; Fast or Mid extracts facts per batch of pages |
-| 3 Score | Strongest judges | Script runs speed; Mid gathers evidence |
-| 4 Taste | Strongest | - |
-| 5 References | Strongest chooses | Fast gathers screenshots |
-| 6 Directions and system | Strongest, all of it | - |
-| 7 Build | Strongest builds shell and templates | Builder or Mid fills remaining pages |
-| 8 Imagery | Strongest writes the shot list | Image tool generates |
-| 9 Phone and speed | Builder fixes | Script tests; Fast reads results |
+| 2 Ingest | Lead merges and resolves | Script crawls; Fast or Mid extracts facts per batch of pages |
+| 3 Score | Lead judges | Script runs speed; Mid gathers evidence |
+| 4 Taste | Lead | - |
+| 5 References | Lead chooses | Fast gathers screenshots |
+| 6 Directions and system | Lead, all of it. Suggest Highest at agency pace with client inspiration or a brand kit | - |
+| 7 Build | Lead builds shell and templates | Lead or Mid fills remaining pages |
+| 8 Imagery | Lead writes the shot list | Image tool generates |
+| 9 Phone and speed | Lead fixes | Script tests; Fast reads results |
 | 10 AI visibility | Mid | Script checks |
-| 11 Code diet | Builder | - |
-| 12 Copy | Strongest rewrites headings and first screens | Mid flags lines per page |
-| 13 Compare | Strongest judges | Script and Mid, as in step 3 |
+| 11 Code diet | Lead | - |
+| 12 Copy | Lead rewrites headings and first screens | Mid flags lines per page |
+| 13 Compare | Lead judges | Script and Mid, as in step 3 |
 | 14 GitHub | Mid | Script bumps versions |
-| 15 Cloudflare | Builder | Script checks redirects |
-| 16 Review | Strongest (it is a conversation) | Builder applies fixes |
+| 15 Cloudflare | Lead | Script checks redirects |
+| 16 Review | Lead (it is a conversation) | Lead applies fixes |
 | 17 Launch kit | Mid | - |
-| 18 SEO check and gate | Builder fixes | Scripts run both parts |
-| 19 Go live | Strongest (it is a conversation) | Scripts verify |
-| 20 Roadmap | Strongest | - |
+| 18 SEO check and gate | Lead fixes | Scripts run both parts |
+| 19 Go live | Lead (it is a conversation) | Scripts verify |
+| 20 Roadmap | Lead | - |
 
 ## How to hand work down in Claude Code
 
-Run the session itself on the strongest model, because it holds the conversation with the owner and makes the
+Run the session itself on Opus, because it holds the conversation with the owner and makes the
 design calls. When a job suits a lower tier, start a subagent for it and set its model (`haiku`, `sonnet` or
 `opus`).
 

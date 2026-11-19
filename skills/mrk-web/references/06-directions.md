@@ -15,8 +15,12 @@ blind and redoing it costs far more than a minute's wait. Then carry on with wha
 - Put the design skills to work, as that guide says. With `design-taste-frontend` installed, have it deal
   directions for this business and build from those.
 - Have the pictures ready: the three to six strongest from `_mrk/brand/photos/` and `resources/photos/`.
-- Use the strongest model you have for this step. If the session is on a small one, say so once in a line
-  ("These designs will be better on a stronger model: `/model`") and carry on.
+- **Opus is the first choice for this step.** If the session is on a smaller model, say so once in a line
+  ("These designs will be better on Opus: `/model`") and carry on.
+- **At agency pace, with extra material from the client** (anything in `resources/inspiration/`, or a brand
+  kit in `resources/brand/`), suggest the highest model once before drafting: "You have given me real
+  material to design from. Fable, or the highest model you have, makes more of it: switch with `/model` if
+  you like, or I will carry on with Opus." Do not suggest it at fast pace, or when there is no such material.
 
 ### Lay the foundations first
 
@@ -230,7 +234,9 @@ code cannot drift apart.
 
 ## Model
 
-All of this step belongs on the strongest model available. It is the one place where a cheaper model costs
-the most.
+Opus is the first choice. In a side-by-side test on one site it produced five polished, sellable designs in
+about ten minutes, and built the site faster and closer to the facts than the higher model. The higher model
+earns its place when there is inspiration or a brand kit to interpret, which is why it is only suggested at
+agency pace with that material.
 
 **Done when:** the owner's pick is recorded and `DESIGN.md` exists with tokens in the CSS.

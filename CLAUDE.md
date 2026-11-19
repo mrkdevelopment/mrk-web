@@ -57,7 +57,8 @@ Scripts and templates must stay inside `skills/mrk-web/`, because the skill find
 | Licence | Skill: GPL-2.0-or-later. `skills/mrk-web/templates/`: MIT, because those files are copied into clients' sites. Keep anything meant to be copied into a site inside `templates/`. |
 | Delivery | Private repo. Two ways in, each for one website or for every project: a zip made from `main` (the buyer puts it in a folder and says one sentence to Claude), or `npx skills add mrkdevelopment/mrk-web` (add `-g` for every project) for people with repo access. The plugin manifests still work but are not in the README. |
 | What buyers get | Everything except this file and `ROADMAP.md`, which `.gitattributes` leaves out of GitHub's zip downloads. Do not link to either from the README or anything under `skills/`. |
-| Site versions | Semantic versioning, one branch per version, first version on branch `1.0.0`. |
+| Site versions | Semantic versioning. Every site starts on `main`, then branches off to `1.0.0`, where the changelog begins. One branch per version after that, merged into `main` when finished. |
+| Models | Opus is the first choice for a rebuild. Fable (the highest model) is only suggested for the design step at agency pace when the client supplied inspiration or a brand kit. |
 
 ## Changing the skill
 
