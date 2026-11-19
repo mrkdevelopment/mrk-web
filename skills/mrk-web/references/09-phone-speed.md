@@ -59,8 +59,8 @@ Then tab through each template by keyboard: menu, main button, every form field,
 
 ## Skills
 
-`seo-unlighthouse` and `seo-images` for depth, `web-design-guidelines` and Impeccable's audit for a second
-opinion on the interface, `animation-performance` if anything stutters.
+Impeccable's audit gives a second opinion on the interface, if installed. The speed and image checks are
+in the bundled scripts and need nothing else.
 
 ## Models
 

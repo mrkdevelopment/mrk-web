@@ -96,7 +96,6 @@ must keep. Plain words, no lecture.
 
 ## Tools
 
-`seo-unlighthouse`, `seo-audit` and Impeccable's critique add depth if installed. Running the tests suits a
-smaller model; the pass or fail judgement on U1, M1 to M4 belongs on the strongest one.
+Impeccable's critique adds depth if installed. Running the tests suits a smaller model; the pass or fail judgement on U1, M1 to M4 belongs on the strongest one.
 
 **Done when:** `_mrk/scores/before.md` exists and the scores are in `_mrk/state.json`.

@@ -108,18 +108,15 @@ turnaround time, the price, the name. Headings carry information. Step 12 checks
 
 ## Put the design skills to work
 
-If these are installed they do real work, not background reading. Use them, do not just note them.
+Two skills do real work in the design steps. If they are installed, use them. Do not just note them.
 
 - `design-taste-frontend`: ask it for directions for this kind of business, build from what it deals, and run
   its inspector and its look-and-fix loop on your drafts.
-- `ui-ux-pro-max`: run its design-system search for this business type and industry, for type pairings and
-  palettes to choose between.
 - `impeccable`: set it up once with the facts and brand kit, then have it critique the drafts before the
   owner sees them.
-- `refactoring-ui`: spacing, hierarchy and colour scales, while building.
-- `emil-design-eng`: anything that moves.
 
-Where two of them disagree, the brand kit and the owner's pick in step 6 decide.
+Where they disagree, the brand kit and the owner's pick in step 6 decide. Without either, this guide and
+`06-directions.md` are enough to work from.
 
 ## House style
 

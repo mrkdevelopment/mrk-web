@@ -159,11 +159,12 @@ skills/mrk-web/
 
 ## What it costs to run
 
-MRK-Web sets up the free things first and never needs a paid tool.
+MRK-Web sets up the free things first and never needs a paid tool. It does its own crawling, speed tests, SEO checks and
+redirects with the scripts it ships, so it needs no SEO skills.
 
 | | What | Cost |
 |---|---|---|
-| Set up first | Other free skills it works with: `design-taste-frontend`, `impeccable`, `refactoring-ui`, `ui-ux-pro-max`, `emil-design-eng`, `modern-web-guidance`, `web-design-guidelines`, `ponytail`, `no-ai-slop`, the `claude-seo` skills, and the Astro docs connector | Free. No account, no key. |
+| Set up first | Four free skills it works with: `design-taste-frontend` and `impeccable` (design), `ponytail` (leaner code), `no-ai-slop` (writing), plus the Astro docs connector | Free. No account, no key. |
 | When you reach them | A GitHub account and a Cloudflare account | Free. Sign in with your browser. |
 | Optional | A contact form that sends email, a spam check, a link to your CRM | Mostly free, but each needs an API key. The skill walks you through them, and your site can launch without any. |
 | Optional, paid | Mobbin (design references) and Higgsfield (generated images) | Paid. Never needed. |

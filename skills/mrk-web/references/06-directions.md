@@ -13,8 +13,7 @@ blind and redoing it costs far more than a minute's wait. Then carry on with wha
 
 - Read `04-taste.md` again, the part headed "What to do instead".
 - Put the design skills to work, as that guide says. With `design-taste-frontend` installed, have it deal
-  directions for this business and build from those. With `ui-ux-pro-max`, run its design-system search for
-  type and palette options.
+  directions for this business and build from those.
 - Have the pictures ready: the three to six strongest from `_mrk/brand/photos/` and `resources/photos/`.
 - Use the strongest model you have for this step. If the session is on a small one, say so once in a line
   ("These designs will be better on a stronger model: `/model`") and carry on.
@@ -226,7 +225,7 @@ code cannot drift apart.
 
 ## Tools
 
-`design-system`, `impeccable` and `ui-ux-pro-max` help write the system if installed. If Claude Design
+`impeccable` helps write the system if installed. If Claude Design
 (Artifacts with a design system type) is available, the directions can be shown there instead of local files.
 
 ## Model

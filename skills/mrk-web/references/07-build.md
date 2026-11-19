@@ -6,7 +6,7 @@
 
 - **Astro, static output.** Every page is plain HTML built ahead of time. No server, no adapter.
 - Check current Astro docs before scaffolding (the Astro docs connector, or the web): versions move fast and
-  remembered commands go stale. `modern-web-guidance`, if installed, does the same job for HTML and CSS.
+  remembered commands go stale.
 - **Content lives in content collections** (markdown files with typed fields), one collection per page type
   that repeats: services, articles, case studies, locations. The owner can edit a text file, and a content
   system can replace the files later without touching the design.
@@ -106,8 +106,7 @@ right. I am carrying on with the checks." This is a look, not a stop.
 
 ## Skills
 
-`design-taste-frontend`, `refactoring-ui` and `web-design-guidelines` while building; `emil-design-eng` for
-anything that moves.
+`design-taste-frontend` while building, if installed.
 
 **Done when:** every page in the site map is built, `npm run build` passes, and the site check reports no
 errors.

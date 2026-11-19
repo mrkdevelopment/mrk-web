@@ -35,15 +35,10 @@ Keep it to one page. Every item has an owner (them, or "ask MRK-Web") and a date
 
 ## Also record
 
-- Shortcuts taken during the build and what would remove them (`ponytail-debt` lists them if installed).
+- Shortcuts taken during the build and what would remove them (`ponytail` can list them, if installed).
 - How to make a change: say `continue` or describe it, work on a new version branch, review on the preview,
   release.
 - When the next check-in is. Suggest a quarterly re-score.
-
-## Skills
-
-`seo-plan` for a fuller search strategy, `seo-drift` to catch regressions, `improve-animations` and
-`ponytail-debt` for upkeep.
 
 ## Hand back
 

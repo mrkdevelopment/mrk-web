@@ -10,7 +10,7 @@ number of source files, and the ten largest files in the build. Measure again at
 
 ## Cut, in this order
 
-1. **Run the audit.** With `ponytail-audit` installed, run it on the repo: it reports what to delete, merge
+1. **Run the audit.** With `ponytail` installed, run its audit (`ponytail-audit`) on the repo: it reports what to delete, merge
    or simplify, ranked, and changes nothing. Without it, do the same pass by hand: for each component, style
    file, script and dependency, ask what breaks if it goes.
 2. **Unused files**: components, pages, scripts and images nothing references. Unused dependencies in
@@ -43,8 +43,8 @@ Then re-run the speed test from step 9 and compare screenshots of each template 
 
 ## Skills and models
 
-`ponytail-audit` to find, `ponytail-review` to check each change, `seo-images` for image detail. This is
-careful code work: a strong coding model, not the cheapest.
+`ponytail` finds what to cut. The image checks are in `check-site.mjs`. This is careful code work: a strong
+coding model, not the cheapest.
 
 **Done when:** the before and after sizes are in `_mrk/checks/diet.md`, the build and site check pass, speed
 is still 98 or more, and the screenshots match.

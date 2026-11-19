@@ -49,7 +49,7 @@ every account, key and cost in the whole build.
 | Order | What | Cost | What to do now |
 |---|---|---|---|
 | 1 | Node (the version current Astro asks for), git, Chrome | Free | Required. Fix these before anything else. |
-| 2 | Free skills (table below) | Free. No account, no key. | Offer the whole set with one yes. |
+| 2 | Four free skills (table below) | Free. No account, no key. | Offer the set with one yes. |
 | 3 | Free connector: Astro docs | Free. No account, no key. | Offer it with the set. |
 | 4 | Free accounts: GitHub, Cloudflare | Free. Browser sign-in, no key. | Mention only. They are set up at steps 14 and 15. |
 | 5 | Anything with an API key | Mostly free | Nothing now. Optional, at step 15, with help. |
@@ -69,23 +69,20 @@ them?" They can say yes to all, or pick. Then install them one after another and
 - These were correct in November 2026. If one fails, open the project's own page rather than guessing a new
   command. A failed optional install never stops the build: note it and move on.
 
-| Free skill | Used in | Install (run in the site folder; add `-g` for every project) |
-|---|---|---|
-| design-taste-frontend | 4, 6, 7 | `npx skills add Leonxlnx/taste-skill --skill design-taste-frontend -y` |
-| refactoring-ui | 4, 6, 7 | `npx skills add s0xDk/refactoring-ui-skill -y` |
-| emil-design-eng | 7 | `npx skills add emilkowalski/skill --skill emil-design-eng -y` |
-| modern-web-guidance | 7, 9 | `npx skills add GoogleChrome/modern-web-guidance -y` |
-| web-design-guidelines | 9 | `npx skills add vercel-labs/agent-skills --skill web-design-guidelines -y` |
-| ponytail (with audit and review) | 11 | `npx skills add DietrichGebert/ponytail -y` |
-| no-ai-slop | 12 | `npx skills add petergyang/no-ai-slop -y` |
-| Cloudflare's `wrangler` and `cloudflare` | 15, 19 | `npx skills add cloudflare/skills --skill wrangler -y`, then again with `--skill cloudflare` |
-| impeccable | 3, 6, 9 | See impeccable.style for the current installer |
-| ui-ux-pro-max | 6 | The owner types `/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill`, then `/plugin install ui-ux-pro-max@ui-ux-pro-max-skill` |
-| claude-seo (seo-unlighthouse, seo-agentic, seo-geo, seo-schema, seo-images, seo-audit, seo-technical, seo-local) | 3, 9, 10, 18 | Follow the README at github.com/AgriciDaniel/claude-seo |
+| Free skill | What it does here | Used in | Install (run in the site folder; add `-g` for every project) |
+|---|---|---|---|
+| design-taste-frontend | Deals design directions and checks the drafts | 4, 6, 7 | `npx skills add Leonxlnx/taste-skill --skill design-taste-frontend -y` |
+| impeccable | Critiques the designs before the owner sees them | 3, 6, 9 | See impeccable.style for the current installer |
+| ponytail | Finds code to delete or simplify | 11 | `npx skills add DietrichGebert/ponytail -y` |
+| no-ai-slop | Finds writing that reads AI-made | 12 | `npx skills add petergyang/no-ai-slop -y` |
 
-| Free connector | Used in | Add (for this project; add `--scope user` for every project) |
-|---|---|---|
-| Astro docs | 7 | `claude mcp add --transport http astro-docs https://mcp.docs.astro.build/mcp` |
+| Free connector | What it does here | Used in | Add (for this project; add `--scope user` for every project) |
+|---|---|---|---|
+| Astro docs | Up-to-date Astro documentation | 7 | `claude mcp add --transport http astro-docs https://mcp.docs.astro.build/mcp` |
+
+That is the whole list. MRK-Web does its own crawling, speed tests, SEO checks, redirects and image checks
+with the scripts it ships, so no SEO skill is needed. Other skills the owner happens to have installed may
+join in by themselves. Do not suggest installing any that are not in this table.
 
 ### Accounts, keys and paid tools
 

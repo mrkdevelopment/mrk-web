@@ -44,6 +44,9 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 
 ### Changed
 
+- Far fewer other skills. The recommended set is down from 21 to four: `design-taste-frontend` and
+  `impeccable` for design, `ponytail` for leaner code, `no-ai-slop` for writing, plus the free Astro docs
+  connector. All the SEO skills are gone: the scripts MRK-Web ships do that work.
 - Better first designs. Each of the five is a visual idea with its own ground colour and type, and each
   now has substance: a working panel designed from the business's facts (a day as a timeline, a picker of
   the real services), two actions, three proof points, and a structured second section. All five share one

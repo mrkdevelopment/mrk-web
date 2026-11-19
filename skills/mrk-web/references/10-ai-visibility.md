@@ -40,8 +40,7 @@ At the time of writing it looks at:
 - **ARD** (Agentic Resource Discovery): a catalogue file, `ai-catalog.json`, for sites that offer tools or
   data for agents to use. **Most business sites have nothing to list and should not have this file.** Never
   create one just to tick the box;
-- forms described for agents (WebMCP). Experimental. Only add it if the `seo-agentic` skill is installed and
-  says the standard is settled.
+- forms described for agents (WebMCP). Experimental. Leave it out.
 
 ## Check from outside
 
@@ -59,11 +58,6 @@ A 403 for `GPTBot` usually means a Cloudflare setting ("block AI bots", bot prot
 
 AI answers lean heavily on other people's pages: Google Business Profile, review sites, industry directories,
 "best of" lists. List the gaps in `_mrk/owner-todo.md` with draft wording. The owner submits them; you do not.
-
-## Skills
-
-`seo-agentic` (agent readiness and the Lighthouse category), `seo-geo` (being cited in AI answers) and
-`seo-schema` (structured data) go deeper if installed.
 
 **Done when:** the files are in the build, the structured data parses, and `check-site.mjs` reports no errors
 for them.

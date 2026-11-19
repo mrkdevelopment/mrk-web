@@ -67,6 +67,5 @@ If something important is broken and cannot be fixed in minutes, go back: point 
 
 - Tag the release (`v1.0.0`) and update the "production" badge in the README.
 - Record the launch date in `_mrk/state.json` and the changelog. Later comparisons depend on it.
-- With `seo-drift` installed, capture a baseline now.
 
 **Done when:** the domain serves the new site, every check above passes, and the launch is tagged.

@@ -27,27 +27,10 @@ catalogue() { cat <<'EOF'
 required|Tool|Node|Runs the build|All|Free
 required|Tool|git|Keeps the site's history|All|Free
 required|Tool|Chrome|Screenshots and speed tests|3, 9, 13, 18|Free
-free|Skill|design-taste-frontend|Art direction; keeps the AI look out|4, 6, 7|Free
-free|Skill|impeccable|Design critique and polish|3, 6, 9|Free
-free|Skill|refactoring-ui|Spacing, hierarchy and colour|4, 6, 7|Free
-free|Skill|ui-ux-pro-max|Type, palette and pattern ideas by industry|6|Free
-free|Skill|emil-design-eng|How things move and respond|7|Free
-free|Skill|modern-web-guidance|Current HTML and CSS practice|7, 9|Free
-free|Skill|web-design-guidelines|Second opinion on the interface|9|Free
-free|Skill|ponytail|Smallest change that solves the task|11|Free
-free|Skill|ponytail-audit|Finds code to delete or simplify|11|Free
-free|Skill|ponytail-review|Checks each change|11|Free
+free|Skill|design-taste-frontend|Deals design directions and checks the drafts|4, 6, 7|Free
+free|Skill|impeccable|Critiques the designs before you see them|3, 6, 9|Free
+free|Skill|ponytail|Finds code to delete or simplify|11|Free
 free|Skill|no-ai-slop|Finds writing that reads AI-made|12|Free
-free|Skill|seo-unlighthouse|Speed scores across every page|3, 9|Free
-free|Skill|seo-images|Image size and format checks|9, 11|Free
-free|Skill|seo-agentic|Whether AI agents can use the site|10|Free
-free|Skill|seo-geo|Being quoted by AI search|10|Free
-free|Skill|seo-schema|Structured data for search engines|10|Free
-free|Skill|seo-audit|Whole-site SEO audit|18|Free
-free|Skill|seo-technical|Technical SEO audit|18|Free
-free|Skill|seo-local|Local business SEO|18|Free
-free|Skill|wrangler|Current Cloudflare commands|15, 19|Free
-free|Skill|cloudflare|Current Cloudflare guidance|15, 19|Free
 free|Connector|Astro docs|Up-to-date Astro documentation|7|Free
 account|Account|GitHub|Stores the site and its history|14|Free
 account|Account|Cloudflare|Hosts the site and the preview|15, 19|Free

@@ -33,10 +33,6 @@ Then confirm by hand, because scripts cannot judge these:
   `--traffic _mrk/baseline/Pages.csv` when there is a report.
 - **Preview-only settings are not baked in**: no `noindex` on real pages, no preview addresses in the build.
 
-With the SEO skills installed, run `seo-audit` or `seo-technical` against the preview for a second opinion,
-and `seo-local` for a local business. Read their findings as advice: fix what is real, note what you declined
-and why.
-
 ## Part 2: the gate
 
 ```bash

@@ -101,8 +101,8 @@ right address. No domain yet is fine: the preview address works without one.
 
 ## Skills and models
 
-Cloudflare's own `wrangler` and `cloudflare` skills, if installed, keep the commands current. Forms and
-redirect decisions need care: a strong coding model, and the owner for anything about their business.
+Cloudflare changes its screens and commands often: check its current docs before walking the owner through
+anything. Forms and redirect decisions need care: a strong coding model, and the owner for anything about their business.
 
 **Done when:** the preview loads, contact works at the level the owner chose, and `redirects.mjs` exits
 clean.

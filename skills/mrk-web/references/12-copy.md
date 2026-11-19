@@ -46,6 +46,4 @@ audience is technical.
 Flagging lines page by page is good work for a mid-sized model in batches. Rewrites of headings and first
 screens deserve the strongest model, because those few lines carry the page.
 
-`writing-guidelines` and `seo-content` add a second read if installed.
-
 **Done when:** `_mrk/checks/copy.md` shows every flagged line as fixed, deleted, or kept with a reason.

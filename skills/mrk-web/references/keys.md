@@ -20,10 +20,8 @@ through one screen at a time using the notes below. Offer the video from `videos
 | What | Used in | Cost | Sign-up | Key | Without it |
 |---|---|---|---|---|---|
 | Node, git, Chrome | Whole build | Free | None | No | Cannot build (required) |
-| Design, code and writing skills | Steps 3 to 12 | Free | None | No | The guides' own rules apply |
-| SEO skills (the ones this skill uses) | Steps 3, 9, 10, 18 | Free | None | No | The bundled scripts cover the essentials |
+| The four helper skills (design-taste-frontend, impeccable, ponytail, no-ai-slop) | Steps 6, 11, 12 | Free | None | No | The guides' own rules apply |
 | Astro docs connector | Step 7 | Free | None | No | Look the docs up on the web |
-| Cloudflare skills | Steps 15, 19 | Free | None | No | Look the docs up on the web |
 | GitHub | Step 14 | Free | Account, browser sign-in | No | No history or backup; cannot use Cloudflare's automatic builds |
 | Cloudflare Pages | Step 15 | Free for most small sites | Account, browser sign-in | No | No preview and no launch (required to go live in 1.0) |
 | Google Analytics or Tag Manager | Step 17 | Free | Google account | No (an ID, which is not secret) | No visitor numbers, and no cookie banner needed |
@@ -34,9 +32,6 @@ through one screen at a time using the notes below. Offer the video from `videos
 | **PageSpeed API key** | Steps 18, 19 | Free | Google account | **Yes** | The local speed test is used instead (same engine) |
 | Mobbin | Step 5 | **Paid** | Account | No | Free galleries and the client's own inspiration |
 | Higgsfield | Step 8 | **Paid** | Account | No | Real photos, or drawn visuals |
-
-Some SEO skills that are not used by this skill need paid data services or their own keys (live keyword data,
-backlink data). Do not suggest them during a build.
 
 ## Rules for every key
 
