@@ -20,34 +20,39 @@ You need [Claude Code](https://claude.com/claude-code). Nothing else has to be s
 
 ### The quick way: paste one sentence
 
+MRK-Web installs into one site's folder at a time. Nothing is added to the rest of your computer, and each
+site keeps the version it was built with.
+
 1. Download the MRK-Web zip and leave it in your Downloads folder. Do not unzip it.
-2. Open Claude Code in any folder and paste this:
+2. Make a new, empty folder for the site and open Claude Code in it.
+3. Paste this:
 
 ```text
-Install the MRK-Web skill for me. The zip is in my Downloads folder and its name starts with "mrk-web". Unzip it, copy the "skills/mrk-web" folder from inside it to my Claude skills folder at ~/.claude/skills/mrk-web (replace any older copy), then run the setup check in its scripts folder and show me the result. Offer to install anything that is missing, and ask me before each one.
+Install the MRK-Web skill into this project only. The zip is in my Downloads folder and its name starts with "mrk-web". Unzip it to a temporary folder, then copy the "skills/mrk-web" folder from inside it to .claude/skills/mrk-web in this project folder. If something is already at that path, remove it first, and if it is a link, remove only the link. Do not put MRK-Web anywhere outside this project. Then run the setup check in its scripts folder and show me the result. Offer to install anything that is missing, and ask me before each one.
 ```
 
-3. Say yes when Claude asks permission for each step.
-4. Restart Claude Code when it finishes.
+4. Say yes when Claude asks permission for each step.
+5. Restart Claude Code in the same folder when it finishes, then say **start**.
 
-It works the same on Mac, Windows and Linux. Claude finds the right folders for your computer.
+It works the same on Mac, Windows and Linux. For the next site, make a new folder and paste the sentence
+again.
 
 ### By hand
 
-**Mac or Linux**, in a terminal:
+**Mac or Linux**, in a terminal opened in the site's folder:
 
 ```bash
 unzip ~/Downloads/mrk-web-*.zip -d ~/Downloads/mrk-web-unzipped
 ```
 
 ```bash
-mkdir -p ~/.claude/skills && cp -R ~/Downloads/mrk-web-unzipped/*/skills/mrk-web ~/.claude/skills/
+mkdir -p .claude/skills && cp -R ~/Downloads/mrk-web-unzipped/*/skills/mrk-web .claude/skills/
 ```
 
 **Windows:** unzip the download, open it until you see a `skills` folder, and copy the `mrk-web` folder inside
-it into `C:\Users\<your name>\.claude\skills\`. Create the `skills` folder if it is not there.
+it into a `.claude\skills\` folder inside the site's folder. Create those two folders if they are not there.
 
-Restart Claude Code afterwards.
+Restart Claude Code in the site's folder afterwards.
 
 ### From GitHub
 
@@ -65,14 +70,14 @@ Claude Code uses your computer's GitHub sign-in to reach the repo. If it cannot,
 
 | Installed from | Update | Remove |
 |---|---|---|
-| The zip | Download the new zip and paste the same sentence again | Delete the `mrk-web` folder from your Claude skills folder |
+| The zip | Download the new zip and paste the same sentence again in that site's folder | Delete `.claude/skills/mrk-web` from the site's folder |
 | GitHub | `claude plugin update mrk-web@mrk-web` in a terminal | `claude plugin uninstall mrk-web@mrk-web` |
 
-Your site folders are never touched by an update: each site's progress lives in that site's own `_mrk` folder.
+Updating the skill never touches a site's work: each site's progress lives in its own `_mrk` folder.
 
 ## Use it
 
-1. Make a new, empty folder for the new site and open Claude Code in it.
+1. Open Claude Code in the site's folder, where you installed MRK-Web.
 2. Use the strongest model you have.
 3. Say **start**. If you have an email or message from a client describing what they want, paste it in
    after the word start. It reads that first and only asks what the message leaves out.

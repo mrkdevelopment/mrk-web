@@ -19,6 +19,9 @@ node_modules/
 resources/*
 !resources/README.md
 
+# The MRK-Web skill itself, when it was installed into this project. It is a tool, not part of the site.
+.claude/skills/mrk-web/
+
 # Bulky working files that can be remade
 _mrk/ingest/pages/
 _mrk/ingest/assets/

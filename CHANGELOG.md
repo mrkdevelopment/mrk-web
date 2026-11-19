@@ -27,6 +27,8 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 
 ### Changed
 
+- Installing from the zip now puts the skill inside one site's folder (`.claude/skills/mrk-web`), not across
+  the whole computer. Each new site gets its own copy.
 - The skill's version is now written inside `SKILL.md`, so a copy installed from the zip knows which version
   it is.
 
