@@ -45,11 +45,12 @@ business already has. There is no cart and no payment code in the site.
 
 - A product page, or one clear section per product: what it is, the price, the options (sizes, packs).
 - One "Buy" button per option, each going to that exact product and option at the checkout. The addresses
-  are in `_mrk/functions.md`.
+  are in `_mrk/functions.md`. A button with no known address gets a visible `TODO`, never a guessed link.
 - Buying is the page's main action, so it is in the first screen and repeated.
 - Test every buy button by hand before review: right product, right size, right price at the other end.
 - For a regulated product, ask the owner now what their licence or regulator requires on the site (an age
-  check, a licence number, a warning line) and build exactly that. Do not guess the law.
+  check, a licence number, a warning line) and build exactly that. Do not guess the law. In fast, do not
+  ask: add it to `_mrk/owner-todo.md` and leave a visible `TODO` where it will go.
 
 Across every page type:
 

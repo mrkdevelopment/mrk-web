@@ -84,14 +84,23 @@ the copied folder and follow it, or restart Claude Code in that folder.
 3. Type `/mrk-web start`. If you have an email or message from a client describing what they want, paste
    it in after that. It reads the message first and only asks what it leaves out.
 
-It asks four quick questions, then shows a table of every tool, skill and connector it uses: what each is
-for, what it costs, and whether you have it. Then it begins. After that, plain words work: say **continue** in
-the same folder to pick up later, **status** to see where you are, **tools** to see that table again, or
-**help** for the step list.
+### Two paces
+
+| | You type | What it does |
+|---|---|---|
+| **Fast** (the default) | `/mrk-web start` | Takes what you give it and builds. No questions it can avoid, no waiting for files, no emails. It stops for you to pick a design, and again before anything goes online. |
+| **Verbose** | `/mrk-web start verbose` | Walks you through: the brief questions, a table of every tool it uses, what you would like to bring, and offers to draft messages to your client. |
+
+Say **fast** or **verbose** at any time to switch. After the start, plain words work: **continue** to pick up
+later, **status** to see where you are, **tools** for the table of everything it uses, **help** for the steps.
+
+At either pace it always stops for four things: choosing a design, sending the site to GitHub, your review,
+and going live. It never spends money without showing the price first.
 
 ### Bring your own materials
 
-During setup it creates a `resources` folder and asks what you would like to bring:
+It creates a `resources` folder for anything you want it to use. Fill it before you start or at any time.
+In verbose it asks what you would like to bring; in fast it uses whatever is there:
 
 ```
 resources/
@@ -106,9 +115,6 @@ The more that is real and yours, the closer the first design is to what you want
 given, even where the skill's own taste rules would choose differently. Your inspiration shapes at least two
 of the five design directions. Nothing in the folder is changed, and nothing is published unless you say so.
 Add to it at any time.
-
-It stops for you in five places: installing anything, choosing a design, paying for images (optional), your
-review, and going live. Everything else it does and reports.
 
 ## The twenty steps
 

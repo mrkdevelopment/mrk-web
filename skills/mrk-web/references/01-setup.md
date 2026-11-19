@@ -5,6 +5,21 @@ what the client already has, so the first design is close to what they want inst
 
 Part 1 is the tools. Part 2, the client's materials, is at the end of this guide. Do both.
 
+## Pace
+
+**Fast (the default).** Two quick actions and no questions:
+
+1. Run `bash "$SKILL/scripts/setup-check.sh"`. If the required tools pass, say so in one line and note what
+   is missing among the free add-ons in `_mrk/state.json`. Do not show the table, and do not offer to install
+   anything. A missing required tool is the only thing that stops you: say what is missing and how to fix it.
+2. Create `resources/` if it is not there (the command is in part 2), read whatever is in it, and write
+   `_mrk/resources.txt`. Do not ask what they would like to bring, do not wait for files, and do not offer to
+   write to anyone. One line is enough: "The `resources` folder is there if you want to add a logo or photos."
+
+Then go on to step 2.
+
+**Verbose.** Everything below.
+
 ## Run it
 
 ```bash

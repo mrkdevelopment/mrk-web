@@ -8,7 +8,7 @@ description: >-
   read AI-made. Use when someone says "/mrk-web", "mrk-web start", "rebuild my website", "ingest this site",
   "score my website" or "build me a website with mrk-web", and when they say just "start", "continue",
   "status" or "tools" in an empty folder or in a folder that holds `_mrk/`, `resources/` or this skill.
-argument-hint: "[start | continue | status | step <n> | help]"
+argument-hint: "[start [fast|verbose] | continue | status | step <n> | tools | help]"
 license: GPL-2.0-or-later (the templates folder is MIT; see the LICENSE files)
 metadata:
   version: "1.0.1"
@@ -40,12 +40,42 @@ Wix or Squarespace. They do not know Git, the terminal or Cloudflare, and should
 
 | They say | You do |
 |---|---|
-| `start` | Step 0 if there is no `_mrk/state.json` here; otherwise say in one line where the build is up to and offer to continue. If a client's email or message is pasted in with it, read that before asking anything (`00-brief.md`) |
+| `start`, `start fast`, `start verbose` | Begin at step 0 at that pace (fast unless they say verbose). If `_mrk/state.json` is already here, say in one line where the build is up to and carry on. If a client's email or message is pasted in with it, read that first (`00-brief.md`) |
+| `fast`, `verbose` | Change pace from here on, and record it in `_mrk/state.json` |
 | `continue` | Read `_mrk/state.json` and carry on from the current step |
 | `status` | One line per step: done, current or to do, with the scores so far |
 | `step <n>` | Redo that step. Say first which later steps it will make stale |
 | `tools` | Show the tools table (below) |
 | `help` | The step list, the stops, and any video links |
+
+## Two paces: fast and verbose
+
+The owner decides how much you ask. **Fast is the default.** Verbose is for someone who wants to be walked
+through. Record the pace as `pace` in `_mrk/state.json` and keep to it until they change it.
+
+**Fast means: if they did not ask for it, do not do it.** Take what you were given at the start (the
+address, a pasted message, whatever is in `resources/`) and build. Ask no optional questions, wait for no
+materials, write no emails and do not offer to, offer no installs. When something is unknown, decide by the
+guides' defaults, note it in `_mrk/owner-todo.md`, and carry on. Rule 1 still holds: a gap stays a gap. Cut
+the section, or leave a visible `TODO` (the site check refuses to launch one). Never fill it by inventing.
+
+| | Fast | Verbose |
+|---|---|---|
+| Step 0 | Ask only for what you cannot start without, normally just the site's address. Assume the rest, write the brief, go on. No confirm. | The four questions, the brief, then "Do tool check". |
+| Step 1, tools | Run the check. If the required tools pass, say so in one line and go on. Install nothing. | Show the table and offer the free set. |
+| Step 1, materials | Create `resources/`, read whatever is in it, go on. No question, no waiting. | Ask what they would like to bring, and wait. |
+| Unclear or missing facts | Use the best source, note the doubt in `_mrk/owner-todo.md`, go on. | Ask the owner. |
+| Messages to a client | Never. | Offer to draft them. |
+| Step 6 | Make the five directions and stop for the pick. | The same, after one last call for materials. |
+| Step 8, imagery | Skip, and record that it was skipped. | Follow the guide. |
+| Steps 2 to 5 and 7 to 13 | Straight through, one line per finished step. | The same, with a hand-over after each step. |
+
+**The same at either pace:** the eight rules, and the stops only the owner can clear: picking a design
+(step 6), sending the site to GitHub (14), the review (16), going live (19), and anything that costs money.
+A missing required tool stops both.
+
+In fast, when step 13 is done, hand back in a few lines: the site is built and scored on this computer, the
+old-against-new numbers, what is on the to-do list, and that step 14 puts it online when they say so.
 
 ## The tools table
 
@@ -79,8 +109,8 @@ Show it at the top of step 1 (that is the tool check), after anything is install
 - **Progress lives in files, not in the chat.** `_mrk/state.json` records the brief, the current step and the
   scores. Update it at the end of every step so a fresh session can pick up with `continue`.
 - **Read a step's guide when you start that step**, not before. Guides are in `$SKILL/references/`.
-- **Every step ends with a file** (the "Done when" column) and a short hand-over: what was done, in two or
-  three sentences, then the next action as one choice. Then go straight on, unless the step is a stop.
+- **Every step ends with a file** (the "Done when" column) and a short hand-over. In fast: one line, then
+  straight on. In verbose: what was done, in two or three sentences, then the next action as one choice.
 - **Say less.** Do not list what you chose not to ask, preview later steps, repeat where the stops are, or
   suggest when to pause. Do not ask for anything optional before the step that uses it. The owner can say
   `help` for the overview.
@@ -115,15 +145,15 @@ Show it at the top of step 1 (that is the tool check), after anything is install
 
 | # | Step | Why it exists | Guide | Done when |
 |---|---|---|---|---|
-| 0 ✋ | Brief | Four answers that change everything after | `00-brief.md` | `_mrk/brief.md`, `_mrk/state.json` |
-| 1 ✋ | Setup and materials | Missing tools fail quietly; the client's own material makes the first design right | `01-setup.md` | Required tools pass, `resources/` ready |
+| 0 (✋) | Brief | Four answers that change everything after | `00-brief.md` | `_mrk/brief.md`, `_mrk/state.json` |
+| 1 (✋) | Setup and materials | Missing tools fail quietly; the client's own material makes the first design right | `01-setup.md` | Required tools pass, `resources/` ready |
 | 2 | Ingest | Without real material the build invents things | `02-ingest.md` | `_mrk/facts.md`, `brand-kit.md`, `site-map.md` |
 | 3 | Score the old site | "Better" needs a number to beat | `03-scorecard.md` | `_mrk/scores/before.md` |
 | 4 | Taste rules | The default look of AI sites is recognisable | `04-taste.md` | Rules loaded, design skills noted |
 | 5 | References | Designs drawn from nothing come out average | `05-references.md` | `_mrk/references.md` |
 | 6 ✋ | Five directions, then a design system | The owner chooses the look; one system keeps it consistent | `06-directions.md` | Owner's pick, `DESIGN.md` |
 | 7 | Build | A static site built to be acted on | `07-build.md` | Build passes, site check passes |
-| 8 ✋ | Imagery (optional) | Physical businesses with no usable photos | `08-imagery.md` | Approved images, or skipped |
+| 8 (✋) | Imagery (optional) | Physical businesses with no usable photos | `08-imagery.md` | Approved images, or skipped |
 | 9 | Phone and speed pass | Most visitors are on phones | `09-phone-speed.md` | `_mrk/scores/speed-after.csv` |
 | 10 | AI visibility | So ChatGPT, Claude and Google's AI can read and cite it | `10-ai-visibility.md` | Crawler files in the build |
 | 11 | Code diet | Less code is faster and breaks less | `11-code-diet.md` | Smaller build, checks still pass |
@@ -136,6 +166,8 @@ Show it at the top of step 1 (that is the tool check), after anything is install
 | 18 | SEO check and the 98 gate | Last chance to catch what search engines will see | `18-seo-check.md` | Checks clean, gate passed |
 | 19 ✋ | Go live | The only step that touches the real domain | `19-go-live.md` | Live, verified, tagged |
 | 20 | What next | A site is never finished | `20-roadmap.md` | `_mrk/roadmap.md` |
+
+✋ stops at either pace. (✋) stops only in verbose.
 
 No existing site? Steps 2, 3 and 13 change shape; `00-brief.md` says how.
 

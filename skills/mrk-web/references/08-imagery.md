@@ -3,6 +3,8 @@
 **Purpose.** Some physical businesses have no usable photos, and their site looks empty without them.
 Generated imagery can help in a narrow way. Everywhere else it hurts, so the default is to skip this step.
 
+**In fast, skip this step** unless the owner asked for generated images. Record it as skipped and go on.
+
 ## First choice: real photos
 
 If `resources/photos/` already covers what the pages need, this step is done. Record it as skipped.

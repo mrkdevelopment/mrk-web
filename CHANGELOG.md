@@ -8,6 +8,9 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 
 ### Added
 
+- Two paces. **Fast** (the default) takes what it is given and builds: no optional questions, no waiting for
+  materials, no emails, stopping only to pick a design and before anything goes online. **Verbose**
+  (`/mrk-web start verbose`) is the guided walk-through. Say "fast" or "verbose" to switch.
 - Paste a client's email or message after "start". The skill saves it, takes from it the site address, the
   sites they like, the pages and features they asked for, any deadline and whether they sell online, then
   asks only for what is missing.

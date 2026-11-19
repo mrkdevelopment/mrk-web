@@ -7,6 +7,22 @@ five lines or fewer, offer one next action, and stop. Do not ask about anything 
 what you have not asked, and do not describe the steps to come. Everything else is asked at the step that
 needs it.
 
+## Pace
+
+**Fast (the default).** Do not run the four questions and do not ask for a confirm. Take the address and
+anything else you were given, and assume the rest:
+
+- `mode`: `all-pages`.
+- `goal`: what the current site's main button already asks visitors to do, or what the message says.
+- `builtFor`: leave it out unless they said.
+
+Write the two files, say what you are doing in one line ("Rebuilding all of example.com, built around
+enquiries. Starting."), and go straight to step 1. If something under "Raise these only if" applies, add one
+line for it and keep going. Ask a question only when there is nothing to start from: no address, no message,
+no description of the business.
+
+**Verbose.** Everything below, ending with the brief and "Do tool check".
+
 ## The four questions
 
 Skip any that are already answered: by a pasted message, by a file in `resources/documents/`, or by what
@@ -101,6 +117,7 @@ Dislikes, pages that must stay and dates are never asked for. Record them if the
 {
   "skill": "mrk-web",
   "skillVersion": "1.0.1",
+  "pace": "fast",
   "brief": {
     "url": "https://www.example.com",
     "path": "rebuild",
@@ -127,7 +144,7 @@ Dislikes, pages that must stay and dates are never asked for. Record them if the
 `skillVersion` is the `version` under `metadata` at the top of `SKILL.md`. Leave out any brief field that
 does not apply. `decisions` is where you record any time you departed from a guide, and why.
 
-## Finish
+## Finish (verbose)
 
 Show the brief as a short list: **five lines at most, one line each, no sub-points.**
 
@@ -148,4 +165,4 @@ Then offer one choice, and stop:
 Nothing after that. No list of what is still open, no preview of the steps, no list of where you will stop,
 no advice on when to pause.
 
-**Done when:** both files exist and the owner chose "Do tool check".
+**Done when:** both files exist and, in verbose, the owner chose "Do tool check".

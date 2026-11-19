@@ -3,9 +3,9 @@
 **Purpose.** The owner chooses how their business looks, from real options, before a full site is built.
 Then one written system keeps every page consistent with that choice.
 
-## Last call for materials
+## Last call for materials (verbose only)
 
-Before drafting, look at `resources/brand/` and `resources/inspiration/`. If both are empty, ask once: "Before
+In fast, skip this and design from what you have. In verbose, before drafting, look at `resources/brand/` and `resources/inspiration/`. If both are empty, ask once: "Before
 I draft the designs, is there a logo file, brand colours, or a site you like that I should see?" Designing
 blind and redoing it costs far more than a minute's wait. Then carry on with whatever you have.
 
@@ -44,6 +44,9 @@ Rules for the set:
 Save them in `_mrk/directions/` with an `index.html` that shows all five side by side and links to each.
 
 ## The pick ✋
+
+This stop holds at either pace. It is the one design decision only the owner can make, and building the
+wrong look wastes everything after it.
 
 Show the owner the index page. Ask which they would be proud to send a customer to, and what they would
 change. They can pick one, or combine parts of two. Do not build past this point without their answer.
