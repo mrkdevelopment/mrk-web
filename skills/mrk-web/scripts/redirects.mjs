@@ -3,6 +3,11 @@
 //
 // Usage:
 //   node redirects.mjs --old _mrk/ingest/urls.csv --dist dist [--map _mrk/redirects.csv] [--write public/_redirects]
+//                     [--traffic resources/search-console/Pages.csv]
+//
+// --traffic takes the Pages.csv from a Google Search Console export. Every page in it that Google has
+// shown counts as an old address too, even if the crawl never found it, and its impressions are written
+// into the map so the busiest pages are dealt with first.
 //
 // Every old path that returned 200 (or was listed in the old sitemap) must either exist in the build at
 // the same path, or have a row in the map CSV (columns: old_path,new_path,status,note,impressions).
@@ -24,10 +29,10 @@ import { parseArgs } from 'node:util';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const HELP = 'Usage: node redirects.mjs --old _mrk/ingest/urls.csv --dist dist [--map _mrk/redirects.csv] [--write public/_redirects]';
+const HELP = 'Usage: node redirects.mjs --old _mrk/ingest/urls.csv --dist dist [--map _mrk/redirects.csv] [--write public/_redirects] [--traffic resources/search-console/Pages.csv]';
 let args;
 try {
-  args = parseArgs({ options: { old: { type: 'string' }, dist: { type: 'string', default: 'dist' }, map: { type: 'string', default: '_mrk/redirects.csv' }, write: { type: 'string' }, help: { type: 'boolean', short: 'h' } } });
+  args = parseArgs({ options: { old: { type: 'string' }, dist: { type: 'string', default: 'dist' }, map: { type: 'string', default: '_mrk/redirects.csv' }, write: { type: 'string' }, traffic: { type: 'string' }, help: { type: 'boolean', short: 'h' } } });
 } catch (e) { console.error(`Error: ${e.message}\n${HELP}`); process.exit(2); }
 const o = args.values;
 if (o.help) { console.log(HELP); process.exit(0); }
@@ -84,6 +89,27 @@ const oldPaths = [...new Set(oldRows
   .map((r) => r.path || cleanPath(r.url))
   .filter((p) => p && p.startsWith('/')))];
 
+// ---------- traffic (optional): the Pages.csv from a Google Search Console export ----------
+// A page Google has shown is an old address too, even when the crawl never found it.
+const traffic = new Map(); let trafficOnly = 0;
+const pathKey = (p) => p.replace(/\/+$/, '') || '/';
+const trafficFor = (p) => traffic.get(pathKey(p));
+if (o.traffic) {
+  if (!fs.existsSync(o.traffic)) { console.error(`Error: ${o.traffic} not found. It should be the Pages.csv from a Search Console export.`); process.exit(2); }
+  const num = (v) => Number(String(v || '').replace(/[^0-9.]/g, '')) || 0;
+  const rows = parseCsv(fs.readFileSync(o.traffic, 'utf8'));
+  if (rows.length && !('top pages' in rows[0] || 'page' in rows[0] || 'url' in rows[0] || 'path' in rows[0])) { console.error(`Error: ${o.traffic} has no "Top pages" column. Use the Pages.csv from a Search Console export.`); process.exit(2); }
+  for (const r of rows) {
+    const p = cleanPath(r['top pages'] || r.page || r.url || r.path || '');
+    if (!p || !p.startsWith('/')) continue;
+    const t = traffic.get(pathKey(p)) || { path: p, clicks: 0, impressions: 0 };
+    t.clicks += num(r.clicks); t.impressions += num(r.impressions);
+    traffic.set(pathKey(p), t);
+  }
+  const known = new Set(oldPaths.map(pathKey));
+  for (const [k, t] of traffic) if (t.impressions > 0 && !known.has(k)) { oldPaths.push(t.path); known.add(k); trafficOnly++; }
+}
+
 // ---------- map ----------
 let map = fs.existsSync(o.map) ? parseCsv(fs.readFileSync(o.map, 'utf8')) : null;
 const created = !map;
@@ -92,13 +118,19 @@ const mapped = new Map(map.map((r) => [r.old_path, r]));
 const dynamicRows = map.filter((r) => isDynamic(r.old_path) && r.new_path);
 const coveredBySplat = (p) => dynamicRows.some((r) => patternRe(r.old_path).test(p));
 let added = 0;
+const fresh = [];
 for (const p of oldPaths) {
   if (inBuild(p) || mapped.has(p) || coveredBySplat(p)) continue;
   const sug = bySeg.get(lastSeg(p));
   const row = { old_path: p, new_path: '', status: '301', note: sug ? `suggested: ${sug.slice(0, 3).join(' or ')}` : '', impressions: '' };
-  map.push(row); mapped.set(p, row); added++;
+  fresh.push(row); mapped.set(p, row); added++;
 }
-if (added || created) { fs.mkdirSync(path.dirname(path.resolve(o.map)), { recursive: true }); fs.writeFileSync(o.map, toCsv(map)); }
+// Fill in impressions where the traffic report has them, and put the busiest new rows first.
+let filled = 0;
+for (const r of [...map, ...fresh]) { const t = trafficFor(r.old_path); if (t && t.impressions && !r.impressions) { r.impressions = String(t.impressions); filled++; } }
+fresh.sort((a, b) => Number(b.impressions || 0) - Number(a.impressions || 0));
+map.push(...fresh);
+if (added || filled || created) { fs.mkdirSync(path.dirname(path.resolve(o.map)), { recursive: true }); fs.writeFileSync(o.map, toCsv(map)); }
 
 // ---------- validate ----------
 const errors = []; const warnings = [];
@@ -187,6 +219,7 @@ if (o.write && !errors.length) {
 // ---------- summary ----------
 const matched = oldPaths.filter((p) => inBuild(p)).length;
 console.log(`Old paths to keep alive: ${oldPaths.length}   same path in build: ${matched}   via redirect: ${oldPaths.length - matched}`);
+if (o.traffic) console.log(`Traffic report: ${traffic.size} pages, ${trafficOnly} of them not found by the crawl (added to the list above).`);
 console.log(`Map: ${o.map}${created ? ' (created)' : ''}${added ? `, ${added} new row(s) added` : ''}   rules: ${staticRules} static + ${dynamicRules} dynamic (limits ${LIMIT_STATIC} / ${LIMIT_DYNAMIC})`);
 const group = (list) => { const g = {}; for (const x of list) (g[x.rule] ||= []).push(x.detail); return g; };
 for (const [label, list] of [['ERRORS', errors], ['Warnings', warnings]]) {

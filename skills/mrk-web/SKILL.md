@@ -98,8 +98,8 @@ per finished step.
 
 ### Agency: the guided route
 
-Follow the step guides in full: the four brief questions and a confirm, the client's own materials, key
-facts confirmed with the owner, every liked site studied properly, five home page sketches each with a first
+Follow the step guides in full: the four brief questions and a confirm, the client's own materials, the
+Search Console pages report so the important pages are kept, key facts confirmed with the owner, every liked site studied properly, five home page sketches each with a first
 screen and one more section, a hand-over after each step, and offers to draft messages to a client. It asks more and
 takes longer, and the result is more considered. Still say less: short hand-overs, one choice at a time, and
 the thing to look at or answer always last.

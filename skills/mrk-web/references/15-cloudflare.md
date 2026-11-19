@@ -59,6 +59,9 @@ showing the business's email address until sending is set up. Record what is out
 node "$SKILL/scripts/redirects.mjs" --old _mrk/ingest/urls.csv --dist dist --map _mrk/redirects.csv
 ```
 
+If there is a Search Console report, add `--traffic _mrk/baseline/Pages.csv`: it protects pages Google shows
+that the crawl missed, and lists the busiest unmapped pages first.
+
 It lists every old address with no home in the new site. Fill in `_mrk/redirects.csv` for each (the site map
 from step 2 has the decisions), then run it again with `--write public/_redirects`.
 

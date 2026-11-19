@@ -13,6 +13,7 @@ unless you say it should be.
 | `documents/` | Anything written | Brochures, product PDFs, price lists, a brief, notes, text you want on the site |
 | `links.md` | Links | YouTube videos, social profiles, review pages, booking links |
 | `inspiration/` | How you want it to look and work | Sites you like, screenshots, things to avoid |
+| `search-console/` | Your Google Search Console pages report | The export that shows which pages Google sends people to |
 
 ## Brand kit: `brand/`
 
@@ -37,6 +38,11 @@ Anything that says what you do, for whom, and what it costs. PDF, Word or plain 
 
 If a document should be **downloadable from the site** (a product sheet, a brochure), say so. Everything else
 is read for facts only and stays private.
+
+## Search Console: `search-console/`
+
+If the current site has Google Search Console, its Pages report tells us which pages matter most, so none of
+them is lost. The steps to export it are in the README inside that folder. It takes about two minutes.
 
 ## Inspiration: `inspiration/`
 

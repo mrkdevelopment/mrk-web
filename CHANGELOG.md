@@ -12,6 +12,10 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
   is missing. `/mrk-web start <address>` builds fast: no optional questions, no waiting for materials, no
   emails. `/mrk-web agency <address>` is the guided route for an agency-level result, when you are happy to
   give more input.
+- Important pages from Google Search Console (agency pace). The skill asks for the Pages report, with the
+  steps to export it, and there is a `resources/search-console` folder to drop it into. Pages that bring
+  the visitors keep their addresses and are never dropped, and the redirect check protects every page
+  Google shows, including ones the crawl missed.
 - Paste a client's email or message after "start". The skill saves it, takes from it the site address, the
   sites they like, the pages and features they asked for, any deadline and whether they sell online, then
   asks only for what is missing.

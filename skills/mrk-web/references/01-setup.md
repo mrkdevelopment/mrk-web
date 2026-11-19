@@ -15,7 +15,8 @@ build: say what is missing and how to fix it, in two lines. Do not show the tabl
 anything during a build. That is the installer's job.
 
 Create `resources/` if it is not there (the command is under "The client's materials"), read whatever is in
-it, and write `_mrk/resources.txt`.
+it, and write `_mrk/resources.txt`. If `resources/` exists but lacks a folder the template has (an older
+build), add the missing folder and its README. Never touch what is already there.
 
 - **Fast:** say nothing and go straight on. No questions about materials, no waiting.
 - **Agency:** ask for the client's materials ("The client's materials", below) and wait for the answer.
@@ -121,6 +122,7 @@ resources/
   documents/       brochures, product PDFs, price lists, briefs, text for the site
   links.md         YouTube videos, social profiles, review pages, booking links
   inspiration/     sites.md, screenshots/, patterns/, avoid/
+  search-console/  the Pages report exported from Google Search Console
 ```
 
 Then ask, in these words or close to them:
@@ -150,6 +152,7 @@ For an agency: this is the list to send the client. Offer to write that email.
 | Documents | Facts, prices and wording for step 2, each traced to its file. |
 | Links | Videos to embed, profiles for the footer and structured data, reviews as proof. |
 | Inspiration | The first references in step 5, and at least two of the five directions in step 6. |
+| Search Console pages report | Which pages matter most (step 2). They keep their addresses and are never dropped. |
 
 ### Handling it
 

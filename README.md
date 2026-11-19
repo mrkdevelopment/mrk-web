@@ -92,7 +92,7 @@ In the site's folder, type one of these with your website address:
 | You type | What you get |
 |---|---|
 | `/mrk-web start https://www.your-site.com` | **Fast.** It reads your site and opens five home page designs to choose from, with almost nothing on screen until they are ready. Then it builds the one you pick. It asks for nothing it can do without. |
-| `/mrk-web agency https://www.your-site.com` | **Agency level.** The guided route, when you are happy to give more input for a more considered result. It asks a few questions, asks what you would like to bring (logo, photos, documents, sites you like), checks key facts with you, studies the sites you like, and offers to draft messages to your client. |
+| `/mrk-web agency https://www.your-site.com` | **Agency level.** The guided route, when you are happy to give more input for a more considered result. It asks a few questions, asks what you would like to bring (logo, photos, documents, sites you like), asks for your Google Search Console pages report so the pages that bring visitors are kept, checks key facts with you, studies the sites you like, and offers to draft messages to your client. |
 
 No site yet? Leave the address off and describe the business in a sentence. Got an email from a client saying
 what they want? Paste it in after the address.
@@ -115,6 +115,7 @@ resources/
   documents/     brochures, product PDFs, price lists, a brief, text for the site
   links.md       YouTube videos, social profiles, review pages, booking links
   inspiration/   sites you like, screenshots, pieces you want, things to avoid
+  search-console/  your pages report from Google Search Console
 ```
 
 The more that is real and yours, the closer the first design is to what you want. Your brand kit is used as

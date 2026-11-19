@@ -28,8 +28,9 @@ Then confirm by hand, because scripts cannot judge these:
 - **Images** have descriptions that say what is shown.
 - **Local businesses**: name, address and phone are identical everywhere on the site and match the Google
   Business Profile, character for character.
-- **Nothing important was lost**: every page with real traffic in the baseline exists or redirects to a
-  proper replacement.
+- **Nothing important was lost**: every page marked important in `_mrk/important-pages.md` exists at its old
+  address, or redirects to a proper replacement that the owner agreed to. Run the redirect check with
+  `--traffic _mrk/baseline/Pages.csv` when there is a report.
 - **Preview-only settings are not baked in**: no `noindex` on real pages, no preview addresses in the build.
 
 With the SEO skills installed, run `seo-audit` or `seo-technical` against the preview for a second opinion,
