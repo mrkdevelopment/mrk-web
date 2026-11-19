@@ -13,22 +13,34 @@ MRK-Web 1.0 launches on Cloudflare Pages only. cPanel hosting arrives in 1.1.
 Go through `_mrk/functions.md` from step 2. Each item is rebuilt, replaced or retired on purpose, and the
 owner is told which. Nothing disappears by accident.
 
-## 2. Forms
+## 2. Contact and forms
 
-Ask now:
+API keys are the hardest part of a build for most people, so none is required. Offer the three levels in
+this order and let the owner choose. `keys.md` has the walkthrough for every key.
+
+| Level | What visitors get | What the owner must set up |
+|---|---|---|
+| **1. No keys** | Phone, a tappable email link, address, hours | Nothing |
+| **2. A working form** | The enquiry form emails the business | One email service: an account, one API key, and proving they own the domain |
+| **3. Form with extras** | The same, plus a spam check and a copy to their CRM | Two free Turnstile keys, and a webhook address from the CRM |
+
+Level 1 is a complete, honest contact page and can launch today. Levels 2 and 3 can be added later without
+redesigning anything. If the deadline is tight or the owner is unsure, launch at level 1 and add the form
+after.
+
+**For level 2 or 3**, ask:
 
 - Which address receives enquiries?
-- Which service sends the email? The contact function template supports the ones listed in
-  `$SKILL/templates/README.md`. If they have none, recommend the simplest for their situation and send them
-  to its sign-up page.
-- Should enquiries also go to a CRM or automation tool? That needs a webhook address from that tool.
+- Which service sends the email? The contact function supports the ones in `$SKILL/templates/README.md`. If
+  they have none, `keys.md` says which suits whom.
+- Should enquiries also go to a CRM or automation tool?
 
 Then:
 
 - Copy the contact function, the form component and its script from `$SKILL/templates/`. Pages stay static;
   the one function runs on Cloudflare when a form is sent.
-- **Spam protection**: Cloudflare Turnstile. The owner creates a widget in their Cloudflare dashboard and gets
-  two keys. Plus the hidden trap field already in the template.
+- **Spam protection**: the hidden trap field in the template works with no set-up. Turnstile is the optional
+  extra.
 - **Secrets** (rule 4): the owner enters them in Cloudflare Pages, Settings, Variables and Secrets, for
   **both** Production and Preview. Forgetting Preview is the usual reason forms fail in review. Names are in
   `$SKILL/templates/env/`.
@@ -36,6 +48,10 @@ Then:
 - Test locally first: `npx wrangler pages dev dist` with a `.dev.vars` file. Astro's own preview does not run
   functions. If wrangler objects to the compatibility date, add `--compatibility-date` with a date a few
   months back.
+
+If a key cannot be sorted out in one sitting, do not wait on it. The form template already falls back to
+showing the business's email address until sending is set up. Record what is outstanding in
+`_mrk/owner-todo.md` and carry on.
 
 ## 3. Redirects
 
@@ -70,7 +86,8 @@ Copy `public/_headers` from the templates and remove the lines for services this
 ## 6. Prove it works
 
 - Open the preview on a phone and a desktop.
-- Send a real test enquiry through every form. Confirm the email arrives, and the CRM entry if there is one.
+- Send a real test enquiry through every form (levels 2 and 3). Confirm the email arrives, and the CRM entry
+  if there is one. At level 1, tap the phone and email links on a phone.
 - Try five old addresses and confirm each redirects in one hop.
 - `curl -I <preview address>`: preview deployments should send `X-Robots-Tag: noindex` so they stay out of
   search results. If that header is missing, tell the owner before sharing the link around.
@@ -80,4 +97,5 @@ Copy `public/_headers` from the templates and remove the lines for services this
 Cloudflare's own `wrangler` and `cloudflare` skills, if installed, keep the commands current. Forms and
 redirect decisions need care: a strong coding model, and the owner for anything about their business.
 
-**Done when:** the preview loads, a test enquiry arrived, and `redirects.mjs` exits clean.
+**Done when:** the preview loads, contact works at the level the owner chose, and `redirects.mjs` exits
+clean.

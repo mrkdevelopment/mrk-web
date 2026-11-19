@@ -60,6 +60,9 @@ Wix or Squarespace. They do not know Git, the terminal or Cloudflare, and should
   was done, where it is, what comes next. Then go straight on, unless the step is a stop.
 - **Stops (✋) are the only places you wait.** Everything else: do it, then report.
 - **Run scripts before spending model effort.** If a script in `$SKILL/scripts/` does the job, use it.
+- **Free first.** Set up what is free and needs no account before anything else. API keys are always
+  optional: say what works without one before offering help to get it. Paid tools come last and are never
+  needed. `keys.md` lists every account, key and cost.
 - **A missing tool never blocks the build.** Each guide says what to do without it. Say what was skipped;
   never skip silently.
 - **These guides are defaults, not a cage.** When the brief, the owner or the business calls for something
@@ -133,6 +136,8 @@ requirement.
 
 - `house-style.md`: MRK's defaults for page order, forms, FAQs, colour and wording. Follow them unless the
   brief or the owner says otherwise; they are meant to be edited.
+- `keys.md`: every account, API key and paid tool in a build, what works without each, and how to get
+  each key.
 - `videos.md`: help videos by step.
 - `$SKILL/templates/README.md`: the starter files and which step uses each.
 

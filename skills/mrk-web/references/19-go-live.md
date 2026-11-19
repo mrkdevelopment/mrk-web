@@ -10,7 +10,8 @@ All of these must be true. Show the owner the list.
 - [ ] Review approved (step 16), including the legal pages (step 17).
 - [ ] Checks clean and the 98 gate passed (step 18).
 - [ ] Redirects written and tested on the preview.
-- [ ] A test enquiry arrived from every form on the preview.
+- [ ] Contact works on the preview: a test enquiry arrived from every form, or the phone and email links work
+      if the site launched without a form.
 - [ ] Baseline saved (step 2): old addresses, traffic export, scores.
 - [ ] The owner can sign in where the domain's DNS is managed.
 - [ ] The old site and its hosting stay untouched and paid for at least two more weeks. That is the way back.
@@ -47,6 +48,9 @@ curl -A GPTBot -sI https://<domain>/             # 200, not 403
 node "$SKILL/scripts/speed.mjs" https://<domain> --label live --gate 98
 node "$SKILL/scripts/speed.mjs" https://<domain> --label live-psi --psi --urls /,<one page per template>
 ```
+
+The last line uses Google's hosted test and needs a free PageSpeed API key (`keys.md`). It is optional: the
+line above it runs the same engine locally and is the one the gate uses.
 
 Also: send a real enquiry through each form, check a real page is **not** marked `noindex`, and open the site
 on a phone using mobile data.

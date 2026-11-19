@@ -11,57 +11,68 @@ Part 1 is the tools. Part 2, the client's materials, is at the end of this guide
 bash "$SKILL/scripts/setup-check.sh"
 ```
 
-It changes nothing. Show the owner the result as one table: ready, missing and required, missing and optional
-(with what happens without it). On Windows, run it in Git Bash or WSL.
+It changes nothing. Show the owner the result in its own order: required, free, accounts for later, paid.
+On Windows, run it in Git Bash or WSL.
 
-## What is needed
+## What is needed, in the order to set it up
 
-| Item | Needed | Without it |
+Free things first, accounts when their step arrives, keys only as options, paid tools last. `keys.md` lists
+every account, key and cost in the whole build.
+
+| Order | What | Cost | What to do now |
+|---|---|---|---|
+| 1 | Node (the version current Astro asks for), git, Chrome | Free | Required. Fix these before anything else. |
+| 2 | Free skills (table below) | Free. No account, no key. | Offer the whole set with one yes. |
+| 3 | Free connector: Astro docs | Free. No account, no key. | Offer it with the set. |
+| 4 | Free accounts: GitHub, Cloudflare | Free. Browser sign-in, no key. | Mention only. They are set up at steps 14 and 15. |
+| 5 | Anything with an API key | Mostly free | Nothing now. Optional, at step 15, with help. |
+| 6 | Paid tools: Mobbin, Higgsfield | Paid | Do not offer. Say once that they exist and are optional. |
+
+Nothing in rows 5 and 6 is needed to reach a working preview.
+
+## Installing the free set
+
+List what is missing from the free set and ask once: "These are all free and need no account. Shall I install
+them?" They can say yes to all, or pick. Then install them one after another and report what went in.
+
+- **Match where MRK-Web itself lives.** If it was installed for one website, install these into the same
+  site folder, so nothing is left on the computer when the site is finished. If it was installed for every
+  project, add `-g` to each command.
+- Commands starting with `/` are typed by the owner inside Claude Code. You cannot run those for them.
+- These were correct in November 2026. If one fails, open the project's own page rather than guessing a new
+  command. A failed optional install never stops the build: note it and move on.
+
+| Free skill | Used in | Install (run in the site folder; add `-g` for every project) |
 |---|---|---|
-| Node (the version current Astro asks for), git | Required | Cannot build |
-| Chrome or Chromium | Required | No screenshots or speed scores, so no scoring |
-| GitHub account and `gh` | From step 14 | Create the repo on github.com by hand |
-| Cloudflare account | From step 15 | Cannot preview or launch |
-| Design skills (below) | Recommended | `04-taste.md` alone sets the floor |
-| SEO skills (below) | Recommended | The bundled scripts cover the essentials |
-| Mobbin, Astro docs, Cloudflare skills | Optional | Slower reference hunting; check docs on the web instead |
-| Higgsfield | Optional, paid | No generated imagery, which is usually fine |
-
-## Installing
-
-One item at a time, and only after a yes. Commands starting with `/` are typed by the owner inside Claude
-Code; you cannot run those for them. If `npx skills add` asks questions, have them run it in their own
-terminal and choose Claude Code.
-
-These were correct in November 2026. If one fails, open the linked project rather than guessing a new command.
-
-| Skill or tool | Used in | Install |
-|---|---|---|
-| design-taste-frontend | 4, 6, 7 | `npx skills add https://github.com/Leonxlnx/taste-skill --skill design-taste-frontend` |
+| design-taste-frontend | 4, 6, 7 | `npx skills add Leonxlnx/taste-skill --skill design-taste-frontend -y` |
+| refactoring-ui | 4, 6, 7 | `npx skills add s0xDk/refactoring-ui-skill -y` |
+| emil-design-eng | 7 | `npx skills add emilkowalski/skill --skill emil-design-eng -y` |
+| modern-web-guidance | 7, 9 | `npx skills add GoogleChrome/modern-web-guidance -y` |
+| web-design-guidelines | 9 | `npx skills add vercel-labs/agent-skills --skill web-design-guidelines -y` |
+| ponytail (with audit and review) | 11 | `npx skills add DietrichGebert/ponytail -y` |
+| no-ai-slop | 12 | `npx skills add petergyang/no-ai-slop -y` |
+| Cloudflare's `wrangler` and `cloudflare` | 15, 19 | `npx skills add cloudflare/skills --skill wrangler -y`, then again with `--skill cloudflare` |
 | impeccable | 3, 6, 9 | See impeccable.style for the current installer |
-| refactoring-ui | 4, 6, 7 | `npx skills add s0xDk/refactoring-ui-skill` |
-| ui-ux-pro-max | 6 | `/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill` then `/plugin install ui-ux-pro-max@ui-ux-pro-max-skill` |
-| emil-design-eng | 7 | `npx skills add emilkowalski/skill --skill emil-design-eng` |
-| modern-web-guidance | 7, 9 | `npx skills add GoogleChrome/modern-web-guidance` |
-| web-design-guidelines | 9 | `npx skills add vercel-labs/agent-skills --skill web-design-guidelines` |
-| ponytail (with audit and review) | 11 | `npx skills add DietrichGebert/ponytail` |
-| no-ai-slop | 12 | `npx skills add petergyang/no-ai-slop` |
-| claude-seo (seo-unlighthouse, seo-agentic, seo-geo, seo-schema, seo-images, seo-audit, seo-technical, seo-local) | 3, 9, 10, 18 | github.com/AgriciDaniel/claude-seo |
-| Cloudflare skills | 15, 19 | `npx skills add https://github.com/cloudflare/skills` |
-| GitHub CLI | 14 | `brew install gh` on a Mac, then the owner runs `gh auth login` |
+| ui-ux-pro-max | 6 | The owner types `/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill`, then `/plugin install ui-ux-pro-max@ui-ux-pro-max-skill` |
+| claude-seo (seo-unlighthouse, seo-agentic, seo-geo, seo-schema, seo-images, seo-audit, seo-technical, seo-local) | 3, 9, 10, 18 | Follow the README at github.com/AgriciDaniel/claude-seo |
 
-Connectors (the owner signs in through `/mcp` afterwards):
-
-| Connector | Used in | Add |
+| Free connector | Used in | Add (for this project; add `--scope user` for every project) |
 |---|---|---|
-| Mobbin | 5 | `claude mcp add --transport http --scope user mobbin https://api.mobbin.com/mcp` |
-| Astro docs | 7 | `claude mcp add --transport http --scope user astro-docs https://mcp.docs.astro.build/mcp` |
-| Higgsfield (paid plan) | 8 | higgsfield.ai/mcp has the current command |
+| Astro docs | 7 | `claude mcp add --transport http astro-docs https://mcp.docs.astro.build/mcp` |
 
-## Keys and sign-ins
+## Accounts, keys and paid tools
 
-Keys never pass through the chat (rule 4). Say where to get the key and give the command with a placeholder
-for them to run themselves.
+- **Free accounts.** GitHub (step 14) and Cloudflare (step 15). Both are ordinary sign-ups with a browser
+  sign-in, and neither needs a key. Tell the owner now so they can create them when it suits. The GitHub
+  command-line tool is optional: `brew install gh` on a Mac, then the owner runs `gh auth login`.
+- **API keys.** None are needed yet, and none are ever required. Step 15 offers them as options, and
+  `keys.md` has the walkthrough for each. Keys never pass through the chat (rule 4).
+- **Paid tools.** Do not offer these during setup. If the owner asks, or already pays for one:
+
+  | Paid tool | Used in | Add |
+  |---|---|---|
+  | Mobbin (design references) | 5 | `claude mcp add --transport http mobbin https://api.mobbin.com/mcp`, then sign in through `/mcp` |
+  | Higgsfield (generated images) | 8 | higgsfield.ai/mcp has the current command |
 
 ## After installing
 

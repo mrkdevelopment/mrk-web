@@ -142,11 +142,18 @@ skills/mrk-web/
 .claude-plugin/   lets Claude Code install the repo as a plugin
 ```
 
-## Works best with
+## What it costs to run
 
-MRK-Web runs on its own, and does better with these installed. Step 1 checks for them and offers to install
-what is missing: `design-taste-frontend`, `impeccable`, `refactoring-ui`, `ui-ux-pro-max`, `emil-design-eng`,
-`modern-web-guidance`, `web-design-guidelines`, `ponytail`, `no-ai-slop`, and the `claude-seo` skills.
+MRK-Web sets up the free things first and never needs a paid tool.
+
+| | What | Cost |
+|---|---|---|
+| Set up first | Other free skills it works with: `design-taste-frontend`, `impeccable`, `refactoring-ui`, `ui-ux-pro-max`, `emil-design-eng`, `modern-web-guidance`, `web-design-guidelines`, `ponytail`, `no-ai-slop`, the `claude-seo` skills, and the Astro docs connector | Free. No account, no key. |
+| When you reach them | A GitHub account and a Cloudflare account | Free. Sign in with your browser. |
+| Optional | A contact form that sends email, a spam check, a link to your CRM | Mostly free, but each needs an API key. The skill walks you through them, and your site can launch without any. |
+| Optional, paid | Mobbin (design references) and Higgsfield (generated images) | Paid. Never needed. |
+
+Step 1 checks what you have and offers to install the free set in one go.
 
 ## Versions
 

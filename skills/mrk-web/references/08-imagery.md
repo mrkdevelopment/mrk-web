@@ -39,7 +39,8 @@ All three must be true:
 
 ## Tools
 
-- **Claude:** Higgsfield, if connected (it needs a paid plan).
+- **Claude:** Higgsfield, if it is already connected. It is a paid plan, and each image uses credits on
+  top. Do not suggest signing up unless the owner asks for generated imagery.
 - **Gemini or Codex:** their own built-in image tools.
 - **None available:** use drawn visuals instead: diagrams, icon flows, the real logo wall, type as the image.
 

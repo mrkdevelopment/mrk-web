@@ -57,37 +57,45 @@ else
 fi
 
 echo
-echo "NEEDED LATER"
-if have gh; then
-  if gh auth status >/dev/null 2>&1; then row "GitHub CLI (step 14)" "ready" "signed in"
-  else row "GitHub CLI (step 14)" "sign in" "owner runs: gh auth login"; fi
-else
-  row "GitHub CLI (step 14)" "optional" "or create the repo on github.com"
-fi
-if have wrangler; then row "Cloudflare wrangler (step 15)" "ready"
-else row "Cloudflare wrangler (step 15)" "ok" "runs through npx, nothing to install"; fi
-
-echo
-echo "SKILLS (recommended; each step has a fallback)"
+echo "FREE SKILLS (no account, no key; each step has a fallback without them)"
 for skill in design-taste-frontend impeccable refactoring-ui ui-ux-pro-max emil-design-eng \
              modern-web-guidance web-design-guidelines ponytail ponytail-audit ponytail-review \
              no-ai-slop seo-unlighthouse seo-agentic seo-geo seo-schema seo-images seo-audit \
              seo-technical seo-local wrangler cloudflare; do
-  if has_skill "$skill"; then row "skill: $skill" "ready"; else row "skill: $skill" "-"; fi
+  if has_skill "$skill"; then row "skill: $skill" "ready"; else row "skill: $skill" "-" "free to add"; fi
 done
 
+connectors=""
+if have claude; then connectors="$(claude mcp list 2>/dev/null || true)"; fi
+connector() { # name, note shown when missing
+  if [ -z "$connectors" ]; then row "connector: $1" "unknown" "could not list connectors"
+  elif printf '%s' "$connectors" | grep -i "$1" | grep -qi "connected"; then row "connector: $1" "ready"
+  elif printf '%s' "$connectors" | grep -qi "$1"; then row "connector: $1" "sign in" "listed but not connected"
+  else row "connector: $1" "-" "$2"; fi
+}
+
 echo
-echo "CONNECTORS (optional)"
-if have claude; then
-  connectors="$(claude mcp list 2>/dev/null || true)"
-  for name in mobbin astro higgsfield; do
-    if printf '%s' "$connectors" | grep -i "$name" | grep -qi "connected"; then row "connector: $name" "ready"
-    elif printf '%s' "$connectors" | grep -qi "$name"; then row "connector: $name" "sign in" "listed but not connected"
-    else row "connector: $name" "-"; fi
-  done
+echo "FREE CONNECTOR (no account, no key)"
+connector astro "free to add"
+
+echo
+echo "FREE ACCOUNTS, NEEDED LATER (browser sign-in, no key)"
+if have gh; then
+  if gh auth status >/dev/null 2>&1; then row "GitHub (step 14)" "ready" "signed in"
+  else row "GitHub (step 14)" "sign in" "owner runs: gh auth login"; fi
 else
-  row "connectors" "unknown" "the claude command is not on PATH; check your own tool list"
+  row "GitHub (step 14)" "later" "account at github.com; the gh tool is optional"
 fi
+if have wrangler; then row "Cloudflare (step 15)" "later" "account at cloudflare.com; wrangler is installed"
+else row "Cloudflare (step 15)" "later" "account at cloudflare.com; wrangler runs through npx"; fi
+
+echo
+echo "API KEYS: none needed for a preview. All optional, offered at step 15 (see references/keys.md)."
+
+echo
+echo "PAID, OPTIONAL (never needed to finish a build)"
+connector mobbin "paid"
+connector higgsfield "paid"
 
 echo
 if [ "$missing_required" -eq 0 ]; then echo "All required items are ready."

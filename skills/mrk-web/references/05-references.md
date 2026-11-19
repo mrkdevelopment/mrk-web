@@ -85,13 +85,15 @@ brands will notice, and a near copy of a rival's look can become a legal problem
 ## Where to look
 
 - **The owner's own likes** from the brief, if they named any.
-- **Mobbin** (if connected): search by section and by business type.
-- **Godly, Awwwards, One Page Love, Land-book**: filter by industry for whole-page feel.
+- **Godly, Awwwards, One Page Love, Land-book**: free to browse. Filter by industry for whole-page feel.
 - **Competitors** from the facts sheet: what this market expects, and where everyone looks the same.
 - **Real brand design systems** published by well-run companies: borrow their discipline (how few sizes, how
   little colour), never their look.
 
 Without any of these, ask the owner for three sites they admire, in any industry.
+
+Mobbin is a paid library of real app and site screens. Use it if it is already connected. Do not suggest
+signing up for it: the free sources above are enough.
 
 ## What to take, and what not to
 

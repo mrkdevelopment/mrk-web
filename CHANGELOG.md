@@ -25,8 +25,15 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 - For agencies, what is missing is split into what the agency can answer and what the client must supply,
   with an offer to draft the reply to the client.
 
+- `keys.md`: one guide to every account, API key and paid tool in a build, what works without each one, and
+  how to get each key.
+
 ### Changed
 
+- Setup now goes free first: free skills and the free Astro docs connector are offered as one set, accounts
+  wait until their step, and the paid tools (Mobbin, Higgsfield) are never offered unless asked for.
+- No API key is required any more. The contact page can launch with phone and email links, and the form,
+  spam check and CRM link are optional levels added when the owner is ready.
 - Installing is now one line, with a choice: for one website (the skill lives in that site's folder) or for
   every project on the computer. Each works from the zip, by saying a sentence to Claude, or from the GitHub
   repo with one terminal command. Uninstalling is one line too.
