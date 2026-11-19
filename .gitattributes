@@ -1,0 +1,4 @@
+# Files left out of the zip people download from GitHub (Download ZIP and release archives).
+# They stay in the repo; they are working notes, not part of the product.
+ROADMAP.md export-ignore
+CLAUDE.md  export-ignore

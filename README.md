@@ -123,7 +123,7 @@ review, and going live. Everything else it does and reports.
 - Spend money without showing you the price first.
 - Launch a page scoring under 98 on any of Lighthouse's four measures, unless you decide otherwise.
 
-## What is in this repo
+## What is in the package
 
 ```
 skills/mrk-web/
@@ -132,8 +132,6 @@ skills/mrk-web/
   scripts/        crawl, speed test, site scan, redirect check, version bump, setup check
   templates/      starter files: forms, consent, crawler files, headers, legal drafts, site README
 .claude-plugin/   lets Claude Code install the repo as a plugin
-CLAUDE.md         notes for anyone (or any AI) working on the skill itself
-ROADMAP.md        what is planned for 1.1 and 2.0
 ```
 
 ## Works best with
@@ -144,11 +142,8 @@ what is missing: `design-taste-frontend`, `impeccable`, `refactoring-ui`, `ui-ux
 
 ## Versions
 
-[CHANGELOG.md](CHANGELOG.md) lists what changed. [ROADMAP.md](ROADMAP.md) lists what is coming: cPanel
-hosting in 1.1, headless WordPress and EmDash CMS in 2.0.
-
-The version number lives in `.claude-plugin/plugin.json`, the badge above and the changelog. Change all three
-together.
+[CHANGELOG.md](CHANGELOG.md) lists what changed. Coming next: cPanel hosting in 1.1, then headless WordPress
+and EmDash CMS in 2.0.
 
 ## Licence
 
