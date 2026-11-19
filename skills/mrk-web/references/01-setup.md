@@ -1,25 +1,35 @@
-# Step 1: Setup and materials ✋
+# Step 1: Tools and materials
 
-**Purpose.** Two things before any real work: find missing tools, so no later step fails halfway, and collect
-what the client already has, so the first design is close to what they want instead of a guess.
+Two separate things live here. Keep them apart.
 
-Part 1 is the tools. Part 2, the client's materials, is at the end of this guide. Do both.
+- **The installer** is run once, when someone first gets the skill (`/mrk-web installer`). It shows what the
+  skill uses and sets up what is missing. It is not part of building a site.
+- **Step 1 of a build** is nearly silent. It checks the tools quietly and makes room for the client's
+  materials.
 
-## Pace
+## Step 1 of a build
 
-**Fast (the default): this step is silent.** Setup is not part of building a site.
+Run `bash "$SKILL/scripts/setup-check.sh"`. If the required tools pass, say nothing about it and note what is
+missing among the free extras in `_mrk/state.json`. A missing required tool is the only thing that stops a
+build: say what is missing and how to fix it, in two lines. Do not show the table or offer to install
+anything during a build. That is the installer's job.
 
-1. Run `bash "$SKILL/scripts/setup-check.sh"`. If the required tools pass, say nothing and note what is
-   missing among the free extras in `_mrk/state.json`. A missing required tool is the only thing that stops
-   you: say what is missing and how to fix it, in two lines.
-2. Create `resources/` if it is not there (the command is in part 2), read whatever is in it, and write
-   `_mrk/resources.txt`. Say nothing about it.
+Create `resources/` if it is not there (the command is under "The client's materials"), read whatever is in
+it, and write `_mrk/resources.txt`.
 
-Then go straight on. No table, no offers, no questions about materials, no waiting.
+- **Fast:** say nothing and go straight on. No questions about materials, no waiting.
+- **Agency:** ask for the client's materials ("The client's materials", below) and wait for the answer.
 
-**Verbose, or when they say `setup`.** Everything below.
+## The installer (`/mrk-web installer`)
 
-## Run it
+First-time setup. Run it in any folder. It writes nothing into a site folder and starts no build.
+
+1. Show the tools table.
+2. Offer to set up what is missing, free things first.
+3. Finish with one line: "You are set. Type `/mrk-web start` and your website address, or `/mrk-web agency`
+   and the address for the guided build."
+
+### Show the table
 
 ```bash
 bash "$SKILL/scripts/setup-check.sh" --table
@@ -30,7 +40,7 @@ right order: required, free, accounts for later, paid. On Windows, run it in Git
 
 Show the table again after installing anything, so the owner sees what changed.
 
-## What is needed, in the order to set it up
+### What is needed, in the order to set it up
 
 Free things first, accounts when their step arrives, keys only as options, paid tools last. `keys.md` lists
 every account, key and cost in the whole build.
@@ -46,7 +56,7 @@ every account, key and cost in the whole build.
 
 Nothing in rows 5 and 6 is needed to reach a working preview.
 
-## Installing the free set
+### Installing the free set
 
 List what is missing from the free set and ask once: "These are all free and need no account. Shall I install
 them?" They can say yes to all, or pick. Then install them one after another and report what went in.
@@ -76,7 +86,7 @@ them?" They can say yes to all, or pick. Then install them one after another and
 |---|---|---|
 | Astro docs | 7 | `claude mcp add --transport http astro-docs https://mcp.docs.astro.build/mcp` |
 
-## Accounts, keys and paid tools
+### Accounts, keys and paid tools
 
 - **Free accounts.** GitHub (step 14) and Cloudflare (step 15). Both are ordinary sign-ups with a browser
   sign-in, and neither needs a key. Tell the owner now so they can create them when it suits. The GitHub
@@ -90,12 +100,12 @@ them?" They can say yes to all, or pick. Then install them one after another and
   | Mobbin (design references) | 5 | `claude mcp add --transport http mobbin https://api.mobbin.com/mcp`, then sign in through `/mcp` |
   | Higgsfield (generated images) | 8 | higgsfield.ai/mcp has the current command |
 
-## After installing
+### After installing
 
-Skills and connectors load when Claude Code starts. If anything was added, ask them to restart Claude Code,
-come back to this folder and say `continue`. The check then passes in seconds.
+Skills and connectors load when Claude Code starts. If anything was added, show the table again, then ask
+them to restart Claude Code before building.
 
-## Part 2: the client's materials ✋
+## The client's materials (agency pace) ✋
 
 Create the folder they will fill (skip if `resources/` already exists):
 
@@ -153,6 +163,5 @@ For an agency: this is the list to send the client. Offer to write that email.
   with the folder at the start of each session shows what is new.
 - If a file will not open, ask for it as a PDF or pasted text.
 
-**Done when:** every required tool passes, `resources/` exists, the question has been asked and answered, and
-`_mrk/resources.txt` lists what is there. Record missing optional tools in `_mrk/state.json` so later steps
-know which fallbacks to use.
+**Done when (a build):** every required tool passes, `resources/` exists and `_mrk/resources.txt` lists what
+is there. At agency pace, the materials question has also been asked and answered.

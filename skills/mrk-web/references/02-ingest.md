@@ -57,7 +57,7 @@ references. Every entry carries where it came from: the page address, or the fil
 - **Competitors**: three to five in the same trade and area, and how each words its offer. Start with any
   the client named (marked `competitor` in the brief), then ask the owner or search.
 
-Where two sources disagree (two phone numbers, two prices), ask the owner (verbose), or follow the fast
+Where two sources disagree (two phone numbers, two prices), ask the owner (agency pace), or follow the fast
 rule under "Done when". Never pick one silently.
 
 ### 2. `_mrk/brand-kit.md`: what it looks and sounds like
@@ -123,7 +123,7 @@ Google Business Profile, social pages, review sites. Skip the site map and basel
 Crawling is a script. Pulling facts out of pages suits a fast model working in batches, each returning facts
 with their source page. Merge the batches and resolve conflicts yourself.
 
-**Done when:** the four files exist. In verbose, the owner has also confirmed the facts that hurt most if
+**Done when:** the four files exist. At agency pace, the owner has also confirmed the facts that hurt most if
 wrong: phone, email, address, hours, and the main thing visitors should do. In fast, do not ask: where two
 sources disagree, use the client's material over the old site and the contact page over other pages, and
 list each doubt in `_mrk/owner-todo.md`. Do not ask for Search Console access either; note that there is no

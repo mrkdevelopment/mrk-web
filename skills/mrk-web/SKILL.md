@@ -5,10 +5,10 @@ description: >-
   current site, choose a design direction, build a fast static Astro site made to win enquiries, prove it
   against the old one, and launch on Cloudflare Pages with forms, analytics, redirects and AI-search files.
   Made for people coming from WordPress, Wix or Squarespace who want an AI-built site that does not look or
-  read AI-made. Use when someone says "/mrk-web", "mrk-web start", "rebuild my website", "ingest this site",
-  "score my website" or "build me a website with mrk-web", and when they say just "start", "continue",
-  "status" or "tools" in an empty folder or in a folder that holds `_mrk/`, `resources/` or this skill.
-argument-hint: "[start [fast|verbose] | continue | status | step <n> | tools | help]"
+  read AI-made. Use when someone says "/mrk-web", "mrk-web installer", "mrk-web start <address>",
+  "mrk-web agency <address>", "rebuild my website" or "score my website", and when they say just
+  "continue" or "status" in a folder that holds `_mrk/`, `resources/` or this skill.
+argument-hint: "[installer | start <address> | agency <address> | continue | status | help]"
 license: GPL-2.0-or-later (the templates folder is MIT; see the LICENSE files)
 metadata:
   version: "1.0.1"
@@ -47,20 +47,23 @@ simpler.
 
 | They say | You do |
 |---|---|
-| `start <address>` | Build a site from that address. Fast unless they add `verbose`. With no address and no site, they describe the business instead. If `_mrk/state.json` is already here, say in one line where the build is up to and carry on. A pasted client message is read first (`00-brief.md`) |
-| `fast`, `verbose` | Change pace from here on, and record it in `_mrk/state.json` |
-| `continue` | Read `_mrk/state.json` and carry on from the current step |
+| `installer` | First-time setup, not part of a build. Show the tools table, then offer to set up what is missing (`01-setup.md`, "The installer") |
+| `start <address>` | Build that site at **fast** pace. With no address and no site, they describe the business instead |
+| `agency <address>` | Build that site at **agency** pace: the guided route, for an agency-level result |
+| `continue` | Read `_mrk/state.json` and carry on from the current step, at the recorded pace |
 | `status` | One line per step: done, current or to do, with the scores so far |
 | `step <n>` | Redo that step. Say first which later steps it will make stale |
-| `tools` | Show the tools table (below) |
-| `setup` | The full setup in `01-setup.md`: the table, the free extras, what they would like to bring. Only when asked |
-| `help` | The step list, the stops, and any video links |
+| `help` | These commands, the step list, and any video links |
 
-## Two paces: fast and verbose
+If `_mrk/state.json` is already here, `start` and `agency` say in one line where the build is up to and carry
+on, switching pace if the word changed. A client's email or message pasted in with either is read first
+(`00-brief.md`). `tools` and `setup` mean `installer`.
 
-**Fast is the default.** It means: if they did not ask for it, do not do it. Verbose (`start verbose`, or
-`verbose` at any time) is the guided walk-through written in the step guides. Record the pace as `pace` in
-`_mrk/state.json` and keep to it until they change it.
+## Two paces: fast and agency
+
+`start` builds at **fast** pace: if they did not ask for it, do not do it. `agency` builds at **agency**
+pace: the guided route, for someone who wants an agency-level result and is happy to give more input along
+the way. Record the pace as `pace` in `_mrk/state.json` and keep to it until they use the other command.
 
 ### Fast: from `start` to five designs
 
@@ -73,8 +76,9 @@ need, in this order, and leave the rest until after they choose:
    baseline and redirects wait.
 3. **Glance at any sites the client named.** A screenshot and a few lines each. No wider hunt unless there
    is nothing to design from.
-4. **Design.** Five first screens, drafted in parallel if you can. Open them in the app and ask which one,
-   in two lines (`06-directions.md`).
+4. **Design.** Five sketches of the home page's first screen, one small file each, drafted in parallel if
+   you can. No other pages, no style guide. Open them in the app and ask which one, in two lines
+   (`06-directions.md`).
 
 While this runs, say at most one short line at a time ("Reading your site.", "Designing."). No tables, no
 findings, no file paths, no questions. Each guide has an "In fast" note saying what to do now and what to
@@ -91,6 +95,14 @@ per finished step.
   and carry on. A gap stays a gap: cut the section, or leave a visible `TODO`, which the site check refuses
   to launch.
 - Generate images (step 8), unless asked.
+
+### Agency: the guided route
+
+Follow the step guides in full: the four brief questions and a confirm, the client's own materials, key
+facts confirmed with the owner, every liked site studied properly, five home page sketches each with a first
+screen and one more section, a hand-over after each step, and offers to draft messages to a client. It asks more and
+takes longer, and the result is more considered. Still say less: short hand-overs, one choice at a time, and
+the thing to look at or answer always last.
 
 ### The same at either pace
 
@@ -112,11 +124,9 @@ bash "$SKILL/scripts/setup-check.sh" --table
 Then **put the whole table in your reply, every row, copied as printed**: each tool, skill, connector and
 account, what it is for, which steps use it, what it costs, and whether it is installed. A sentence that
 sums it up is not a substitute. Under the table, add the script's summary line and one sentence on what it
-means for this build. Do not explain rows one by one, and do not offer to install anything yet: step 1 does
-that.
+means for them. Do not explain rows one by one.
 
-Show it at the top of step 1 (that is the tool check), after anything is installed, and whenever asked
-(`tools`). Not at `start`: the brief comes first and stays short.
+Show it for `installer`, and again after anything is installed. Never during a build unless they ask.
 
 ## How a run works
 
@@ -134,7 +144,7 @@ Show it at the top of step 1 (that is the tool check), after anything is install
   scores. Update it at the end of every step so a fresh session can pick up with `continue`.
 - **Read a step's guide when you start that step**, not before. Guides are in `$SKILL/references/`.
 - **Every step ends with a file** (the "Done when" column) and a short hand-over. In fast: one line, then
-  straight on. In verbose: what was done, in two or three sentences, then the next action as one choice.
+  straight on. In agency: what was done, in two or three sentences, then the next action as one choice.
 - **Say less.** Do not list what you chose not to ask, preview later steps, repeat where the stops are, or
   suggest when to pause. Do not ask for anything optional before the step that uses it. The owner can say
   `help` for the overview.
@@ -191,7 +201,7 @@ Show it at the top of step 1 (that is the tool check), after anything is install
 | 19 ✋ | Go live | The only step that touches the real domain | `19-go-live.md` | Live, verified, tagged |
 | 20 | What next | A site is never finished | `20-roadmap.md` | `_mrk/roadmap.md` |
 
-✋ stops at either pace. (✋) stops only in verbose.
+✋ stops at either pace. (✋) stops only at agency pace.
 
 No existing site? Steps 2, 3 and 13 change shape; `00-brief.md` says how.
 

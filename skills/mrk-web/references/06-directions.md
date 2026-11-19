@@ -3,9 +3,9 @@
 **Purpose.** The owner chooses how their business looks, from real options, before a full site is built.
 Then one written system keeps every page consistent with that choice.
 
-## Last call for materials (verbose only)
+## Last call for materials (agency pace only)
 
-In fast, skip this and design from what you have. In verbose, before drafting, look at `resources/brand/` and `resources/inspiration/`. If both are empty, ask once: "Before
+In fast, skip this and design from what you have. At agency pace, before drafting, look at `resources/brand/` and `resources/inspiration/`. If both are empty, ask once: "Before
 I draft the designs, is there a logo file, brand colours, or a site you like that I should see?" Designing
 blind and redoing it costs far more than a minute's wait. Then carry on with whatever you have.
 
@@ -13,17 +13,28 @@ blind and redoing it costs far more than a minute's wait. Then carry on with wha
 
 Draft five genuinely different directions. Different ideas, not five tints of one.
 
-Each direction is:
+**These are sketches of the top of the home page, and nothing more.** The site is built once, in step 7,
+after the owner has chosen. Anything built now for the four designs they do not pick is thrown away.
 
-- **One sentence** that names the idea ("the workshop: honest materials, big photos of the work, type like a
-  job sheet").
-- A typeface choice, a way of using the brand colour, a layout approach, and an approach to pictures.
-- **The first screen and one more section** of the home page, built as a plain HTML file using the real logo,
-  real facts and real photos from the brand kit. Phone and desktop.
+Each direction is **one small HTML file**:
 
-**In fast: the first screen only**, phone and desktop, for each of the five, drafted in parallel if you can.
-Speed matters here: the owner is waiting to see something. If they want to see more of one before choosing,
-they will ask.
+- **Fast:** the home page's first screen only.
+- **Agency:** the home page's first screen and one more section.
+- Phone and desktop come from the same file (it is responsive). Do not make separate files for each.
+- Real logo, real facts and real photos from the brand kit.
+- A name of a few words and **one sentence** that says the idea ("the workshop: honest materials, big
+  photos of the work, type like a job sheet").
+
+**Never at this stage:**
+
+- Any page other than the home page. No about, services, contact or product pages.
+- The whole home page. One screen, or one screen and a section.
+- A style guide, a component library, sample pages for each page type, or a design system. The design
+  system is written once, after the pick, for the chosen direction only.
+- An Astro project, a build step, or shared code between the five. Plain HTML with its own CSS in the file.
+
+If a direction is running past about 200 lines, it is doing too much: stop and cut it back. Draft the five in
+parallel if you can; the owner is waiting to see something.
 
 Rules for the set:
 
@@ -90,7 +101,11 @@ Record the pick and their comments in `_mrk/state.json`.
 
 ## The design system
 
-Write `DESIGN.md` in the site's root (design skills look for it there), from the chosen direction:
+After the pick, and only for the chosen direction. It is a written document plus the tokens in CSS. **Do not
+build a style-guide page, sample pages or a component gallery to go with it.** The first real page is the
+home page in step 7.
+
+Write `DESIGN.md` in the site's root (design skills look for it there):
 
 - **Colour roles**, not just swatches: page background, surface, text, muted text, brand, brand on dark,
   border, focus ring. Each text and background pair with its contrast ratio. All pass WCAG AA.

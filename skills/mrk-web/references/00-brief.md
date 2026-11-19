@@ -9,7 +9,7 @@ needs it.
 
 ## Pace
 
-**Fast (the default).** Do not run the four questions and do not ask for a confirm. Take the address and
+**Fast** (`start`). Do not run the four questions and do not ask for a confirm. Take the address and
 anything else you were given, and assume the rest:
 
 - `mode`: `all-pages`.
@@ -21,7 +21,7 @@ the brief. If something under "Raise these only if" applies, write it into `_mrk
 after the design pick, then say it in one line. Ask a question only when there is nothing to start from: no
 address, no message, no description of the business.
 
-**Verbose.** Everything below, ending with the brief and "Do tool check".
+**Agency.** Everything below, ending with the brief and "Do tool check".
 
 ## The four questions
 
@@ -104,7 +104,7 @@ Dislikes, pages that must stay and dates are never asked for. Record them if the
 - **Rebuild** (a site exists): all twenty steps.
 - **New business** (no site): step 2 becomes an interview plus whatever exists (Google Business Profile,
   social pages, brochures, price lists). Skip step 3, and step 13 scores the new site alone. No redirects.
-- **Agency**: the same steps, but the client confirms facts and gives the approvals at steps 6, 16 and 19.
+- **For a client**: the same steps, but the client confirms facts and gives the approvals at steps 6, 16 and 19.
   Collect questions for the client in `_mrk/owner-todo.md` so they can be sent in one go.
 
 ## Write
@@ -144,7 +144,7 @@ Dislikes, pages that must stay and dates are never asked for. Record them if the
 `skillVersion` is the `version` under `metadata` at the top of `SKILL.md`. Leave out any brief field that
 does not apply. `decisions` is where you record any time you departed from a guide, and why.
 
-## Finish (verbose)
+## Finish (agency pace)
 
 Show the brief as a short list: **five lines at most, one line each, no sub-points.**
 
@@ -165,4 +165,4 @@ Then offer one choice, and stop:
 Nothing after that. No list of what is still open, no preview of the steps, no list of where you will stop,
 no advice on when to pause.
 
-**Done when:** both files exist and, in verbose, the owner chose "Do tool check".
+**Done when:** both files exist and, at agency pace, the owner chose "Do tool check".

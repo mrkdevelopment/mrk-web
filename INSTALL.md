@@ -10,7 +10,7 @@ For Claude, when asked to install this. Do exactly this and nothing more.
 2. Delete the unzipped copy. Leave the zip.
 3. Reply with this one line, and nothing else:
 
-   > MRK-Web is installed. Type `/mrk-web start` and your website address. (If that is not recognised,
+   > MRK-Web is installed. Type `/mrk-web installer` to check your setup. (If that is not recognised,
    > restart Claude Code once.)
 
 Do not run checks, list what was copied, explain the folder layout, or offer to install anything else. The

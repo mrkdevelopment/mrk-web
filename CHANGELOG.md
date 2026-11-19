@@ -8,9 +8,10 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 
 ### Added
 
-- Two paces. **Fast** (the default) takes what it is given and builds: no optional questions, no waiting for
-  materials, no emails, stopping only to pick a design and before anything goes online. **Verbose**
-  (`/mrk-web start verbose`) is the guided walk-through. Say "fast" or "verbose" to switch.
+- Three commands. `/mrk-web installer` is for the first time: it shows what the skill uses and sets up what
+  is missing. `/mrk-web start <address>` builds fast: no optional questions, no waiting for materials, no
+  emails. `/mrk-web agency <address>` is the guided route for an agency-level result, when you are happy to
+  give more input.
 - Paste a client's email or message after "start". The skill saves it, takes from it the site address, the
   sites they like, the pages and features they asked for, any deadline and whether they sell online, then
   asks only for what is missing.
@@ -26,7 +27,7 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 - A site folder can be prepared in advance: put the client's message and files in `resources/` and say
   "start". The skill reads them before asking anything.
 
-- A tools table at the tool check (step 1), and whenever you say "tools": every tool, skill, connector and account the
+- A tools table in the installer: every tool, skill, connector and account the
   skill uses or recommends, what each is for, which steps use it, what it costs, and whether it is
   installed.
 - `keys.md`: one guide to every account, API key and paid tool in a build, what works without each one, and
@@ -39,9 +40,11 @@ All notable changes to MRK-Web. Versions follow [semantic versioning](https://se
 
 ### Changed
 
+- The first designs are sketches of the top of the home page only, one small file each. No other pages, no
+  style guide and no sample pages are made before a design is chosen, which was using a lot of credits.
 - Two things, kept apart. **Installing** copies the skill and replies with one line. **Building** is
   `/mrk-web start` and a website address. Setup is no longer part of either: the tool check runs silently,
-  and the tools table and free extras are there when you say "tools" or "setup".
+  and the tools table and free extras are in `/mrk-web installer`.
 - Fast goes straight to the designs. It reads the site, glances at any sites the client named, and opens
   five first screens to choose from, saying almost nothing on the way. Scoring the old site and the rest of
   the groundwork happen after the pick.

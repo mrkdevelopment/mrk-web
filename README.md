@@ -68,47 +68,45 @@ For anyone doing it by hand, and for Claude when asked to install from the zip. 
    - every project: `.claude/skills/mrk-web` inside your home folder (`~/.claude/skills/mrk-web` on Mac
      and Linux, `C:\Users\<you>\.claude\skills\mrk-web` on Windows).
 3. Delete the unzipped copy. Leave the zip.
-4. Reply with one line and nothing else: "MRK-Web is installed. Type `/mrk-web start` and your website
-   address." Do not run checks, show tables, or offer to install anything else.
+4. Reply with one line and nothing else: "MRK-Web is installed. Type `/mrk-web installer` to check your
+   setup." Do not run checks, show tables, or offer to install anything else.
 
 To uninstall by hand, delete that `mrk-web` folder (and `.agents/skills/mrk-web` beside it, if the terminal
 command was used).
 
 If `/mrk-web` is not recognised straight after installing, restart Claude Code once.
 
-## Build a site
-
-In the site's folder, type `/mrk-web start` and your website address:
+## First time: check your setup
 
 ```text
-/mrk-web start https://www.your-site.com
+/mrk-web installer
 ```
 
-That is all. It reads your site and opens five designs for you to choose from. No site yet? Type
-`/mrk-web start` and describe the business in a sentence.
+It shows a table of everything the skill can use, what each is for, what it costs and whether you have it.
+Then it offers to set up what is missing, free things first. You only need to do this once.
 
-Got an email from a client saying what they want? Paste it in after the address.
+## Build a site
 
-### Two paces
+In the site's folder, type one of these with your website address:
 
-| | You type | What it does |
-|---|---|---|
-| **Fast** (the default) | `/mrk-web start <address>` | Goes straight to five designs, with almost nothing on screen until they are ready. Then it builds the one you pick. It stops again only before anything goes online. |
-| **Verbose** | `/mrk-web start verbose <address>` | Walks you through: the brief questions, a table of every tool it uses, what you would like to bring, and offers to draft messages to your client. |
+| You type | What you get |
+|---|---|
+| `/mrk-web start https://www.your-site.com` | **Fast.** It reads your site and opens five home page designs to choose from, with almost nothing on screen until they are ready. Then it builds the one you pick. It asks for nothing it can do without. |
+| `/mrk-web agency https://www.your-site.com` | **Agency level.** The guided route, when you are happy to give more input for a more considered result. It asks a few questions, asks what you would like to bring (logo, photos, documents, sites you like), checks key facts with you, studies the sites you like, and offers to draft messages to your client. |
 
-Say **fast** or **verbose** at any time to switch. After the start, plain words work: **continue** to pick up
-later, **status** to see where you are, **help** for the steps.
+No site yet? Leave the address off and describe the business in a sentence. Got an email from a client saying
+what they want? Paste it in after the address.
 
-Optional, whenever you want them: **tools** shows everything the skill can use and what you have, and
-**setup** offers to add the free extras.
+Either way it stops for four things: choosing a design, sending the site to GitHub, your review, and going
+live. It never spends money without showing the price first.
 
-At either pace it always stops for four things: choosing a design, sending the site to GitHub, your review,
-and going live. It never spends money without showing the price first.
+Later, plain words work: **continue** to pick up where you left off, **status** to see where you are, **help**
+for the commands and steps. Use the other command to switch between fast and agency.
 
 ### Bring your own materials
 
 It creates a `resources` folder for anything you want it to use. Fill it before you start or at any time.
-In verbose it asks what you would like to bring; in fast it uses whatever is there:
+With `agency` it asks what you would like to bring; with `start` it uses whatever is there:
 
 ```
 resources/

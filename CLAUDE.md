@@ -50,6 +50,8 @@ Scripts and templates must stay inside `skills/mrk-web/`, because the skill find
 | Content | Files in the repo in 1.x. Headless WordPress and EmDash CMS in 2.0. |
 | Speed gate | 98 on all four Lighthouse scores, mobile, every page. A hard stop; only the site's owner can override, and it is recorded. |
 | Scorecard | Ten checks: five usability, five marketability. |
+| Commands | `installer` (first time: table and setup), `start <address>` (fast), `agency <address>` (guided, agency-level). Setup is never part of a build. |
+| Design credits | Before a design is chosen, only five small sketches of the home page's top are made. Nothing else is built until after the pick. |
 | Client materials | Asked for in step 1, kept in `resources/`, out of GitHub by default. |
 | Online shops | Not built. The site links to the checkout the business already has (asked in the brief). |
 | Licence | Skill: GPL-2.0-or-later. `skills/mrk-web/templates/`: MIT, because those files are copied into clients' sites. Keep anything meant to be copied into a site inside `templates/`. |
